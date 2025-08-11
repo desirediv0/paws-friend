@@ -1,7 +1,9 @@
-import React from "react";
+import ModernHero from "@/components/modern-hero";
 
-const Home = () => {
-  return <div>Home</div>;
-};
-
-export default Home;
+export default function Home() {
+  return (
+    <main className="min-h-screen">
+      <ModernHero />
+    </main>
+  );
+}
