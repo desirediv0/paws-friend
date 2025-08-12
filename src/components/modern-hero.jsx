@@ -52,7 +52,7 @@ const ModernHero = () => {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 mt-20 md:mt-2">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 mt-20 md:mt-0">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8 lg:space-y-10 lg:pt-16">
