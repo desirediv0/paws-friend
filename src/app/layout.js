@@ -123,7 +123,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head> */}
-      <body className="antialiased bg-[#f2f2f2] text-gray-900">
+      <body className="antialiased bg-[#f2f2f2] text-gray-900 overflow-x-hidden">
         <Header />
         {children}
         <Footer />
