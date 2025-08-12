@@ -1,258 +1,310 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, User, Phone, MapPin, Heart } from "lucide-react";
+import {
+  Calendar,
+  User,
+  Phone,
+  Heart,
+  Sparkles,
+  PawPrint,
+  Star,
+  Shield,
+} from "lucide-react";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import dog from "@/assets/dog.png";
+import cat from "@/assets/cat.png";
+import bird from "@/assets/bird.png";
 
 const AppointmentForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    petName: "",
     petType: "",
+    petName: "",
+    ownerName: "",
+    phone: "",
     service: "",
     date: "",
     time: "",
-    address: "",
     message: "",
   });
+  const petTypes = [
+    { value: "dog", label: "Dog", icon: dog },
+    { value: "cat", label: "Cat", icon: cat },
+    { value: "bird", label: "Bird", icon: bird },
+    { value: "other", label: "Other", icon: "🐾" },
+  ];
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const services = [
+    "Veterinary Service",
+    "Dog Walking",
+    "Pet Grooming",
+    "Pet Training",
+    "Pet Boarding",
+    "Pet Surgery",
+    "Online Vet Consultation",
+    "Vet Home Visit",
+  ];
+
+  const timeSlots = [
+    "09:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "02:00 PM",
+    "03:00 PM",
+    "04:00 PM",
+    "05:00 PM",
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Appointment booked:", formData);
     // Handle form submission
-    console.log("Form submitted:", formData);
   };
 
-  const services = [
-    "Veterinary Checkup",
-    "Grooming Service",
-    "Lab Tests",
-    "Training Session",
-    "Emergency Care",
-  ];
-
-  const petTypes = ["Dog", "Cat", "Bird", "Rabbit", "Other"];
-
   return (
-    <section className="bg-[#FFD9D4] py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#2B2B2B] mb-6">
-            Book Your Appointment
-          </h2>
-          <p className="text-xl text-[#2B2B2B]/80 max-w-2xl mx-auto">
-            Schedule a visit with our expert pet care team. We'll come to your
-            home at your convenience to provide the best care for your furry
-            friend.
-          </p>
-        </div>
+    <section>
+      <div className="relative mt-20">
+        <div className="bg-white rounded p-8 shadow-2xl border border-gray-200 sticky top-32">
+          {/* Form Header */}
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-black text-gray-900 mb-3">
+              Book Your Appointment
+            </h3>
+            <div className="inline-flex items-center bg-[#FF6B6B] text-white px-4 py-2 rounded-full">
+              <Sparkles className="w-4 h-4 mr-2" />
+              <p className="text-sm font-bold">
+                🎉 Special Offers Available - Up to 30% OFF!
+              </p>
+            </div>
+          </div>
 
-        {/* Form */}
-        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Personal Information */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  <User className="w-4 h-4 inline mr-2" />
-                  Your Name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  <Phone className="w-4 h-4 inline mr-2" />
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
-                  placeholder="Enter your phone number"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
-                  placeholder="Enter your email address"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  <MapPin className="w-4 h-4 inline mr-2" />
-                  Address *
-                </label>
-                <input
-                  type="text"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
-                  placeholder="Enter your address"
-                />
+            {/* Pet Type Selection */}
+            <div>
+              <Label className="text-sm font-bold text-gray-900 mb-4 flex items-center">
+                <PawPrint className="w-4 h-4 mr-2" />
+                Select Your Pet:
+              </Label>
+              <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
+                {petTypes.map((pet) => (
+                  <div key={pet.value} className="relative">
+                    <input
+                      type="radio"
+                      id={pet.value}
+                      name="petType"
+                      value={pet.value}
+                      className="sr-only"
+                      checked={formData.petType === pet.value}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          petType: e.target.value,
+                        })
+                      }
+                    />
+                    <label
+                      htmlFor={pet.value}
+                      className={`group flex flex-col items-center p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105 ${
+                        formData.petType === pet.value
+                          ? "border-[#FF6B6B] bg-[#FF6B6B]/10 shadow-lg"
+                          : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
+                      }`}
+                    >
+                      <span className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                        {pet.value === "other" ? (
+                          <span className="text-4xl">🐾</span>
+                        ) : (
+                          <Image
+                            src={pet.icon}
+                            alt={pet.label}
+                            width={50}
+                            height={50}
+                            className="object-contain"
+                          />
+                        )}
+                      </span>
+                      <span className="text-sm font-bold text-gray-900">
+                        {pet.label}
+                      </span>
+                    </label>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Pet Information */}
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Service Selection */}
+            <div>
+              <Label className="text-sm font-bold text-gray-900 mb-3 flex items-center">
+                <Star className="w-4 h-4 mr-2 fill-current" />
+                Choose Service:
+              </Label>
+              <select
+                value={formData.service}
+                onChange={(e) =>
+                  setFormData({ ...formData, service: e.target.value })
+                }
+                className="w-full bg-white border border-gray-300 text-gray-900 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+              >
+                <option value="">-- Select Your Service --</option>
+                {services.map((service) => (
+                  <option
+                    key={service}
+                    value={service}
+                    className="bg-white text-gray-900"
+                  >
+                    {service}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Input Fields */}
+            <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  <Heart className="w-4 h-4 inline mr-2" />
+                <Label className="text-sm font-bold text-gray-900 mb-2 block">
                   Pet Name *
-                </label>
-                <input
+                </Label>
+                <Input
+                  id="petName"
                   type="text"
-                  name="petName"
-                  value={formData.petName}
-                  onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
-                  placeholder="Enter your pet's name"
+                  className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                  placeholder="Your pet's name"
+                  value={formData.petName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, petName: e.target.value })
+                  }
                 />
               </div>
-
               <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  Pet Type *
-                </label>
-                <select
-                  name="petType"
-                  value={formData.petType}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
-                >
-                  <option value="">Select pet type</option>
-                  {petTypes.map((type) => (
-                    <option key={type} value={type}>
-                      {type}
-                    </option>
-                  ))}
-                </select>
+                <Label className="text-sm font-bold text-gray-900 mb-2 block">
+                  Your Name *
+                </Label>
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Input
+                    id="ownerName"
+                    type="text"
+                    required
+                    className="pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                    placeholder="Your full name"
+                    value={formData.ownerName}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        ownerName: e.target.value,
+                      })
+                    }
+                  />
+                </div>
               </div>
             </div>
 
-            {/* Service and Schedule */}
-            <div className="grid md:grid-cols-3 gap-6">
-              <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  Service Required *
-                </label>
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
+            {/* Phone Input */}
+            <div>
+              <Label className="text-sm font-bold text-gray-900 mb-2 block">
+                Mobile Number *
+              </Label>
+              <div className="relative">
+                <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Input
+                  id="phone"
+                  type="tel"
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
-                >
-                  <option value="">Select service</option>
-                  {services.map((service) => (
-                    <option key={service} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  <Calendar className="w-4 h-4 inline mr-2" />
-                  Preferred Date *
-                </label>
-                <input
-                  type="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
+                  className="pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                  placeholder="+91 98765 43210"
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
                 />
               </div>
+            </div>
 
+            {/* Date & Time */}
+            <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[#2B2B2B] font-semibold mb-2">
-                  <Clock className="w-4 h-4 inline mr-2" />
+                <Label className="text-sm font-bold text-gray-900 mb-2 block">
+                  Preferred Date *
+                </Label>
+                <div className="relative">
+                  <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 z-10" />
+                  <Input
+                    id="date"
+                    type="date"
+                    required
+                    className="pl-10 bg-white border-gray-300 text-gray-900 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                    value={formData.date}
+                    onChange={(e) =>
+                      setFormData({ ...formData, date: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+              <div>
+                <Label className="text-sm font-bold text-gray-900 mb-2 block">
                   Preferred Time *
-                </label>
+                </Label>
                 <select
-                  name="time"
                   value={formData.time}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white"
+                  onChange={(e) =>
+                    setFormData({ ...formData, time: e.target.value })
+                  }
+                  className="w-full bg-white border border-gray-300 text-gray-900 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
                 >
                   <option value="">Select time</option>
-                  <option value="09:00">9:00 AM</option>
-                  <option value="10:00">10:00 AM</option>
-                  <option value="11:00">11:00 AM</option>
-                  <option value="12:00">12:00 PM</option>
-                  <option value="13:00">1:00 PM</option>
-                  <option value="14:00">2:00 PM</option>
-                  <option value="15:00">3:00 PM</option>
-                  <option value="16:00">4:00 PM</option>
-                  <option value="17:00">5:00 PM</option>
+                  {timeSlots.map((time) => (
+                    <option
+                      key={time}
+                      value={time}
+                      className="bg-white text-gray-900"
+                    >
+                      {time}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
 
-            {/* Additional Message */}
+            {/* Message */}
             <div>
-              <label className="block text-[#2B2B2B] font-semibold mb-2">
-                Additional Information
-              </label>
-              <textarea
-                name="message"
+              <Label className="text-sm font-bold text-gray-900 mb-2 block">
+                Special Requests
+              </Label>
+              <Textarea
+                id="message"
+                rows={3}
+                className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl resize-none focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                placeholder="Tell us about any specific concerns or requirements..."
                 value={formData.message}
-                onChange={handleChange}
-                rows="4"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#F25C5C] focus:outline-none transition-all duration-300 bg-white resize-none"
-                placeholder="Any special requirements or concerns about your pet..."
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
               />
             </div>
 
             {/* Submit Button */}
-            <div className="text-center pt-6">
-              <Button
-                type="submit"
-                className="bg-[#F25C5C] hover:bg-[#E54B4B] text-white rounded-lg px-12 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                Book Appointment
-              </Button>
-            </div>
+            <Button
+              type="submit"
+              className="group w-full bg-[#FF6B6B] hover:bg-[#FF5252] text-white rounded-2xl py-6 text-lg font-black shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] border-0"
+            >
+              <div className="flex items-center justify-center">
+                <Heart className="w-6 h-6 mr-3" />
+                <span>Book Now & Save Up to 30%</span>
+                <Sparkles className="w-6 h-6 ml-3" />
+              </div>
+            </Button>
 
-            {/* Note */}
-            <div className="text-center text-[#2B2B2B]/60 text-sm">
-              * Required fields. We'll confirm your appointment within 2 hours.
+            {/* Trust Badge */}
+            <div className="text-center pt-4">
+              <p className="text-sm text-gray-600 flex items-center justify-center">
+                <Shield className="w-4 h-4 mr-2 text-[#FF6B6B]" />
+                Your information is 100% secure & confidential
+              </p>
             </div>
           </form>
         </div>
