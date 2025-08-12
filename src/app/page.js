@@ -1,4 +1,5 @@
 import BookingProcess from "@/components/booking-process";
+import CustomerTestimonials from "@/components/customer-testimonials";
 import ModernHero from "@/components/modern-hero";
 import PetCareInfo from "@/components/pet-care-info";
 import PetServices from "@/components/pet-services";
@@ -12,6 +13,7 @@ export default function Home() {
       <WhyChooseUs />
       <PetCareInfo />
       <BookingProcess />
+      <CustomerTestimonials />
     </main>
   );
 }

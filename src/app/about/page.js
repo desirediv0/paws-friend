@@ -1,319 +1,283 @@
-"use client";
-
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
-import { Heart, Award, Users, Target, Star, CheckCircle } from "lucide-react";
+import HeroBanner from "@/components/hero-banner";
+import { Card, CardContent } from "@/components/ui/card";
+import { Heart, Brain, Shield, Activity } from "lucide-react";
+import Image from "next/image";
 
 export default function AboutPage() {
-  const team = [
-    {
-      name: "Dr. Sarah Johnson",
-      role: "Lead Veterinarian",
-      image: "SJ",
-      experience: "15+ years",
-      specialty: "Small Animal Medicine",
-    },
-    {
-      name: "Dr. Michael Chen",
-      role: "Senior Veterinarian",
-      image: "MC",
-      experience: "12+ years",
-      specialty: "Surgery & Emergency Care",
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Head Groomer",
-      image: "ER",
-      experience: "8+ years",
-      specialty: "Professional Grooming",
-    },
-    {
-      name: "David Thompson",
-      role: "Training Specialist",
-      image: "DT",
-      experience: "10+ years",
-      specialty: "Behavioral Training",
-    },
-  ];
-
-  const values = [
-    {
-      icon: Heart,
-      title: "Compassion",
-      description:
-        "We treat every pet with the same love and care we'd give our own.",
-    },
-    {
-      icon: Award,
-      title: "Excellence",
-      description:
-        "Committed to providing the highest quality veterinary care and service.",
-    },
-    {
-      icon: Users,
-      title: "Community",
-      description:
-        "Building lasting relationships with pets and their families.",
-    },
-    {
-      icon: Target,
-      title: "Innovation",
-      description:
-        "Using the latest technology and techniques for better pet care.",
-    },
-  ];
-
   return (
-    <main className="min-h-screen">
-      <Header />
+    <main style={{ backgroundColor: "#F2F2F2" }}>
+      <HeroBanner
+        title="About Paws Friend"
+        subtitle="Your Trusted Pet Care Partner"
+        description="Welcome to our pet care sanctuary, where passion meets expertise. We specialize in training, grooming, walking, boarding, and veterinary services with a team of dedicated professionals."
+        backgroundImage="/happy-pets-vet.png"
+      />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-softPink to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              About <span className="text-coral">Paws Friend</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              For over 15 years, we&apos;ve been dedicated to providing exceptional
-              care for pets and building lasting relationships with their
-              families in our community.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Mission, Vision, Values Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div
+                  className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "#FF6B6B" }}
+                >
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">
+                  Our Mission
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Paws Friend is dedicated to keeping pets healthy and happy at
+                  all times. We offer comprehensive services including grooming,
+                  walking, training, and veterinary care with a team of
+                  passionate pet lovers.
+                </p>
+              </CardContent>
+            </Card>
 
-      {/* Story Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Our <span className="text-coral">Story</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Paws Friend was founded in 2010 by Dr. Sarah Johnson with a
-                simple mission: to provide compassionate, professional care for
-                pets while treating every animal like family.
-              </p>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                What started as a small veterinary clinic has grown into a
-                comprehensive pet care center, serving over 5,000 pets and their
-                families. Our commitment to excellence and compassion has
-                remained unchanged throughout our journey.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Today, we&apos;re proud to offer a full range of services including
-                veterinary care, grooming, training, and lab services, all
-                delivered with the same love and attention to detail that
-                inspired our founding.
-              </p>
-            </motion.div>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div
+                  className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "#FF6B6B" }}
+                >
+                  <Brain className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">
+                  Our Vision
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We aspire to be the premier pet care service provider,
+                  ensuring every pet feels safe, happy, and loved in our
+                  presence. Your furry friends deserve nothing but the best.
+                </p>
+              </CardContent>
+            </Card>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-coral/20 to-skyBlue/20 rounded-3xl p-8">
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                  <div className="aspect-square bg-gradient-to-br from-softPink to-skyBlue/30 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-32 h-32 bg-coral/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-6xl">🏥</span>
-                      </div>
-                      <p className="text-gray-600 text-lg font-medium">
-                        Established 2010
-                      </p>
-                      <p className="text-gray-500 text-sm mt-2">
-                        15+ years of excellence
-                      </p>
-                    </div>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div
+                  className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "#FF6B6B" }}
+                >
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">
+                  Our Values
+                </h3>
+                <div className="space-y-3 text-left">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "#FF6B6B" }}
+                    ></div>
+                    <span className="text-gray-600">
+                      <strong>Love:</strong> We care for every pet
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "#FF6B6B" }}
+                    ></div>
+                    <span className="text-gray-600">
+                      <strong>Knowledge:</strong> Expert pet care
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "#FF6B6B" }}
+                    ></div>
+                    <span className="text-gray-600">
+                      <strong>Trust:</strong> Always doing what's best
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "#FF6B6B" }}
+                    ></div>
+                    <span className="text-gray-600">
+                      <strong>Health:</strong> Optimal pet wellness
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-2 h-2 rounded-full"
+                      style={{ backgroundColor: "#FF6B6B" }}
+                    ></div>
+                    <span className="text-gray-600">
+                      <strong>Family:</strong> Pets are family
+                    </span>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Mission & Values */}
-      <section className="py-20 bg-gradient-to-br from-skyBlue/10 to-softPink/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Our <span className="text-coral">Mission</span> & Values
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We&apos;re committed to providing the highest quality pet care while
-              building lasting relationships with pets and their families.
-            </p>
-          </motion.div>
+      {/* Pet Care Sections */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+            Specialized Care for Your Pets
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-coral rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="w-8 h-8 text-white" />
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Dogs Care */}
+            <Card className="border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <Image
+                    src="/happy-dog-icon.png"
+                    alt="Dog"
+                    className="w-15 h-15 rounded-full"
+                    width={500}
+                    height={500}
+                  />
+                  <h3 className="text-3xl font-bold text-gray-800">For Dogs</h3>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">{value.description}</p>
-              </motion.div>
-            ))}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Activity
+                      className="w-5 h-5 mt-1"
+                      style={{ color: "#FF6B6B" }}
+                    />
+                    <p className="text-gray-600">
+                      Regular walks and playtime to keep dogs physically active
+                      and mentally stimulated
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Activity
+                      className="w-5 h-5 mt-1"
+                      style={{ color: "#FF6B6B" }}
+                    />
+                    <p className="text-gray-600">
+                      Balanced and nutritious diet tailored to individual needs
+                      and health conditions
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Activity
+                      className="w-5 h-5 mt-1"
+                      style={{ color: "#FF6B6B" }}
+                    />
+                    <p className="text-gray-600">
+                      Regular health check-ups and vaccination schedules
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Cats Care */}
+            <Card className="border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <Image
+                    src="/happy-cat-icon.png"
+                    alt="Cat"
+                    className="w-15 h-15 rounded-full"
+                    width={500}
+                    height={500}
+                  />
+                  <h3 className="text-3xl font-bold text-gray-800">For Cats</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Activity
+                      className="w-5 h-5 mt-1"
+                      style={{ color: "#FF6B6B" }}
+                    />
+                    <p className="text-gray-600">
+                      Balanced nutrition with special dietary considerations for
+                      health conditions
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Activity
+                      className="w-5 h-5 mt-1"
+                      style={{ color: "#FF6B6B" }}
+                    />
+                    <p className="text-gray-600">
+                      Clean and comfortable environment with engaging playtime
+                      activities
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Activity
+                      className="w-5 h-5 mt-1"
+                      style={{ color: "#FF6B6B" }}
+                    />
+                    <p className="text-gray-600">
+                      Regular brushing to prevent matting and reduce shedding
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Meet Our <span className="text-coral">Team</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our experienced team of professionals is dedicated to providing
-              the best care for your beloved pets.
-            </p>
-          </motion.div>
+      {/* Our Expert Team */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8 text-gray-800">
+            Our Expert Team
+          </h2>
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+            Our experienced veterinarians and pet care specialists are dedicated
+            to providing the highest quality care for your beloved pets.
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 text-center"
-              >
-                <div className="w-20 h-20 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">
-                    {member.image}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">
-                  {member.name}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <Image
+                  src="/placeholder-8lr3j.png"
+                  alt="Dr. Deepak Malik"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                  width={500}
+                  height={500}
+                />
+                <h3 className="text-2xl font-bold mb-2 text-gray-800">
+                  Dr. Deepak Malik
                 </h3>
-                <p className="text-coral font-medium mb-2">{member.role}</p>
-                <p className="text-gray-600 text-sm mb-2">
-                  {member.experience} experience
+                <p className="text-gray-600 mb-4">Senior Veterinarian</p>
+                <p className="text-sm text-gray-500">
+                  Specializing in home visits, surgery, and comprehensive pet
+                  health care
                 </p>
-                <p className="text-gray-500 text-xs">{member.specialty}</p>
-              </motion.div>
-            ))}
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <Image
+                  src="/indian-female-veterinarian.png"
+                  alt="Dr. Diksha Moun"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                  width={500}
+                  height={500}
+                />
+                <h3 className="text-2xl font-bold mb-2 text-gray-800">
+                  Dr. Diksha Moun
+                </h3>
+                <p className="text-gray-600 mb-4">Veterinary Specialist</p>
+                <p className="text-sm text-gray-500">
+                  Expert in pet training, vaccination, and online consultations
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-coral to-coral/90">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: "5000+", label: "Happy Pets" },
-              { number: "15+", label: "Years Experience" },
-              { number: "4.9", label: "Average Rating" },
-              { number: "24/7", label: "Emergency Care" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="text-4xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-white/90">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-coral">Paws Friend</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We go above and beyond to ensure your pets receive the best care
-              possible.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              "Licensed veterinarians with years of experience",
-              "State-of-the-art equipment and facilities",
-              "Compassionate and gentle approach to pet care",
-              "Same-day results for most lab tests",
-              "Emergency care available 24/7",
-              "Transparent pricing with no hidden fees",
-              "Follow-up care and support included",
-              "Pet-friendly environment designed for comfort",
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-center space-x-3"
-              >
-                <CheckCircle className="w-5 h-5 text-coral flex-shrink-0" />
-                <span className="text-gray-700">{feature}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Footer />
     </main>
   );
 }
