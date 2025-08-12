@@ -200,8 +200,8 @@ export default function PetCareInfo() {
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               There are a lot of advantages of hiring in-house pet care services
               as it really helps in behavioural issues. The other thing which is
-              important for your pet is pet's mental health and emotional well
-              being which is focused through household pet care sessions
+              important for your pet is pet&apos;s mental health and emotional
+              well being which is focused through household pet care sessions
               companionship and playtime.
             </p>
           </div>
@@ -274,8 +274,8 @@ export default function PetCareInfo() {
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Paws Friend is the first choice for anyone looking out for pet
-                care near me. We haven't got this legacy really easily. We have
-                worked hard by continuously improving and listening to our
+                care near me. We haven&apos;t got this legacy really easily. We
+                have worked hard by continuously improving and listening to our
                 clients demands which ultimately makes our furry buddy happy.
                 Here are the reasons which makes us stand apart:
               </p>
