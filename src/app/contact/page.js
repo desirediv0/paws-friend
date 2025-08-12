@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, MessageSquare } from "lucide-react";
+import AppointmentForm from "@/components/AppointmentForm";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -95,8 +96,8 @@ export default function ContactPage() {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Have questions about our services? Need to schedule an
-              appointment? We&apos;re here to help! Reach out to us and we&apos;ll get
-              back to you as soon as possible.
+              appointment? We&apos;re here to help! Reach out to us and
+              we&apos;ll get back to you as soon as possible.
             </p>
           </motion.div>
         </div>
@@ -141,135 +142,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-                <div className="flex items-center space-x-3 mb-8">
-                  <div className="w-12 h-12 bg-coral rounded-xl flex items-center justify-center">
-                    <MessageSquare className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900">
-                      Send us a Message
-                    </h2>
-                    <p className="text-gray-600">We&apos;d love to hear from you!</p>
-                  </div>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
-                        placeholder="+1 (555) 123-4567"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="subject"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Subject *
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
-                        placeholder="How can we help?"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent resize-none"
-                      placeholder="Tell us about your pet's needs..."
-                    />
-                  </div>
-
-                  <motion.button
-                    type="submit"
-                    disabled={isSubmitting}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full bg-coral text-white py-4 px-6 rounded-xl font-semibold hover:bg-coral/90 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <Send className="w-5 h-5" />
-                    <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-                  </motion.button>
-                </form>
-              </div>
-            </motion.div>
+            <AppointmentForm />
 
             {/* Map */}
             <motion.div
@@ -278,7 +151,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-full">
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-min">
                 <div className="flex items-center space-x-3 mb-8">
                   <div className="w-12 h-12 bg-skyBlue rounded-xl flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
@@ -311,9 +184,9 @@ export default function ContactPage() {
                     Getting Here
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Located in the heart of Pet City, we&apos;re easily accessible by
-                    car, public transportation, or walking. Free parking
-                    available on-site.
+                    Located in the heart of Pet City, we&apos;re easily
+                    accessible by car, public transportation, or walking. Free
+                    parking available on-site.
                   </p>
                 </div>
               </div>

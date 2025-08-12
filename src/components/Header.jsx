@@ -3,12 +3,15 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, Heart } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import AppointmentForm from "./AppointmentForm";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -35,13 +38,19 @@ const Header = () => {
   };
 
   const navigationItems = [
-    { name: "Home", href: "#home", active: true },
-    { name: "Services", href: "#services" },
-    { name: "About Us", href: "#about" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
+
+  // Function to check if a navigation item is active
+  const isActive = (href) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href;
+  };
 
   return (
     <>
@@ -74,20 +83,20 @@ const Header = () => {
             {/* Desktop Navigation - Center */}
             <nav className="hidden lg:flex items-center space-x-1">
               {navigationItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 group ${
-                    item.active
+                    isActive(item.href)
                       ? "text-white bg-[#FF6B6B] shadow-lg shadow-[#FF6B6B]/25"
                       : "text-gray-700 hover:text-[#FF6B6B] hover:bg-[#FF6B6B]/5"
                   }`}
                 >
                   {item.name}
-                  {!item.active && (
+                  {!isActive(item.href) && (
                     <div className="absolute inset-0 rounded-xl bg-[#FF6B6B]/10 opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10"></div>
                   )}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -176,11 +185,11 @@ const Header = () => {
               <nav className="p-6 pb-4">
                 <div className="space-y-2">
                   {navigationItems.map((item, index) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className={`flex items-center justify-between px-4 py-4 rounded-xl font-semibold transition-all duration-200 ${
-                        item.active
+                        isActive(item.href)
                           ? "text-white bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] shadow-lg shadow-[#FF6B6B]/25"
                           : "text-gray-700 hover:text-[#FF6B6B] hover:bg-[#FF6B6B]/5"
                       }`}
@@ -191,8 +200,8 @@ const Header = () => {
                       }}
                     >
                       <span>{item.name}</span>
-                      {item.active && <Heart className="w-4 h-4" />}
-                    </a>
+                      {isActive(item.href) && <Heart className="w-4 h-4" />}
+                    </Link>
                   ))}
                 </div>
               </nav>

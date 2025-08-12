@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Image from "next/image";
+import { placeholderUser } from "@/assets";
 
 const testimonials = [
   {
@@ -15,7 +16,7 @@ const testimonials = [
     review:
       "Paws Friend's grooming service is exceptional! My Golden Retriever Max looks amazing after every session. The team is professional and my pet feels comfortable with them. Highly recommended!",
     service: "Pet Grooming",
-    image: "/happy-indian-woman-dog.png",
+    image: placeholderUser,
   },
   {
     id: 2,
@@ -25,7 +26,7 @@ const testimonials = [
     review:
       "The veterinary service at home is a game-changer! Dr. Sarah visited our home for my cat's vaccination. No stress for my pet, and the service was top-notch. Thank you Paws Friend!",
     service: "Veterinary Service",
-    image: "/indian-man-with-cat.png",
+    image: placeholderUser,
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ const testimonials = [
     review:
       "Amazing dog training service! My Labrador was very naughty, but after 3 sessions with Paws Friend trainers, he's now well-behaved and obedient. Worth every rupee!",
     service: "Pet Training",
-    image: "/indian-woman-labrador.png",
+    image: placeholderUser,
   },
   {
     id: 4,
@@ -45,7 +46,7 @@ const testimonials = [
     review:
       "The pet boarding facility is fantastic! Left my two dogs for a week vacation. They were well-cared for with regular updates and photos. My pets were happy and healthy when I returned.",
     service: "Pet Boarding",
-    image: "/indian-man-with-dogs.png",
+    image: placeholderUser,
   },
   {
     id: 5,
@@ -55,7 +56,7 @@ const testimonials = [
     review:
       "Dog walking service is excellent! The walker is punctual and takes great care of my Beagle. I get regular updates with photos during walks. Highly satisfied with the service!",
     service: "Dog Walking",
-    image: "/indian-woman-beagle.png",
+    image: placeholderUser,
   },
   {
     id: 6,
@@ -65,7 +66,7 @@ const testimonials = [
     review:
       "Online vet consultation saved my day! My cat was unwell late at night, and I got immediate help through video call. The vet was knowledgeable and provided great advice. Affordable too!",
     service: "Online Consultation",
-    image: "/placeholder-3hl19.png",
+    image: placeholderUser,
   },
 ];
 
@@ -151,7 +152,7 @@ export default function CustomerTestimonials() {
 
                   {/* Review Text */}
                   <p className="text-gray-700 text-lg leading-relaxed mb-4 italic">
-                    "{testimonials[currentIndex].review}"
+                    &ldquo;{testimonials[currentIndex].review}&rdquo;
                   </p>
 
                   {/* Rating */}

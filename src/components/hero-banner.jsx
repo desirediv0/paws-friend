@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroBanner({
   title,
@@ -19,10 +20,12 @@ export default function HeroBanner({
     >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src={backgroundImage || "/placeholder.svg"}
           alt="Pet care background"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-black/40"></div>
       </div>

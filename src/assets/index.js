@@ -12,6 +12,7 @@ import onlinevetconsultation from "./online-vet-consultation.png";
 import surgerysetup from "./veterinary-surgery-setup.png";
 
 import placeholder from "./placeholder.jpg";
+import placeholderUser from "./placeholder-user.jpg";
 
 export {
   dog,
@@ -26,4 +27,5 @@ export {
   onlinevetconsultation,
   surgerysetup,
   placeholder,
+  placeholderUser,
 };
