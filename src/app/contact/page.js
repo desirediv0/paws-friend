@@ -1,52 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import AppointmentForm from "@/components/AppointmentForm";
+import HeroBanner from "@/components/hero-banner";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // TODO: Integrate with email service (EmailJS, server API, etc.)
-    console.log("Form submitted:", formData);
-
-    // Simulate API call
-    setTimeout(() => {
-      alert("Thank you for your message! We'll get back to you soon.");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-      setIsSubmitting(false);
-    }, 1000);
-  };
-
   const contactInfo = [
     {
       icon: Phone,
@@ -80,28 +39,13 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-softPink to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Get in <span className="text-coral">Touch</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Have questions about our services? Need to schedule an
-              appointment? We&apos;re here to help! Reach out to us and
-              we&apos;ll get back to you as soon as possible.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <HeroBanner
+        title="Contact Us"
+        subtitle="Get in Touch with Paws Friend"
+        description="We're here to help you and your furry friends. Contact us for any queries or book an appointment today."
+        backgroundImage="/contact-hero-pets.jpg"
+        breadcrumbs={["Contact"]}
+      />
 
       {/* Contact Information */}
       <section className="py-20 bg-white">
@@ -253,8 +197,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

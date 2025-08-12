@@ -10,7 +10,8 @@ export default function AboutPage() {
         title="About Paws Friend"
         subtitle="Your Trusted Pet Care Partner"
         description="Welcome to our pet care sanctuary, where passion meets expertise. We specialize in training, grooming, walking, boarding, and veterinary services with a team of dedicated professionals."
-        backgroundImage="/happy-pets-vet.jpg"
+        backgroundImage="/veterinarian-retriever.jpg"
+        breadcrumbs={["About"]}
       />
 
       {/* Mission, Vision, Values Section */}
