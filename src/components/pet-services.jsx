@@ -85,22 +85,22 @@ const services = [
     ],
     image: surgerysetup,
   },
-  {
-    id: "walking",
-    title: "Dog Walking Services",
-    price: "₹3,500",
-    description:
-      "Ready to give your dogs the walks they deserve? Book affordable at-home dog walking services. Our professional dog walkers will come to your home and take the dog for a walk they deserve to stay happy and healthy.",
-    features: [
-      "Professional dog walkers",
-      "Flexible scheduling",
-      "Exercise and care",
-      "Trusted service",
-      "Happy adventures",
-      "Regular updates",
-    ],
-    image: dogwalker,
-  },
+  // {
+  //   id: "walking",
+  //   title: "Dog Walking Services",
+  //   price: "₹3,500",
+  //   description:
+  //     "Ready to give your dogs the walks they deserve? Book affordable at-home dog walking services. Our professional dog walkers will come to your home and take the dog for a walk they deserve to stay happy and healthy.",
+  //   features: [
+  //     "Professional dog walkers",
+  //     "Flexible scheduling",
+  //     "Exercise and care",
+  //     "Trusted service",
+  //     "Happy adventures",
+  //     "Regular updates",
+  //   ],
+  //   image: dogwalker,
+  // },
   {
     id: "boarding",
     title: "Pet Boarding Services",
