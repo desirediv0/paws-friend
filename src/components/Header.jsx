@@ -68,7 +68,10 @@ const Header = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo - Left */}
-            <div className="flex items-center space-x-4 group cursor-pointer">
+            <Link
+              href="/"
+              className="flex items-center space-x-4 group cursor-pointer"
+            >
               <div className="relative">
                 <Image
                   src="/logo.jpg"
@@ -78,7 +81,7 @@ const Header = () => {
                   className="rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"
                 />
               </div>
-            </div>
+            </Link>
 
             {/* Desktop Navigation - Center */}
             <nav className="hidden lg:flex items-center space-x-1">
