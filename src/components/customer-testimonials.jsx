@@ -134,9 +134,7 @@ export default function CustomerTestimonials() {
                     style={{ borderColor: "#FF6B6B" }}
                   >
                     <Image
-                      src={
-                        testimonials[currentIndex].image || "/placeholder.svg"
-                      }
+                      src={testimonials[currentIndex].image || placeholderUser}
                       alt={testimonials[currentIndex].name}
                       className="w-full h-full object-cover"
                       width={500}
