@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Heart, MapPin } from "lucide-react";
+import { Menu, X, Phone, Heart } from "lucide-react";
 import Image from "next/image";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import AppointmentForm from "./AppointmentForm";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -100,15 +102,23 @@ const Header = () => {
                   <p className="text-sm font-semibold text-gray-900">
                     Emergency Care
                   </p>
-                  <p className="text-xs text-gray-500">+1 (555) 123-PAWS</p>
+                  <p className="text-xs text-gray-500">+91 9876543210</p>
                 </div>
               </div>
 
               {/* Book Appointment Button */}
-              <Button className="bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] hover:from-[#FF5252] hover:to-[#FF6B6B] text-white rounded-xl px-8 py-3 text-sm font-bold shadow-lg shadow-[#FF6B6B]/25 hover:shadow-xl hover:shadow-[#FF6B6B]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5">
-                <Heart className="w-4 h-4 mr-2" />
-                Book Appointment
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] hover:from-[#FF5252] hover:to-[#FF6B6B] text-white rounded-xl px-8 py-3 text-sm font-bold shadow-lg shadow-[#FF6B6B]/25 hover:shadow-xl hover:shadow-[#FF6B6B]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5">
+                    <Heart className="w-4 h-4 mr-2" />
+                    Book Appointment
+                  </Button>
+                </DialogTrigger>
+
+                <DialogContent className="p-0">
+                  <AppointmentForm />
+                </DialogContent>
+              </Dialog>
             </div>
 
             {/* Mobile Menu Button */}
@@ -198,15 +208,22 @@ const Header = () => {
                     <p className="text-sm font-semibold text-gray-900">
                       Emergency Care
                     </p>
-                    <p className="text-xs text-gray-500">+1 (555) 123-PAWS</p>
+                    <p className="text-xs text-gray-500">+91 9876543210</p>
                   </div>
                 </div>
 
                 {/* Book Appointment Button */}
-                <Button className="w-full bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] hover:from-[#FF5252] hover:to-[#FF6B6B] text-white rounded-xl py-4 text-base font-bold shadow-lg shadow-[#FF6B6B]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
-                  <Heart className="w-5 h-5 mr-2" />
-                  Book Appointment
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] hover:from-[#FF5252] hover:to-[#FF6B6B] text-white rounded-xl py-4 text-base font-bold shadow-lg shadow-[#FF6B6B]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                      <Heart className="w-5 h-5 mr-2" />
+                      Book Appointment
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="p-0">
+                    <AppointmentForm />
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </div>

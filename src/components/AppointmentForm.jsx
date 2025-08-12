@@ -66,9 +66,9 @@ const AppointmentForm = () => {
   };
 
   return (
-    <section>
-      <div className="relative mt-20">
-        <div className="bg-white rounded p-8 shadow-2xl border border-gray-200 sticky top-32">
+    <section className="w-full">
+      <div className="relative">
+        <div className="bg-white rounded-2xl p-6 md:p-8">
           {/* Form Header */}
           <div className="text-center mb-8">
             <h3 className="text-3xl font-black text-gray-900 mb-3">
