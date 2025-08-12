@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Heart, Award, Users, Target, Star, CheckCircle } from "lucide-react";
 
@@ -81,7 +81,7 @@ export default function AboutPage() {
               About <span className="text-coral">Paws Friend</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              For over 15 years, we've been dedicated to providing exceptional
+              For over 15 years, we&apos;ve been dedicated to providing exceptional
               care for pets and building lasting relationships with their
               families in our community.
             </p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 remained unchanged throughout our journey.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Today, we're proud to offer a full range of services including
+                Today, we&apos;re proud to offer a full range of services including
                 veterinary care, grooming, training, and lab services, all
                 delivered with the same love and attention to detail that
                 inspired our founding.
@@ -164,7 +164,7 @@ export default function AboutPage() {
               Our <span className="text-coral">Mission</span> & Values
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to providing the highest quality pet care while
+              We&apos;re committed to providing the highest quality pet care while
               building lasting relationships with pets and their families.
             </p>
           </motion.div>

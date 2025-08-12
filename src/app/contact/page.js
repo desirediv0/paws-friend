@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, MessageSquare } from "lucide-react";
 
@@ -95,7 +95,7 @@ export default function ContactPage() {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Have questions about our services? Need to schedule an
-              appointment? We're here to help! Reach out to us and we'll get
+              appointment? We&apos;re here to help! Reach out to us and we&apos;ll get
               back to you as soon as possible.
             </p>
           </motion.div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     <h2 className="text-2xl font-bold text-gray-900">
                       Send us a Message
                     </h2>
-                    <p className="text-gray-600">We'd love to hear from you!</p>
+                    <p className="text-gray-600">We&apos;d love to hear from you!</p>
                   </div>
                 </div>
 
@@ -311,7 +311,7 @@ export default function ContactPage() {
                     Getting Here
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Located in the heart of Pet City, we're easily accessible by
+                    Located in the heart of Pet City, we&apos;re easily accessible by
                     car, public transportation, or walking. Free parking
                     available on-site.
                   </p>
@@ -345,7 +345,7 @@ export default function ContactPage() {
               {
                 question: "What are your operating hours?",
                 answer:
-                  "We're open Monday-Friday 8:00 AM - 6:00 PM, Saturday 9:00 AM - 5:00 PM, and Sunday 10:00 AM - 4:00 PM. Emergency care is available 24/7.",
+                  "We&apos;re open Monday-Friday 8:00 AM - 6:00 PM, Saturday 9:00 AM - 5:00 PM, and Sunday 10:00 AM - 4:00 PM. Emergency care is available 24/7.",
               },
               {
                 question: "Do I need to make an appointment?",

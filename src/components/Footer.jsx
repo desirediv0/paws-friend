@@ -45,7 +45,7 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-gray-900/90 leading-relaxed mb-6">
-                Providing professional pet care services at your doorstep. We're
+                Providing professional pet care services at your doorstep. We&apos;re
                 committed to the health and happiness of your furry family
                 members with love and care!
               </p>
