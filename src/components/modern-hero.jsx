@@ -141,7 +141,9 @@ const ModernHero = () => {
                 ))}
               </div>
             </div>
-            <AppointmentForm />
+            <div className="mt-20">
+              <AppointmentForm />
+            </div>
           </div>
         </div>
       </section>
