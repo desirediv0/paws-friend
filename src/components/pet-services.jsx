@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Phone, Heart, Star, Sparkles } from "lucide-react";
 import {
   dogtrainer,
-  dogwalker,
   groomedtowel,
   homevaccination,
   onlinevetconsultation,
