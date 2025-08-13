@@ -25,7 +25,13 @@ const Header = () => {
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest(".mobile-menu")) {
+      // Don't close if clicking on dialog content or mobile menu
+      if (
+        isMenuOpen &&
+        !event.target.closest(".mobile-menu") &&
+        !event.target.closest("[role='dialog']") &&
+        !event.target.closest("[data-radix-dialog-content]")
+      ) {
         setIsMenuOpen(false);
       }
     };
