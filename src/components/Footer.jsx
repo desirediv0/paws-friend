@@ -181,7 +181,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-gray-900/80">hello@pawsfriend.com</div>
+                    <div className="text-gray-900/80">connect@pawsfriend.in</div>
                   </div>
                 </div>
 

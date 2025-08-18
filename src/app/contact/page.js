@@ -16,7 +16,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      details: ["info@pawsfriend.com", "support@pawsfriend.com"],
+      details: ["connect@pawsfriend.in"],
       color: "skyBlue",
     },
     {

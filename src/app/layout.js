@@ -97,7 +97,7 @@ export default function RootLayout({ children }) {
               logo: "https://pawsfriend.com/logo.png",
               image: "https://pawsfriend.com/hero-image.jpg",
               telephone: "+1-555-123-4567",
-              email: "info@pawsfriend.com",
+              email: "connect@pawsfriend.in",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "123 Pet Care Lane",
