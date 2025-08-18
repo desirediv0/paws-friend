@@ -199,8 +199,8 @@ export default function PetServices() {
                         setIsMobileMenuOpen(false)
                       }}
                       className={`w-full text-left p-3 lg:p-4 rounded-lg transition-all duration-300 hover:shadow-md ${activeService.id === service.id
-                          ? "text-white shadow-lg transform scale-105"
-                          : "text-gray-700 hover:bg-white/50"
+                        ? "text-white shadow-lg transform scale-105"
+                        : "text-gray-700 hover:bg-white/50"
                         }`}
                       style={{
                         backgroundColor: activeService.id === service.id ? "#FF6B6B" : "transparent",
@@ -293,7 +293,7 @@ export default function PetServices() {
 
                 {/* Service Image */}
                 <Card className="shadow-xl border-0 overflow-hidden transform transition-all duration-500 hover:shadow-2xl h-min">
-                  <CardContent className="p-0">
+                  <CardContent className="p-0 flex flex-col max-h-full justify-between">
                     <div className="relative">
                       <Image
                         src={activeService.image || "/placeholder.svg"}
@@ -312,32 +312,31 @@ export default function PetServices() {
                         </div>
                       </div>
                     </div>
+                    <div className="shadow-xl border-0" style={{ backgroundColor: "#FF6B6B" }}>
+                      <div className="p-4 lg:p-6">
+                        <div className="text-center text-white">
+                          <h3 className="text-xl lg:text-2xl font-bold mb-2">Ready to Book?</h3>
+                          <p className="mb-4 text-white/90 text-sm lg:text-base">
+                            Contact us now for the best pet care services in your city
+                          </p>
+                          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <div className="flex items-center gap-2">
+                              <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
+                              <span className="font-semibold text-sm lg:text-base">+91 8800682777</span>
+                            </div>
+                            <div className="hidden sm:block text-white/50">|</div>
+                            <div className="flex items-center gap-2">
+                              <Heart className="w-4 h-4 lg:w-5 lg:h-5" />
+                              <span className="text-sm lg:text-base">Available 24/7</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
 
-              {/* Contact Information */}
-              <Card className="shadow-xl border-0" style={{ backgroundColor: "#FF6B6B" }}>
-                <CardContent className="p-4 lg:p-6">
-                  <div className="text-center text-white">
-                    <h3 className="text-xl lg:text-2xl font-bold mb-2">Ready to Book?</h3>
-                    <p className="mb-4 text-white/90 text-sm lg:text-base">
-                      Contact us now for the best pet care services in your city
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
-                        <span className="font-semibold text-sm lg:text-base">+91 8800682777</span>
-                      </div>
-                      <div className="hidden sm:block text-white/50">|</div>
-                      <div className="flex items-center gap-2">
-                        <Heart className="w-4 h-4 lg:w-5 lg:h-5" />
-                        <span className="text-sm lg:text-base">Available 24/7</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
