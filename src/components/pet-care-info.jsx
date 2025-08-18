@@ -132,8 +132,8 @@ export default function PetCareInfo() {
           <div className="mb-12">
             <Card className="overflow-hidden border-0 shadow-lg">
               <CardContent className="p-0">
-                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-50 to-blue-100 relative">
-                  <div className="flex items-center gap-4">
+                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-50 to-blue-100 relative flex-col md:flex-row">
+                  <div className="flex items-center gap-4 my-2 md:my-0">
                     <div className="bg-white p-3 rounded-full">
                       <Stethoscope className="w-8 h-8 text-blue-600" />
                     </div>
@@ -233,8 +233,8 @@ export default function PetCareInfo() {
           {/* Promotional Banner 2 */}
           <Card className="overflow-hidden border-0 shadow-lg mb-12">
             <CardContent className="p-0">
-              <div className="flex items-center justify-between p-6 bg-gradient-to-r from-green-50 to-green-100">
-                <div className="flex items-center gap-4">
+              <div className="flex items-center justify-between p-6 bg-gradient-to-r from-green-50 to-green-100 flex-col md:flex-row">
+                <div className="flex items-center gap-4 my-2 md:my-0">
                   <div className="bg-white p-3 rounded-full">
                     <Shield className="w-8 h-8 text-green-600" />
                   </div>

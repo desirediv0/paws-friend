@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 
 import {
   Phone,
@@ -16,26 +15,14 @@ import {
 import AppointmentForm from "./AppointmentForm";
 
 const ModernHero = () => {
-  const [showFloatingWidget, setShowFloatingWidget] = useState(false);
+
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  useEffect(() => {
-    if (!isClient) return;
 
-    const handleScroll = () => {
-      setShowFloatingWidget(window.scrollY > 150);
-    };
-
-    // Set initial state
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isClient]);
 
   return (
     <>
@@ -152,24 +139,7 @@ const ModernHero = () => {
         </div>
       </section>
 
-      {/* Floating Widget */}
-      {isClient && showFloatingWidget && (
-        <div className="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 z-50">
-          <Button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="group bg-[#FF6B6B] hover:bg-[#FF5252] text-white rounded-full p-4 sm:p-6 lg:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-2 sm:space-x-3 transform hover:scale-110 border-0"
-          >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center">
-              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-            </div>
-            <div className="text-left hidden sm:block">
-              <div className="font-black text-xs sm:text-sm">Quick Book</div>
-              <div className="text-xs opacity-90">30% Off Today!</div>
-            </div>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </Button>
-        </div>
-      )}
+
     </>
   );
 };
