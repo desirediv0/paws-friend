@@ -185,11 +185,10 @@ export default function PetServices() {
                     <button
                       key={service.id}
                       onClick={() => setActiveService(service)}
-                      className={`w-full text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md ${
-                        activeService.id === service.id
-                          ? "text-white shadow-lg transform scale-105"
-                          : "text-gray-700 hover:bg-white/50"
-                      }`}
+                      className={`w-full text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md ${activeService.id === service.id
+                        ? "text-white shadow-lg transform scale-105"
+                        : "text-gray-700 hover:bg-white/50"
+                        }`}
                       style={{
                         backgroundColor:
                           activeService.id === service.id
@@ -201,13 +200,12 @@ export default function PetServices() {
                         {service.title}
                       </div>
                       <div
-                        className={`text-xs mt-1 ${
-                          activeService.id === service.id
-                            ? "text-white/80"
-                            : "text-gray-500"
-                        }`}
+                        className={`text-xs mt-1 ${activeService.id === service.id
+                          ? "text-white/80"
+                          : "text-gray-500"
+                          }`}
                       >
-                        Starting from {service.price}
+                        Starting @ only  {service.price}
                       </div>
                     </button>
                   ))}
@@ -278,7 +276,7 @@ export default function PetServices() {
                       className="w-full border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white transition-all duration-300 bg-transparent"
                     >
                       <Phone className="w-4 h-4 mr-2" />
-                      Call +91 9876543210
+                      Call +91 8800682777
                     </Button>
                   </div>
                 </CardContent>
@@ -325,7 +323,7 @@ export default function PetServices() {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <div className="flex items-center gap-2">
                       <Phone className="w-5 h-5" />
-                      <span className="font-semibold">+91 9876543210</span>
+                      <span className="font-semibold">+91 8800682777</span>
                     </div>
                     <div className="hidden sm:block text-white/50">|</div>
                     <div className="flex items-center gap-2">

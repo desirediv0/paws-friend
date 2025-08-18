@@ -10,7 +10,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "Emergency: +1 (555) 999-8888"],
+      details: ["+91- 880 068 2777", "Emergency: +91- 911 256 1322"],
       color: "coral",
     },
     {
@@ -22,7 +22,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Pet Care Lane", "Pet City, CA 90210"],
+      details: [" 314, Sec 23, Gurgaon, Haryana 122017"],
       color: "coral",
     },
     {
@@ -109,18 +109,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="bg-gray-100 rounded-2xl h-80 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600 text-lg font-medium">
-                      Interactive Map
-                    </p>
-                    <p className="text-gray-500 text-sm mt-2">
-                      Google Maps integration
-                    </p>
-                    <p className="text-gray-400 text-xs mt-1">
-                      TODO: Add Google Maps API key and embed map
-                    </p>
-                  </div>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.5619637086293!2d77.05010637528429!3d28.508510675732754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1983b859b1fb%3A0x2592d820fe0568bc!2s314%2C%20Sector%2023%2C%20Gurugram%2C%20Haryana%20122017!5e1!3m2!1sen!2sin!4v1755493881617!5m2!1sen!2sin" width="100%" height="100%" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
                 <div className="mt-6 p-4 bg-coral/10 rounded-xl">
@@ -177,7 +166,7 @@ export default function ContactPage() {
               {
                 question: "Do you offer emergency services?",
                 answer:
-                  "Yes, we provide 24/7 emergency care. Call our emergency line at +1 (555) 999-8888 for immediate assistance.",
+                  "Yes, we provide 24/7 emergency care. Call our emergency line at +91- 9112561322 for immediate assistance.",
               },
             ].map((faq, index) => (
               <motion.div

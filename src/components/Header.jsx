@@ -61,11 +61,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 rounded-full ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-xl border border-[#FF6B6B]/10"
-            : "bg-white/90 backdrop-blur-sm shadow-lg"
-        }`}
+        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 rounded-full ${isScrolled
+          ? "bg-white/95 backdrop-blur-xl shadow-xl border border-[#FF6B6B]/10"
+          : "bg-white/90 backdrop-blur-sm shadow-lg"
+          }`}
         style={{
           width: "90%",
           maxWidth: "1400px",
@@ -95,11 +94,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 group ${
-                    isActive(item.href)
-                      ? "text-white bg-[#FF6B6B] shadow-lg shadow-[#FF6B6B]/25"
-                      : "text-gray-700 hover:text-[#FF6B6B] hover:bg-[#FF6B6B]/5"
-                  }`}
+                  className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 group ${isActive(item.href)
+                    ? "text-white bg-[#FF6B6B] shadow-lg shadow-[#FF6B6B]/25"
+                    : "text-gray-700 hover:text-[#FF6B6B] hover:bg-[#FF6B6B]/5"
+                    }`}
                 >
                   {item.name}
                   {!isActive(item.href) && (
@@ -120,7 +118,7 @@ const Header = () => {
                   <p className="text-sm font-semibold text-gray-900">
                     Emergency Care
                   </p>
-                  <p className="text-xs text-gray-500">+91 9876543210</p>
+                  <p className="text-xs text-gray-500">+91 9112561322</p>
                 </div>
               </div>
 
@@ -157,11 +155,10 @@ const Header = () => {
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 lg:hidden mobile-menu">
           <div className="flex justify-end items-start pt-4 px-4">
             <div
-              className={`bg-white rounded-3xl w-full max-w-sm shadow-2xl border border-[#FF6B6B]/10 transform transition-all duration-500 ease-out ${
-                isMenuOpen
-                  ? "translate-x-0 opacity-100 scale-100"
-                  : "translate-x-full opacity-0 scale-95"
-              }`}
+              className={`bg-white rounded-3xl w-full max-w-sm shadow-2xl border border-[#FF6B6B]/10 transform transition-all duration-500 ease-out ${isMenuOpen
+                ? "translate-x-0 opacity-100 scale-100"
+                : "translate-x-full opacity-0 scale-95"
+                }`}
             >
               {/* Mobile Menu Header */}
               <div className="flex justify-between items-center p-6 pb-4 border-b border-[#FF6B6B]/10">
@@ -197,11 +194,10 @@ const Header = () => {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`flex items-center justify-between px-4 py-4 rounded-xl font-semibold transition-all duration-200 ${
-                        isActive(item.href)
-                          ? "text-white bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] shadow-lg shadow-[#FF6B6B]/25"
-                          : "text-gray-700 hover:text-[#FF6B6B] hover:bg-[#FF6B6B]/5"
-                      }`}
+                      className={`flex items-center justify-between px-4 py-4 rounded-xl font-semibold transition-all duration-200 ${isActive(item.href)
+                        ? "text-white bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] shadow-lg shadow-[#FF6B6B]/25"
+                        : "text-gray-700 hover:text-[#FF6B6B] hover:bg-[#FF6B6B]/5"
+                        }`}
                       onClick={toggleMenu}
                       style={{
                         animationDelay: `${index * 50}ms`,
@@ -226,7 +222,7 @@ const Header = () => {
                     <p className="text-sm font-semibold text-gray-900">
                       Emergency Care
                     </p>
-                    <p className="text-xs text-gray-500">+91 9876543210</p>
+                    <p className="text-xs text-gray-500">+91 9112561322</p>
                   </div>
                 </div>
 

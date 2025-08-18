@@ -91,9 +91,8 @@ export default function CustomerTestimonials() {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`w-4 h-4 ${
-          i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-        }`}
+        className={`w-4 h-4 ${i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+          }`}
       />
     ));
   };
@@ -206,9 +205,8 @@ export default function CustomerTestimonials() {
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "w-8" : "hover:scale-110"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8" : "hover:scale-110"
+                }`}
               style={{
                 backgroundColor: index === currentIndex ? "#FF6B6B" : "#D1D5DB",
               }}
@@ -261,7 +259,7 @@ export default function CustomerTestimonials() {
             Book Your Service Now
           </Button>
           <p className="text-sm text-gray-500 mt-3">
-            Call us at +91 9876543210 or book online
+            Call us at +91 8800682777 or book online
           </p>
         </div>
       </div>

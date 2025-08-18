@@ -18,6 +18,8 @@ import {
   Zap,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,12 +39,20 @@ const Footer = () => {
             {/* About Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shadow-lg">
-                  <PawPrint className="w-6 h-6 text-gray-900" />
-                </div>
-                <span className="text-2xl font-bold text-gray-900">
-                  Paws Friend
-                </span>
+                <Link
+                  href="/"
+                  className="flex items-center space-x-4 group cursor-pointer"
+                >
+                  <div className="relative">
+                    <Image
+                      src="/logo.jpg"
+                      alt="Paws Friend Logo"
+                      width={60}
+                      height={60}
+                      className="rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"
+                    />
+                  </div>
+                </Link>
               </div>
               <p className="text-gray-900/90 leading-relaxed mb-6">
                 Providing professional pet care services at your doorstep. We&apos;re
@@ -102,21 +112,19 @@ const Footer = () => {
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Home",
-                  "About Us",
-                  "Services",
-                  "Pricing",
-                  "Blog",
-                  "Contact",
+                  { name: "Home", href: "/" },
+                  { name: "About Us", href: "/about" },
+                  { name: "Services", href: "/services" },
+                  { name: "Contact", href: "/contact" },
                 ].map((link, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
+                    <Link
+                      href={link.href}
                       className="text-gray-900/80 hover:text-gray-900 transition-all duration-300 flex items-center group hover:translate-x-2"
                     >
                       <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -138,13 +146,13 @@ const Footer = () => {
                   "Vaccinations",
                 ].map((service, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
+                    <Link
+                      href="/services"
                       className="text-gray-900/80 hover:text-gray-900 transition-all duration-300 flex items-center group hover:translate-x-2"
                     >
                       <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       {service}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -163,7 +171,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-gray-900/80">+91 9876543210</div>
+                    <div className="text-gray-900/80">+91 8800682777</div>
                   </div>
                 </div>
 
@@ -184,9 +192,9 @@ const Footer = () => {
                   <div>
                     <div className="font-semibold">Address</div>
                     <div className="text-gray-900/80">
-                      123 Pet Care Street
+                      314, Sec 23, Gurgaon,
                       <br />
-                      Animal City, AC 12345
+                      Haryana 122017
                     </div>
                   </div>
                 </div>
@@ -213,10 +221,7 @@ const Footer = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm font-semibold">Emergency</div>
-                    <div className="text-lg font-bold">+91 9876543210</div>
-                  </div>
-                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-gray-900" />
+                    <div className="text-lg font-bold">+91 9112561322</div>
                   </div>
                 </div>
               </div>
@@ -233,15 +238,15 @@ const Footer = () => {
             Friend. Made with love for your pets!
           </div>
           <div className="flex space-x-6 text-sm">
-            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
+            {[{ name: "Privacy Policy", href: "/privacy" }, { name: "Terms of Service", href: "/terms" }, { name: "Cookie Policy", href: "/cookies" }].map(
               (link, index) => (
-                <a
+                <Link
                   key={index}
-                  href="#"
+                  href={link.href}
                   className="text-gray-900/80 hover:text-gray-900 transition-colors duration-300 hover:scale-105"
                 >
-                  {link}
-                </a>
+                  {link.name}
+                </Link>
               )
             )}
           </div>
