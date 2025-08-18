@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingBottomBar from "@/components/FloatingBottomBar";
+import VetConsultation from "@/components/vet-consultation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -127,6 +128,7 @@ export default function RootLayout({ children }) {
       <body className="antialiased bg-[#f2f2f2] text-gray-900 overflow-x-hidden">
         <Header />
         {children}
+        <VetConsultation />
         <FloatingBottomBar />
         <Footer />
       </body>
