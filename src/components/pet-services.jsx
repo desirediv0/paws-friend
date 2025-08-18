@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Phone, Heart, Star, Sparkles } from "lucide-react";
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Phone, Heart, Star, Sparkles, X, Menu } from "lucide-react"
 import {
   dogtrainer,
   groomedtowel,
@@ -14,8 +14,8 @@ import {
   placeholder,
   surgerysetup,
   vetexam,
-} from "@/assets";
-import Image from "next/image";
+} from "@/assets"
+import Image from "next/image"
 
 const services = [
   {
@@ -150,62 +150,68 @@ const services = [
     ],
     image: homevaccination,
   },
-];
+]
 
 export default function PetServices() {
-  const [activeService, setActiveService] = useState(services[0]);
+  const [activeService, setActiveService] = useState(services[0])
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#F2F2F2" }}>
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="container mx-auto px-4 py-6 lg:py-12">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 lg:mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Heart className="w-8 h-8 text-[#FF6B6B]" />
-            <h1 className="text-4xl font-bold text-gray-800">Paws Friend</h1>
-            <Heart className="w-8 h-8 text-[#FF6B6B]" />
+            <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#FF6B6B]" />
+            <h1 className="text-2xl lg:text-4xl font-bold text-gray-800">Paws Friend</h1>
+            <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#FF6B6B]" />
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Premium pet care services delivered to your doorstep with love and
-            expertise
+          <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+            Premium pet care services delivered to your doorstep with love and expertise
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="lg:hidden mb-6">
+          <Button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="w-full bg-[#FF6B6B] hover:bg-[#FF6B6B]/90 text-white"
+          >
+            {isMobileMenuOpen ? <X className="w-4 h-4 mr-2" /> : <Menu className="w-4 h-4 mr-2" />}
+            {isMobileMenuOpen ? "Close Services" : "Browse Services"}
+          </Button>
+        </div>
+
+        <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
           {/* Services Sidebar */}
-          <div className="lg:col-span-1">
-            <Card className="sticky top-8 shadow-lg border-0">
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                  <Sparkles className="w-6 h-6 text-[#FF6B6B]" />
+          <div className={`lg:col-span-1 ${isMobileMenuOpen ? "block" : "hidden lg:block"}`}>
+            <Card className="lg:sticky lg:top-8 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-4 lg:p-6">
+                <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4 lg:mb-6 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-[#FF6B6B]" />
                   Our Services
                 </h2>
                 <div className="space-y-2">
                   {services.map((service) => (
                     <button
                       key={service.id}
-                      onClick={() => setActiveService(service)}
-                      className={`w-full text-left p-4 rounded-lg transition-all duration-300 hover:shadow-md ${activeService.id === service.id
-                        ? "text-white shadow-lg transform scale-105"
-                        : "text-gray-700 hover:bg-white/50"
+                      onClick={() => {
+                        setActiveService(service)
+                        setIsMobileMenuOpen(false)
+                      }}
+                      className={`w-full text-left p-3 lg:p-4 rounded-lg transition-all duration-300 hover:shadow-md ${activeService.id === service.id
+                          ? "text-white shadow-lg transform scale-105"
+                          : "text-gray-700 hover:bg-white/50"
                         }`}
                       style={{
-                        backgroundColor:
-                          activeService.id === service.id
-                            ? "#FF6B6B"
-                            : "transparent",
+                        backgroundColor: activeService.id === service.id ? "#FF6B6B" : "transparent",
                       }}
                     >
-                      <div className="font-semibold text-sm leading-tight">
-                        {service.title}
-                      </div>
+                      <div className="font-semibold text-sm leading-tight">{service.title}</div>
                       <div
-                        className={`text-xs mt-1 ${activeService.id === service.id
-                          ? "text-white/80"
-                          : "text-gray-500"
+                        className={`text-xs mt-1 ${activeService.id === service.id ? "text-white/80" : "text-gray-500"
                           }`}
                       >
-                        Starting @ only  {service.price}
+                        Starting @ only {service.price}
                       </div>
                     </button>
                   ))}
@@ -216,127 +222,126 @@ export default function PetServices() {
 
           {/* Main Content */}
           <div className="lg:col-span-3">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Service Details */}
-              <Card className="shadow-xl border-0 transform transition-all duration-500 hover:shadow-2xl">
-                <CardContent className="p-8">
-                  <div className="flex items-start justify-between mb-6">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                        {activeService.title}
-                      </h3>
-                      <div className="flex items-center gap-3">
-                        <span className="text-3xl font-bold text-[#FF6B6B]">
-                          {activeService.price}
-                        </span>
-                        {activeService.originalPrice && (
-                          <span className="text-lg text-gray-500 line-through">
-                            {activeService.originalPrice}
-                          </span>
-                        )}
-                        {activeService.discount && (
-                          <Badge className="bg-[#FF6B6B] text-white hover:bg-[#FF6B6B]/90">
-                            {activeService.discount}
-                          </Badge>
-                        )}
+            <div className="grid gap-6 lg:gap-8">
+              <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+                {/* Service Details */}
+                <Card className="shadow-xl border-0 transform transition-all duration-500 hover:shadow-2xl bg-white/90 backdrop-blur-sm">
+                  <CardContent className="p-6 lg:p-8">
+                    <div className="flex items-start justify-between mb-6">
+                      <div>
+                        <h3 className="text-xl lg:text-2xl font-bold text-gray-800 mb-2">{activeService.title}</h3>
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <span className="text-2xl lg:text-3xl font-bold text-[#FF6B6B]">{activeService.price}</span>
+                          {activeService.originalPrice && (
+                            <span className="text-base lg:text-lg text-gray-500 line-through">
+                              {activeService.originalPrice}
+                            </span>
+                          )}
+                          {activeService.discount && (
+                            <Badge className="bg-[#FF6B6B] text-white hover:bg-[#FF6B6B]/90 text-xs">
+                              {activeService.discount}
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                      <Star className="w-6 h-6 lg:w-8 lg:h-8 text-yellow-400 fill-current flex-shrink-0" />
+                    </div>
+
+                    <p className="text-gray-600 leading-relaxed mb-6 text-sm lg:text-base">
+                      {activeService.description}
+                    </p>
+
+                    <div className="mb-6 lg:mb-8">
+                      <h4 className="font-semibold text-gray-800 mb-3">Our Services Include:</h4>
+                      <div className="grid grid-cols-1 gap-2">
+                        {activeService.features.map((feature, index) => (
+                          <div key={index} className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-[#FF6B6B] flex-shrink-0"></div>
+                            <span className="text-sm text-gray-600">{feature}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                    <Star className="w-8 h-8 text-yellow-400 fill-current" />
-                  </div>
 
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {activeService.description}
-                  </p>
-
-                  <div className="mb-8">
-                    <h4 className="font-semibold text-gray-800 mb-3">
-                      Our Services Include:
-                    </h4>
-                    <div className="grid grid-cols-1 gap-2">
-                      {activeService.features.map((feature, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-[#FF6B6B]"></div>
-                          <span className="text-sm text-gray-600">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
+                    <div className="space-y-3">
+                      <Button
+                        className="w-full text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105"
+                        style={{ backgroundColor: "#FF6B6B" }}
+                        onClick={() => {
+                          const message = encodeURIComponent(
+                            `Hi Paws Friend! I want to book ${activeService.title} (${activeService.price}). Please provide more details and confirm my booking.`,
+                          )
+                          const whatsappUrl = `https://wa.me/918800682777?text=${message}`
+                          window.open(whatsappUrl, "_blank")
+                        }}
+                      >
+                        Book Now
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="w-full border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white transition-all duration-300 bg-transparent"
+                        onClick={() => {
+                          window.location.href = "tel:+918800682777"
+                        }}
+                      >
+                        <Phone className="w-4 h-4 mr-2" />
+                        Call +91 8800682777
+                      </Button>
                     </div>
-                  </div>
+                  </CardContent>
+                </Card>
 
-                  <div className="space-y-3">
-                    <Button
-                      className="w-full text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105"
-                      style={{ backgroundColor: "#FF6B6B" }}
-                    >
-                      Book Now
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white transition-all duration-300 bg-transparent"
-                    >
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call +91 8800682777
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                {/* Service Image */}
+                <Card className="shadow-xl border-0 overflow-hidden transform transition-all duration-500 hover:shadow-2xl h-min">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <Image
+                        src={activeService.image || "/placeholder.svg"}
+                        alt={activeService.title}
+                        className="w-full h-64 lg:h-80 object-cover transition-transform duration-700 hover:scale-110"
+                        width={500}
+                        height={400}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="bg-white/95 backdrop-blur-sm rounded-lg p-3 lg:p-4">
+                          <h4 className="font-bold text-gray-800 mb-1 text-sm lg:text-base">Professional Care</h4>
+                          <p className="text-xs lg:text-sm text-gray-600">
+                            Trusted by thousands of pet parents across the city
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
 
-              {/* Service Image */}
-              <Card className="shadow-xl border-0 overflow-hidden transform transition-all duration-500 hover:shadow-2xl h-min">
-                <CardContent className="p-0">
-                  <div className="relative">
-                    <Image
-                      src={activeService.image || placeholder}
-                      alt={activeService.title}
-                      className="w-full h-80 object-cover transition-transform duration-700 hover:scale-110"
-                      width={500}
-                      height={500}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
-                        <h4 className="font-bold text-gray-800 mb-1">
-                          Professional Care
-                        </h4>
-                        <p className="text-sm text-gray-600">
-                          Trusted by thousands of pet parents across the city
-                        </p>
+              {/* Contact Information */}
+              <Card className="shadow-xl border-0" style={{ backgroundColor: "#FF6B6B" }}>
+                <CardContent className="p-4 lg:p-6">
+                  <div className="text-center text-white">
+                    <h3 className="text-xl lg:text-2xl font-bold mb-2">Ready to Book?</h3>
+                    <p className="mb-4 text-white/90 text-sm lg:text-base">
+                      Contact us now for the best pet care services in your city
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                      <div className="flex items-center gap-2">
+                        <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
+                        <span className="font-semibold text-sm lg:text-base">+91 8800682777</span>
+                      </div>
+                      <div className="hidden sm:block text-white/50">|</div>
+                      <div className="flex items-center gap-2">
+                        <Heart className="w-4 h-4 lg:w-5 lg:h-5" />
+                        <span className="text-sm lg:text-base">Available 24/7</span>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-
-            {/* Contact Information */}
-            <Card
-              className="mt-8 shadow-xl border-0"
-              style={{ backgroundColor: "#FF6B6B" }}
-            >
-              <CardContent className="p-6">
-                <div className="text-center text-white">
-                  <h3 className="text-2xl font-bold mb-2">Ready to Book?</h3>
-                  <p className="mb-4 text-white/90">
-                    Contact us now for the best pet care services in your city
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <div className="flex items-center gap-2">
-                      <Phone className="w-5 h-5" />
-                      <span className="font-semibold">+91 8800682777</span>
-                    </div>
-                    <div className="hidden sm:block text-white/50">|</div>
-                    <div className="flex items-center gap-2">
-                      <Heart className="w-5 h-5" />
-                      <span>Available 24/7</span>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
