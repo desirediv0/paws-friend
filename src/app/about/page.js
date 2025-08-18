@@ -235,7 +235,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Expert Team */}
-      <section className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
+      {/* <section className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-gray-800 px-4">
             Our Expert Team
@@ -294,7 +294,7 @@ export default function AboutPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
