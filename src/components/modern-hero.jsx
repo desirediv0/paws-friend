@@ -1,10 +1,7 @@
-"use client";
 
-import React, { useState, useEffect } from "react";
 
 import {
   Phone,
-  Star,
   Clock,
   Sparkles,
   ArrowRight,
@@ -15,14 +12,6 @@ import {
 import AppointmentForm from "./AppointmentForm";
 
 const ModernHero = () => {
-
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-
 
   return (
     <>
@@ -46,7 +35,7 @@ const ModernHero = () => {
               {/* Trust Badge */}
               <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-[#FF6B6B] text-white rounded-full text-xs sm:text-sm font-bold shadow-lg">
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-2 fill-current" />
+
                 <span className="whitespace-nowrap">
                   Trusted by 10,000+ Pet Families
                 </span>

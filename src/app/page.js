@@ -12,8 +12,8 @@ export default function Home() {
       <PetServices />
       <WhyChooseUs />
       <PetCareInfo />
-      <BookingProcess />
       <VideoTestimonials />
+      <BookingProcess />
     </main>
   );
 }
