@@ -70,7 +70,7 @@ const ModernHero = () => {
                         </div>
                         <div className="min-w-0 flex-1">
                           <span className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 block truncate">
-                            +91 98765 43210
+                            +91 88006 82777
                           </span>
                           <p className="text-xs sm:text-sm text-gray-600">
                             24/7 Emergency Available
