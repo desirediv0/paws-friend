@@ -39,7 +39,6 @@ const AppointmentForm = () => {
 
   const services = [
     "Veterinary Service",
-    "Dog Walking",
     "Pet Grooming",
     "Pet Training",
     "Pet Boarding",
@@ -108,11 +107,10 @@ const AppointmentForm = () => {
                     />
                     <label
                       htmlFor={pet.value}
-                      className={`group flex flex-col items-center p-3 sm:p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105 ${
-                        formData.petType === pet.value
+                      className={`group flex flex-col items-center p-3 sm:p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105 ${formData.petType === pet.value
                           ? "border-[#FF6B6B] bg-[#FF6B6B]/10 shadow-lg"
                           : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
-                      }`}
+                        }`}
                     >
                       <span className="text-xl sm:text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
                         {pet.value === "other" ? (

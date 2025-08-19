@@ -1,27 +1,13 @@
-
-
-import {
-  Phone,
-  Clock,
-  Sparkles,
-  ArrowRight,
-  Award,
-  Users,
-  Zap,
-} from "lucide-react";
-import AppointmentForm from "./AppointmentForm";
+import { Phone, Clock, Sparkles, ArrowRight, Award, Users, Zap } from "lucide-react"
+import AppointmentForm from "./AppointmentForm"
 
 const ModernHero = () => {
-
   return (
     <>
-      <section className="relative min-h-screen bg-[#F2F2F2] overflow-hidden"
-        style={{ backgroundImage: "url('/bg-big.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
-      >
+      <section className="relative min-h-screen bg-[#F2F2F2] overflow-hidden bg-[url('/bg-mobile.jpg')] md:bg-[url('/bg-big.jpg')] bg-cover bg-center">
         {/* Clean Background with Subtle Elements */}
         <div className="absolute inset-0">
-          {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/50 via-[#F2F2F2]/60 to-[#F2F2F2]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/30 via-[#F2F2F2]/50 to-[#F2F2F2]/50 md:from-[#F2F2F2]/50 md:via-[#F2F2F2]/60 md:to-[#F2F2F2]/60"></div>
 
           {/* Subtle floating elements - hidden on mobile */}
           <div className="hidden md:block absolute top-20 left-20 w-64 h-64 bg-[#FF6B6B]/50 rounded-full blur-3xl"></div>
@@ -38,15 +24,13 @@ const ModernHero = () => {
               <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-[#FF6B6B] text-white rounded-full text-xs sm:text-sm font-bold shadow-lg">
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
 
-                <span className="whitespace-nowrap">
-                  Trusted by 10,000+ Pet Families
-                </span>
+                <span className="whitespace-nowrap">Trusted by 10,000+ Pet Families</span>
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
               </div>
 
               {/* Main Headline */}
               <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight">
                   Premium Pet Care
                   <span className="block text-[#FFF] drop-shadow-xl">At Your Doorstep</span>
                 </h1>
@@ -56,8 +40,7 @@ const ModernHero = () => {
                     Professional Healthcare Services for Dogs & Cats
                   </h2>
                   <p className="text-sm sm:text-base lg:text-xl text-gray-700 font-medium leading-relaxed">
-                    🏆 Award-Winning Veterinarians • 🚀 Same Day Service • 💝
-                    Caring Touch
+                    🏆 Award-Winning Veterinarians • 🚀 Same Day Service • 💝 Caring Touch
                   </p>
                 </div>
 
@@ -74,9 +57,7 @@ const ModernHero = () => {
                           <span className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 block truncate">
                             +91 88006 82777
                           </span>
-                          <p className="text-xs sm:text-sm text-gray-600">
-                            24/7 Emergency Available
-                          </p>
+                          <p className="text-xs sm:text-sm text-gray-600">24/7 Emergency Available</p>
                         </div>
                       </div>
                       <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[#FF6B6B] flex-shrink-0 ml-2" />
@@ -113,9 +94,7 @@ const ModernHero = () => {
                       <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#FF6B6B] rounded-xl flex items-center justify-center flex-shrink-0">
                         <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                       </div>
-                      <span className="font-bold text-gray-900 text-xs sm:text-sm">
-                        {feature.text}
-                      </span>
+                      <span className="font-bold text-gray-900 text-sm">{feature.text}</span>
                     </div>
                   </div>
                 ))}
@@ -129,10 +108,8 @@ const ModernHero = () => {
           </div>
         </div>
       </section>
-
-
     </>
-  );
-};
+  )
+}
 
-export default ModernHero;
+export default ModernHero

@@ -45,7 +45,6 @@ const AppointmentModal = ({ isOpen, onClose }) => {
 
   const services = [
     "Veterinary Service",
-    "Dog Walking",
     "Pet Grooming",
     "Pet Training",
     "Pet Boarding",
@@ -123,11 +122,10 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                   />
                   <label
                     htmlFor={pet.value}
-                    className={`flex flex-col items-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 ${
-                      formData.petType === pet.value
-                        ? "border-coral bg-softPink"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
+                    className={`flex flex-col items-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 ${formData.petType === pet.value
+                      ? "border-coral bg-softPink"
+                      : "border-gray-200 hover:border-gray-300"
+                      }`}
                   >
                     <span className="text-2xl mb-2">{pet.icon}</span>
                     <span className="text-sm font-medium text-brand-charcoal">
