@@ -48,7 +48,7 @@ const ModernHero = () => {
               <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight">
                   Premium Pet Care
-                  <span className="block text-[#FF6B6B]">At Your Doorstep</span>
+                  <span className="block text-[#FF6B6B] drop-shadow-xl">At Your Doorstep</span>
                 </h1>
 
                 <div className="space-y-4 sm:space-y-6">
