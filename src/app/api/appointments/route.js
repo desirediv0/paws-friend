@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 // Email configuration
 const transporter = nodemailer.createTransport({
@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
     user: process.env.NEXT_PUBLIC_SMTP_USER,
     pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
   },
-})
+});
 
 export async function POST(request) {
   try {
@@ -20,8 +20,11 @@ export async function POST(request) {
       !process.env.NEXT_PUBLIC_SMTP_USER ||
       !process.env.NEXT_PUBLIC_SMTP_PASSWORD
     ) {
-      console.error("Missing SMTP environment variables")
-      return NextResponse.json({ error: "Email service configuration error" }, { status: 500 })
+      console.error("Missing SMTP environment variables");
+      return NextResponse.json(
+        { error: "Email service configuration error" },
+        { status: 500 }
+      );
     }
 
     const {
@@ -35,35 +38,41 @@ export async function POST(request) {
       appointmentDate,
       appointmentTime,
       notes,
-    } = await request.json()
-
-    console.log("Received appointment data:", {
-      ownerName,
-      email,
-      phone,
-      petName,
-      petType,
-      service,
-      appointmentDate,
-      appointmentTime,
-      notes,
-    })
+    } = await request.json();
 
     // Validate required fields
-    if (!ownerName || !email || !phone || !petName || !petType || !service || !appointmentDate || !appointmentTime) {
-      return NextResponse.json({ error: "All required fields must be filled" }, { status: 400 })
+    if (
+      !ownerName ||
+      !email ||
+      !phone ||
+      !petName ||
+      !petType ||
+      !service ||
+      !appointmentDate ||
+      !appointmentTime
+    ) {
+      return NextResponse.json(
+        { error: "All required fields must be filled" },
+        { status: 400 }
+      );
     }
 
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json({ error: "Please enter a valid email address" }, { status: 400 })
+      return NextResponse.json(
+        { error: "Please enter a valid email address" },
+        { status: 400 }
+      );
     }
 
     // Validate phone format (basic validation)
-    const phoneRegex = /^[+]?[1-9][\d]{0,15}$/
+    const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
     if (!phoneRegex.test(phone.replace(/[\s\-$$$$]/g, ""))) {
-      return NextResponse.json({ error: "Please enter a valid phone number" }, { status: 400 })
+      return NextResponse.json(
+        { error: "Please enter a valid phone number" },
+        { status: 400 }
+      );
     }
 
     // Email template for Paws Friend
@@ -165,41 +174,43 @@ export async function POST(request) {
           </div>
         
           
-          ${petAge
-        ? `
+          ${
+            petAge
+              ? `
           <div class="field">
             <div class="field-label">🎂 Pet Age:</div>
             <div class="field-value">${petAge}</div>
           </div>
           `
-        : ""
-      }
+              : ""
+          }
           
-          ${notes
-        ? `
+          ${
+            notes
+              ? `
           <div class="field">
             <div class="field-label">📝 Additional Notes:</div>
             <div class="field-value">${notes.replace(/\n/g, "<br>")}</div>
           </div>
           `
-        : ""
-      }
+              : ""
+          }
           
           <div class="footer">
             <p>This appointment was booked through the Paws Friend website.</p>
             <p>Submitted on: ${new Date().toLocaleString("en-IN", {
-        timeZone: "Asia/Kolkata",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      })}</p>
+              timeZone: "Asia/Kolkata",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            })}</p>
           </div>
         </div>
       </body>
       </html>
-    `
+    `;
 
     // Send email to admin
     const mailOptions = {
@@ -208,9 +219,9 @@ export async function POST(request) {
       subject: `New Pet Appointment: ${petName} (${service}) - ${appointmentDate}`,
       html: emailTemplate,
       replyTo: email,
-    }
+    };
 
-    await transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions);
 
     // Send confirmation email to customer
     const confirmationTemplate = `
@@ -276,31 +287,32 @@ export async function POST(request) {
         </div>
       </body>
       </html>
-    `
+    `;
 
     const confirmationOptions = {
       from: process.env.NEXT_PUBLIC_FROM_EMAIL,
       to: email,
       subject: `Appointment Confirmed - ${petName} at Paws Friend`,
       html: confirmationTemplate,
-    }
+    };
 
-    await transporter.sendMail(confirmationOptions)
+    await transporter.sendMail(confirmationOptions);
 
     return NextResponse.json(
       {
         success: true,
-        message: "Your appointment has been booked successfully! We've sent a confirmation email to you.",
+        message:
+          "Your appointment has been booked successfully! We've sent a confirmation email to you.",
       },
-      { status: 200 },
-    )
+      { status: 200 }
+    );
   } catch (error) {
-    console.error("Appointment booking error:", error)
+    console.error("Appointment booking error:", error);
     return NextResponse.json(
       {
         error: "Failed to book appointment. Please try again later.",
       },
-      { status: 500 },
-    )
+      { status: 500 }
+    );
   }
 }
