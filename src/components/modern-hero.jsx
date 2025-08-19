@@ -1,5 +1,3 @@
-
-
 import {
   Phone,
   Clock,
@@ -21,12 +19,12 @@ const ModernHero = () => {
         {/* Clean Background with Subtle Elements */}
         <div className="absolute inset-0">
           {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/50 via-[#F2F2F2]/60 to-[#F2F2F2]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/40 via-[#F2F2F2]/50 to-[#F2F2F2]/50"></div>
 
           {/* Subtle floating elements - hidden on mobile */}
-          <div className="hidden md:block absolute top-20 left-20 w-64 h-64 bg-[#FF6B6B]/30 rounded-full blur-3xl"></div>
-          <div className="hidden md:block absolute top-40 right-32 w-80 h-80 bg-[#FF6B6B]/30 rounded-full blur-3xl"></div>
-          <div className="hidden md:block absolute bottom-32 left-40 w-72 h-72 bg-[#FF6B6B]/30 rounded-full blur-3xl"></div>
+          <div className="hidden md:block absolute top-20 left-20 w-64 h-64 bg-[#FF6B6B]/50 rounded-full blur-3xl"></div>
+          <div className="hidden md:block absolute top-40 right-32 w-80 h-80 bg-[#FF6B6B]/50 rounded-full blur-3xl"></div>
+          <div className="hidden md:block absolute bottom-32 left-40 w-72 h-72 bg-[#FF6B6B]/50 rounded-full blur-3xl"></div>
         </div>
 
         {/* Main Content */}
@@ -48,7 +46,7 @@ const ModernHero = () => {
               <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight">
                   Premium Pet Care
-                  <span className="block text-[#FF6B6B] drop-shadow-xl">At Your Doorstep</span>
+                  <span className="block text-[#FFF] drop-shadow-xl">At Your Doorstep</span>
                 </h1>
 
                 <div className="space-y-4 sm:space-y-6">
