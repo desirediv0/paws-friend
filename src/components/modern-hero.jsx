@@ -1,3 +1,5 @@
+
+
 import {
   Phone,
   Clock,
@@ -19,7 +21,7 @@ const ModernHero = () => {
         {/* Clean Background with Subtle Elements */}
         <div className="absolute inset-0">
           {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/40 via-[#F2F2F2]/50 to-[#F2F2F2]/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/50 via-[#F2F2F2]/60 to-[#F2F2F2]/60"></div>
 
           {/* Subtle floating elements - hidden on mobile */}
           <div className="hidden md:block absolute top-20 left-20 w-64 h-64 bg-[#FF6B6B]/50 rounded-full blur-3xl"></div>
