@@ -11,7 +11,6 @@ import {
   homevaccination,
   onlinevetconsultation,
   petboarding,
-  placeholder,
   surgerysetup,
   vetexam,
 } from "@/assets"
@@ -23,7 +22,7 @@ const services = [
     title: "Pet Grooming Services",
     price: "₹999",
     description:
-      "Hire the best pet grooming services from Paws Friend at your home and avoid the travel stress of your furry friend. Our trained groomers are always ready to provide at-home grooming for your cats and dogs at affordable charges. Now, you can keep your pet healthy and fresh with the help of our groomers.",
+      "Give your pets the care they deserve with Paws Friend's at-home grooming services. No more stressful travel our professional groomers come right to your doorstep. From bathing and brushing to nail trimming and overall hygiene, we make sure your furry companion looks and feels their best. Keep your cats and dogs clean, comfortable, and happy all at budget-friendly prices.",
     features: [
       "Full grooming",
       "Mini grooming",
@@ -40,7 +39,7 @@ const services = [
     title: "Veterinary Services",
     price: "₹799",
     description:
-      "Are you searching for an expert vet doctor to visit your home and treat your cats and dogs safely? Then, we at Paws Friend provide at-home vet services. Our experienced vet doctor can visit your home to diagnose your pets and provide the best possible treatment.",
+      "Caring for your pet has never been easier. Our home-visit veterinary services ensure expert care without the stress of traveling. From preventive vaccinations to timely check-ups and urgent medical support, we bring trusted healthcare right to your doorstep keeping your beloved pet safe, healthy, and full of life.",
     features: [
       "Pet vaccination",
       "Online consultation",
@@ -57,7 +56,7 @@ const services = [
     title: "Pet Training Services",
     price: "₹9,999",
     description:
-      "If you want to change your dog's behavior and are looking for an expert trainer, then we at Paws Friend provide affordable dog training services. Our expert trainers are always ready to train your dog to strengthen the bond between you and your furry friend.",
+      "Bringing your furry friend home for the first time can be exciting, but they may not be familiar with household norms and lifestyle. At Paws Friend Pet Care Services, we provide complete training for your dog covering essentials like proper greetings, toilet habits, and good behaviour around new people. Training is a vital part of pet adoption, helping your pet adapt and learn to live happily and confidently in a well-structured routine.",
     features: [
       "Behavioral modification",
       "Obedience training",
@@ -73,7 +72,7 @@ const services = [
     title: "Pet Surgery Services",
     price: "Contact for pricing",
     description:
-      "If you are searching for the best pet surgeon to treat your dog or cat, then we are the best destination for your needs. Our experienced team of expert vets offers all types of pet surgery with pre and post-surgery care.",
+      "We understand how much you love your furry friend. Accidents and illnesses can happen anytime pets love to play, explore, and eat things they shouldn't, which sometimes makes them unwell. That's why our team is always ready to help. In case of an emergency, you can easily call us or book an online session with our vet for quick assistance.",
     features: [
       "Pre-surgery consultation",
       "Modern healthcare facilities",
@@ -84,28 +83,12 @@ const services = [
     ],
     image: surgerysetup,
   },
-  // {
-  //   id: "walking",
-  //   title: "Dog Walking Services",
-  //   price: "₹3,500",
-  //   description:
-  //     "Ready to give your dogs the walks they deserve? Book affordable at-home dog walking services. Our professional dog walkers will come to your home and take the dog for a walk they deserve to stay happy and healthy.",
-  //   features: [
-  //     "Professional dog walkers",
-  //     "Flexible scheduling",
-  //     "Exercise and care",
-  //     "Trusted service",
-  //     "Happy adventures",
-  //     "Regular updates",
-  //   ],
-  //   image: dogwalker,
-  // },
   {
     id: "boarding",
     title: "Pet Boarding Services",
     price: "₹999",
     description:
-      "If you are looking for a comfortable space for your cats and dogs, then Paws Friend provides the best pet boarding services with 24/7 medical facilities. Our pet boarding service is affordable and trusted.",
+      "We know life gets busy, and sometimes you can't always be there for your pet. That's where we come in! Our trusted pet sitters provide care right at your home, keeping your furry friend happy and comfortable. Timely walks, Fun play sessions, Healthy meals, Lots of love & care. Because your pet deserves the best even when you're away!",
     features: [
       "24/7 medical facilities",
       "Healthy meals",
@@ -121,7 +104,7 @@ const services = [
     title: "Online Vet Consultation",
     price: "₹199",
     description:
-      "If you want an online pet consultation, we are here to help you. Now, you can talk to our vets online on video call and get expert advice about your pet's health. With the help of our 24/7 online vet consultation, you no longer need to visit the vet clinic.",
+      "We understand how much you love your furry friend. Accidents and illnesses can happen anytime pets love to play, explore, and eat things they shouldn't, which sometimes makes them unwell. That's why our team is always ready to help. In case of an emergency, you can easily call us or book an online session with our vet for quick assistance.",
     features: [
       "24/7 availability",
       "Video/audio calls",
@@ -139,7 +122,7 @@ const services = [
     originalPrice: "Regular rates",
     discount: "10% OFF",
     description:
-      "Paws Friend brings pet vaccinations to your doorstep, so you don't need to visit the vet clinic to vaccinate your dog or cat. Our vets come to your home and vaccinate your pet to protect them from diseases.",
+      "Caring for your pet has never been easier. Our home-visit veterinary services ensure expert care without the stress of traveling. From preventive vaccinations to timely check-ups and urgent medical support, we bring trusted healthcare right to your doorstep keeping your beloved pet safe, healthy, and full of life.",
     features: [
       "Home vaccination",
       "All age groups",
@@ -199,8 +182,8 @@ export default function PetServices() {
                         setIsMobileMenuOpen(false)
                       }}
                       className={`w-full text-left p-3 lg:p-4 rounded-lg transition-all duration-300 hover:shadow-md ${activeService.id === service.id
-                        ? "text-white shadow-lg transform scale-105"
-                        : "text-gray-700 hover:bg-white/50"
+                          ? "text-white shadow-lg transform scale-105"
+                          : "text-gray-700 hover:bg-white/50"
                         }`}
                       style={{
                         backgroundColor: activeService.id === service.id ? "#FF6B6B" : "transparent",
@@ -336,7 +319,6 @@ export default function PetServices() {
                   </CardContent>
                 </Card>
               </div>
-
             </div>
           </div>
         </div>

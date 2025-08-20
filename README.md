@@ -286,7 +286,7 @@ For support and questions:
 
 - Email: support@pawsfriend.com
 - Phone: +1 (555) 123-4567
-- Website: https://pawsfriend.com
+- Website: https://pawsfriend.in
 
 ## 🎯 Roadmap
 
