@@ -270,20 +270,17 @@ export default function PetCareInfo() {
         </div>
       </div>
 
-      {/* Why Choose Us Section */}
+
       <div className="py-16 px-4" style={{ backgroundColor: "#F2F2F2" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                Why Choose Us?
+                Paws Friend – The First Choice for Pet Care Near You
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Paws Friend is the first choice for anyone looking out for pet
-                care near me. We haven&apos;t got this legacy really easily. We
-                have worked hard by continuously improving and listening to our
-                clients demands which ultimately makes our furry buddy happy.
-                Here are the reasons which makes us stand apart:
+                At Paws Friend, we haven’t built this legacy overnight. It’s the result of dedication, consistent improvement,
+                and truly listening to what pet parents need. Our goal is simple — keeping your furry companion happy, healthy, and loved.
               </p>
 
               <div className="space-y-6">
@@ -295,9 +292,8 @@ export default function PetCareInfo() {
                     <Users className="w-3 h-3 text-white" />
                   </div>
                   <p className="text-gray-700 leading-relaxed">
-                    All of the individuals in our expert team goes extreme
-                    background check. This is to verify they are actually
-                    trained and qualified to be a pet care taker.
+                    Every member of our expert team goes through strict background checks and training. We make sure they are not just
+                    qualified, but also genuinely passionate about caring for pets.
                   </p>
                 </div>
 
@@ -309,22 +305,8 @@ export default function PetCareInfo() {
                     <Phone className="w-3 h-3 text-white" />
                   </div>
                   <p className="text-gray-700 leading-relaxed">
-                    We always keep updating pet owners with video call, photos
-                    and videos. This is to ensure that everything is going well
-                    and you can focus on your day.
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div
-                    className="w-6 h-6 rounded-full flex items-center justify-center mt-1 flex-shrink-0"
-                    style={{ backgroundColor: "#FF6B6B" }}
-                  >
-                    <Clock className="w-3 h-3 text-white" />
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">
-                    We are there to help you 24/7 for 365 days. We know your pet
-                    is really dear to you and they are dear to us as well.
+                    We keep pet parents connected through video calls, photos, and short updates. This way, you’ll always know your
+                    little one is safe and happy, while you focus on your day.
                   </p>
                 </div>
               </div>
@@ -342,6 +324,7 @@ export default function PetCareInfo() {
           </div>
         </div>
       </div>
+
 
       {/* FAQ Section */}
       <div className="py-16 px-4 bg-white">

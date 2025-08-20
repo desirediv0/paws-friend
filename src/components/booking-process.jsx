@@ -2,8 +2,10 @@
 
 import { Search, Calendar, Coffee } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function BookingProcess() {
+  const Router = useRouter()
   const steps = [
     {
       number: "01",
@@ -130,6 +132,7 @@ export default function BookingProcess() {
             size="lg"
             className="text-white px-8 py-3 text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: "#FF6B6B" }}
+            onClick={() => Router.push("/contact")}
           >
             Start Booking Process
           </Button>
