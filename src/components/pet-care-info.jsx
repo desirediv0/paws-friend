@@ -21,37 +21,37 @@ const services = [
     id: 1,
     title: "Pet Grooming",
     description:
-      "One of the most important processes of pet care is pet grooming. Pet grooming involves cutting and trimming of unwanted hairs which can create health issues for your pet. Regular trimming and cutting is really important for them. However, time interval for different pets can be different so hire our professional pet groomer.",
+      "Keep your furry friends healthy, clean & happy with regular grooming. Hire our professional groomers today! Grooming is an essential part of pet care. It includes trimming and cutting unwanted hair to prevent health issues and keep your pet comfortable. Regular grooming ensures your pet stays clean, healthy, and happy. Since every pet has different needs, our professional groomers provide personalized care for your paw some friend.",
   },
   {
     id: 2,
     title: "Pet Sitting Service",
     description:
-      "Pet sitting service is so simple to understand. Whenever you are busy or travelling outside of your hometown and can't take your friend there then we are there to help you. Our experienced team of pet care takers are there to make them feel home. They take good care of your pet. Your pet would get timely walk, play session included healthy meal and fun activities.",
+      "We know life gets busy, and sometimes you can’t always be there for your pet. That’s where we come in! Our trusted pet sitters provide care right at your home, keeping your furry friend happy and comfortable. Timely walks, Fun play sessions, Healthy meals, Lots of love & care. Because your pet deserves the best even when you’re away!",
   },
   {
     id: 3,
     title: "Pet Walking Service",
     description:
-      "Walking is important for everyone as we know. Walking is a great session of exercise even if it is us human. And we at Paws Friend pet care clinic knows this very well. So, if you want your furry friend to go on a walk with one of our professionals then we are just a call away. Regular walking is really necessary for the pets as it gives them time to socialize, to breathe fresh air, to play and many other things.",
+      "Walking is essential for everyone and that includes your furry friends. It’s not just exercise, it’s also a way for pets to stay happy, healthy, and active. At Paws Friend Pet Care Clinic, we understand the importance of regular walks. That’s why our professional team is here to help. If you’d like your pet to enjoy a safe and fun walk, we are just a call away. Regular walking helps pets socialize, breathe fresh air, play, and enjoy countless other benefits that keep them physically fit and emotionally content.",
   },
   {
     id: 4,
     title: "Vet On Call",
     description:
-      "We know how much you love your pet. There's no prediction for any mishaps. They are pet, they love to play, they love to eat whatever they want and they can get under the weather really easily. And if it's an emergency case then our team is there to assist you with the same. You can quickly give us a call or book a session with our vet doctor online.",
+      "We understand how much you love your furry friend. Accidents and illnesses can happen anytime pets love to play, explore, and eat things they shouldn’t, which sometimes makes them unwell. That’s why our team is always ready to help. In case of an emergency, you can easily call us or book an online session with our vet for quick assistance.",
   },
   {
     id: 5,
     title: "Pet Training",
     description:
-      "When you take your fluffy friend for the first time to your home, they are not very versed with norms and lifestyle. At Paws Friend pet care services we provide full fledged training to your dog such as greeting, answering nature's call, behaviour around new people etc. This is also one of the most important part of a pet adoption where you teach them to live a life according to a standard.",
+      "Bringing your furry friend home for the first time can be exciting, but they may not be familiar with household norms and lifestyle. At Paws Friend Pet Care Services, we provide complete training for your dog covering essentials like proper greetings, toilet habits, and good behaviour around new people. Training is a vital part of pet adoption, helping your pet adapt and learn to live happily and confidently in a well-structured routine.",
   },
   {
     id: 6,
     title: "Veterinary Services",
     description:
-      "With our at-home veterinary services, your pet's health is always in safe hands. From vaccinations to routine check-ups, our veterinary services are designed to offer convenience and peace of mind. Whether you need emergency assistance from a vet, you will receive professional healthcare advice to keep your furry friend happy and healthy.",
+      "Caring for your pet has never been easier. Our home-visit veterinary services ensure expert care without the stress of traveling. From preventive vaccinations to timely check-ups and urgent medical support, we bring trusted healthcare right to your doorstep keeping your beloved pet safe, healthy, and full of life.",
   },
 ];
 
@@ -60,19 +60,19 @@ const benefits = [
     icon: <Award className="w-8 h-8" />,
     title: "Professional Care",
     description:
-      "Household pet care providers are actually trained and professional team. Our team understands unique needs of different pets and are trained to handle any mishaps. With the professional help, you can be assured that your pet is in good hands while you take care of your errands.",
+      "Our in-home pet care team is not only compassionate but also highly trained to meet the unique needs of every pet. From managing daily routines to handling unexpected situations, our professionals ensure your furry friend receives the best possible care. With us by your side, you can focus on your day knowing your pet is safe, comfortable, and in expert hands.",
   },
   {
     icon: <Heart className="w-8 h-8" />,
     title: "Personalized Attention",
     description:
-      "The other benefits of hiring online pet care services is your pet gets personalized attention. What exactly does in home pet care sessions means that the pet sitter comes to pet owner's home to take care of the pet. This is how pet gets comfortable with pet sitter and stay familiar with environment.",
+      "One of the biggest advantages of in-home pet care is the personalized attention your pet receives. Instead of adjusting to a new place, the pet sitter visits your home and cares for your pet in their own familiar environment. This helps your pet feel safe, comfortable, and quickly build trust with the caregiver, reducing stress and ensuring they stay happy and relaxed.",
   },
   {
     icon: <Clock className="w-8 h-8" />,
     title: "Flexible Scheduling",
     description:
-      "Our Paws Friend Pet care home services are really flexible so if you have got any last minute urgent meeting or you have busy schedule, we are just a call away. Our professional team is always there to provide daily visits or overnight care or any of the schedule that suits you.",
+      "At Paws Friend Pet Care, we understand that life can be unpredictable. That’s why our services are designed to fit around your busy routine. Whether it’s a last-minute meeting, a long workday, or an urgent trip, our team is just a call away. From daily visits to overnight care, we adjust to the schedule that works best for you and your pet.",
   },
 ];
 
@@ -111,6 +111,17 @@ export default function PetCareInfo() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const confirmCall = (phoneNumber) => {
+    window.location.href = `tel:${phoneNumber}`
+  }
+
+  const confirmWhatsApp = (phoneNumber) => {
+    const message = "Hello, I would like to inquire about your pet care services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, "_blank")
+
+  }
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F2F2F2" }}>
       {/* Header Section */}
@@ -120,11 +131,8 @@ export default function PetCareInfo() {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Paws Friend Advanced Pet Care Services
             </h1>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              As discussed above, there are different procedures for different
-              pets. We at Paws Friend understand the needs and requirements of
-              your pet and help them accordingly. Our professional team takes
-              care of your little friend. So here is how we can help your pet:
+            <p className="text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Pets are not just animals they are a part of our family. Their comfort and health matter the most, and that is why we bring pet care directly to your home. From vet visits, vaccination, and grooming to basic care we make everything easy and stress-free for both pets and parents. Dogs, cats, or birds, every pet has unique needs, and our trained professionals understand how to care for them with love and patience. Choosing the right pet care means choosing happiness and safety for your furry and feathered friends.
             </p>
           </div>
 
@@ -148,6 +156,7 @@ export default function PetCareInfo() {
                     <Button
                       className="text-white font-semibold px-8 py-3"
                       style={{ backgroundColor: "#FF6B6B" }}
+                      onClick={() => confirmCall('+918800682777')}
                     >
                       <Phone className="w-4 h-4 mr-2" />
                       Vet On Call
@@ -198,11 +207,7 @@ export default function PetCareInfo() {
               Benefits Of In-House Pet Care Services
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              There are a lot of advantages of hiring in-house pet care services
-              as it really helps in behavioural issues. The other thing which is
-              important for your pet is pet&apos;s mental health and emotional
-              well being which is focused through household pet care sessions
-              companionship and playtime.
+              Choosing in-house pet care comes with many benefits for both you and your furry friend. It helps in reducing behavioural issues by providing a safe and familiar environment. These services also support your pet’s mental health and emotional well-being through personalized care, companionship, and engaging playtime right at home.
             </p>
           </div>
 
@@ -222,7 +227,7 @@ export default function PetCareInfo() {
                   <h3 className="text-xl font-bold text-gray-800 mb-4">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {benefit.description}
                   </p>
                 </CardContent>
@@ -251,6 +256,7 @@ export default function PetCareInfo() {
                   <Button
                     className="text-white font-semibold px-8 py-3"
                     style={{ backgroundColor: "#FF6B6B" }}
+                    onClick={() => confirmWhatsApp('+918800682777')}
                   >
                     Enquire Now
                   </Button>
