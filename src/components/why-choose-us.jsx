@@ -1,44 +1,53 @@
-"use client";
+"use client"
 
-import { Heart, Users, Dumbbell, GraduationCap } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Heart, Users, Dumbbell, GraduationCap, ChevronDown, ChevronUp } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react"
 
 const features = [
   {
     icon: Heart,
     title: "Wellness Approach",
     description:
-      "Comprehensive wellness approach to pet care, addressing physical health, mental stimulation, and emotional well-being",
+      "We focus on your pet's overall well-being keeping them physically healthy, mentally active, and emotionally happy with complete care and love.",
   },
   {
     icon: Users,
     title: "VIP Memberships",
     description:
-      "VIP membership programs with exclusive perks, such as priority booking, discounts, and access to members-only events",
+      "Enjoy special benefits with our VIP plan priority booking, exclusive discounts, and access to members-only events for you and your pet.",
   },
   {
     icon: Dumbbell,
     title: "Pet Fitness Programs",
     description:
-      "Fitness and exercise programs to keep pets active and healthy, showcasing a commitment to their physical well-being",
+      "We provide fun and safe fitness activities for your pets to keep them strong, active, and happy. Our programs are designed to improve their stamina, reduce health risks, and make sure they enjoy a healthy lifestyle every day. With regular exercise and playful workouts, we help your furry friends live longer, healthier, and more joyful lives.",
   },
   {
     icon: GraduationCap,
     title: "Pet Health Seminars",
     description:
-      "Educational seminars on pet health, nutrition, and general well-being, positioning your business as a trusted source of knowledge",
+      "Our seminars focus on pet health, nutrition, and overall well-being. These sessions are designed to guide pet parents with the right knowledge, from healthy diets to preventive care and lifestyle tips. By attending, you'll gain practical information to keep your pets safe, strong, and happy, while also building trust with experts who care about your furry friends as much as you do.",
   },
-];
+]
 
 export default function WhyChooseUs() {
+  const [expandedCard, setExpandedCard] = useState(null)
+
+  const toggleCard = (title) => {
+    if (expandedCard === title) {
+      setExpandedCard(null)
+    } else {
+      setExpandedCard(title)
+    }
+  }
+
   return (
     <section className="py-16 px-4 bg-[#F2F2F2]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Why Choose Us
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Why Choose Us</h2>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px bg-gray-400 w-16"></div>
             <div className="w-8 h-8 bg-[#FF6B6B] rounded-full flex items-center justify-center">
@@ -47,15 +56,14 @@ export default function WhyChooseUs() {
             <div className="h-px bg-gray-400 w-16"></div>
           </div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Discover what makes Paws Friend the perfect choice for your beloved
-            pet&apos;s care and well-being
+            Discover what makes Paws Friend the perfect choice for your beloved pet&apos;s care and well-being
           </p>
         </div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => {
-            const IconComponent = feature.icon;
+            const IconComponent = feature.icon
             return (
               <Card
                 key={index}
@@ -76,14 +84,32 @@ export default function WhyChooseUs() {
 
                   {/* Description */}
                   <p className="text-gray-600 leading-relaxed text-sm">
-                    {feature.description}
+                    {expandedCard === feature.title
+                      ? feature.description
+                      : feature.description.length > 100
+                        ? `${feature.description.substring(0, 100)}...`
+                        : feature.description}
                   </p>
+
+                  {feature.description.length > 100 && (
+                    <button
+                      onClick={() => toggleCard(feature.title)}
+                      className="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-[#FF6B6B] to-[#FF6B6B]/80 hover:from-[#FF6B6B]/90 hover:to-[#FF6B6B]/70 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
+                    >
+                      <span>{expandedCard === feature.title ? "Show Less" : "Learn More"}</span>
+                      {expandedCard === feature.title ? (
+                        <ChevronUp className="w-5 h-5" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5" />
+                      )}
+                    </button>
+                  )}
                 </CardContent>
               </Card>
-            );
+            )
           })}
         </div>
       </div>
     </section>
-  );
+  )
 }
