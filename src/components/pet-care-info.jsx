@@ -85,12 +85,12 @@ const faqs = [
   {
     question: "How To Ensure Safety Of Your Pet?",
     answer:
-      "Ensure your pet's safety by pet-proofing your home, keeping toxic substances away, providing proper identification tags, maintaining regular vet checkups, and supervising them during outdoor activities. Our trained professionals follow strict safety protocols during all services.",
+      "To ensure your pet’s safety, always keep them in a secure and clean environment, free from toxic plants, chemicals, or sharp objects. Use collars, ID tags, or microchips in case they get lost, and never leave them unattended outdoors. Provide proper training so they understand basic commands and avoid dangerous situations. Regular vet visits, vaccinations, and parasite control also protect their health. Most importantly, always supervise them during walks, play, and travel to keep them safe and happy.",
   },
   {
     question: "What Are The Pet Care Services Charges?",
     answer:
-      "Our pet care services are competitively priced starting from ₹799 for basic services. Pricing varies based on the type of service, duration, and specific requirements. We offer transparent pricing with no hidden costs. Contact us at +91 8800682777 for detailed pricing information.",
+      "Our pet care services are competitively priced starting from ₹499 for basic services. Pricing varies based on the type of service, duration, and specific requirements. We offer transparent pricing with no hidden costs. Contact us at +91 8800682777 for detailed pricing information.",
   },
   {
     question: "Do You Provide Emergency Pet Care Services?",
