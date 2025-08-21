@@ -24,7 +24,7 @@ A production-ready Next.js 14 + Tailwind CSS website for a professional pet care
 
 ### Design System
 
-- **Colors**: Primary Coral (#F25C5C), Soft Pink (#FFECEC), Sky Blue (#7BD8FF)
+- **Colors**: [#F05434] Coral (#F25C5C), Soft Pink (#FFECEC), Sky Blue (#7BD8FF)
 - **Fonts**: Poppins (headings), Open Sans (body) with font preloading
 - **Icons**: Lucide React icons with consistent styling
 - **Components**: Reusable UI components with Tailwind CSS
@@ -119,7 +119,7 @@ The project uses a custom color palette defined in `tailwind.config.js`:
 
 ```javascript
 colors: {
-  coral: "#F25C5C",      // Primary brand color
+  coral: "#F25C5C",      // [#F05434] brand color
   softPink: "#FFECEC",   // Soft pink accent
   skyBlue: "#7BD8FF",    // Sky blue accent
 }

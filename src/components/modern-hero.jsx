@@ -10,9 +10,9 @@ const ModernHero = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/30 via-[#F2F2F2]/50 to-[#F2F2F2]/50 md:from-[#F2F2F2]/50 md:via-[#F2F2F2]/60 md:to-[#F2F2F2]/60"></div>
 
           {/* Subtle floating elements - hidden on mobile */}
-          <div className="hidden md:block absolute top-20 left-20 w-64 h-64 bg-[#FF6B6B]/50 rounded-full blur-3xl"></div>
-          <div className="hidden md:block absolute top-40 right-32 w-80 h-80 bg-[#FF6B6B]/50 rounded-full blur-3xl"></div>
-          <div className="hidden md:block absolute bottom-32 left-40 w-72 h-72 bg-[#FF6B6B]/50 rounded-full blur-3xl"></div>
+          <div className="hidden md:block absolute top-20 left-20 w-64 h-64 bg-[#F05434]/50 rounded-full blur-3xl"></div>
+          <div className="hidden md:block absolute top-40 right-32 w-80 h-80 bg-[#F05434]/50 rounded-full blur-3xl"></div>
+          <div className="hidden md:block absolute bottom-32 left-40 w-72 h-72 bg-[#F05434]/50 rounded-full blur-3xl"></div>
         </div>
 
         {/* Main Content */}
@@ -21,7 +21,7 @@ const ModernHero = () => {
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8 lg:space-y-10 lg:pt-16">
               {/* Trust Badge */}
-              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-[#FF6B6B] text-white rounded-full text-xs sm:text-sm font-bold shadow-lg">
+              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-[#F05434] text-white rounded-full text-xs sm:text-sm font-bold shadow-lg">
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
 
                 <span className="whitespace-nowrap">Trusted by 10,000+ Pet Families</span>
@@ -46,11 +46,11 @@ const ModernHero = () => {
 
                 {/* Contact Section */}
                 <div className="space-y-4 sm:space-y-6">
-                  {/* Primary CTA */}
-                  <div className="group bg-[#FF6B6B] p-1 rounded-2xl shadow-xl">
+                  {/* [#F05434] CTA */}
+                  <div className="group bg-[#F05434] p-1 rounded-2xl shadow-xl">
                     <div className="bg-white text-gray-900 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 rounded-2xl flex items-center justify-between group-hover:bg-gray-50 transition-all duration-300">
                       <div className="flex items-center min-w-0 flex-1">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#FF6B6B] rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#F05434] rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
                           <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
                         <div className="min-w-0 flex-1">
@@ -60,7 +60,7 @@ const ModernHero = () => {
                           <p className="text-xs sm:text-sm text-gray-600">24/7 Emergency Available</p>
                         </div>
                       </div>
-                      <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[#FF6B6B] flex-shrink-0 ml-2" />
+                      <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[#F05434] flex-shrink-0 ml-2" />
                     </div>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const ModernHero = () => {
                     className="group bg-white border border-gray-200 shadow-lg p-3 sm:p-4 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105"
                   >
                     <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#FF6B6B] rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#F05434] rounded-xl flex items-center justify-center flex-shrink-0">
                         <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                       </div>
                       <span className="font-bold text-gray-900 text-sm">{feature.text}</span>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 export default function BookingProcess() {
-  const Router = useRouter()
+  const Router = useRouter();
   const steps = [
     {
       number: "01",
@@ -131,7 +131,7 @@ export default function BookingProcess() {
           <Button
             size="lg"
             className="text-white px-8 py-3 text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
-            style={{ backgroundColor: "#FF6B6B" }}
+            style={{ backgroundColor: "#F05434" }}
             onClick={() => Router.push("/contact")}
           >
             Start Booking Process

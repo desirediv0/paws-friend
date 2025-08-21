@@ -129,7 +129,7 @@ export default function VideoTestimonials() {
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3 sm:p-4 text-white">
                       <h3 className="font-semibold text-base sm:text-lg mb-1">{testimonial.name}</h3>
                       <p className="text-xs sm:text-sm text-gray-200 mb-1">{testimonial.location}</p>
-                      <p className="text-xs text-[#FF6B6B] font-medium">{testimonial.service}</p>
+                      <p className="text-xs text-[#F05434] font-medium">{testimonial.service}</p>
                     </div>
                   </div>
                 </div>

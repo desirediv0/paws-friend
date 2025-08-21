@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Why Choose Us</h2>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px bg-gray-400 w-16"></div>
-            <div className="w-8 h-8 bg-[#FF6B6B] rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-[#F05434] rounded-full flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-full"></div>
             </div>
             <div className="h-px bg-gray-400 w-16"></div>
@@ -72,13 +72,13 @@ export default function WhyChooseUs() {
                 <CardContent className="p-8 text-center">
                   {/* Icon */}
                   <div className="mb-6 flex justify-center">
-                    <div className="w-16 h-16 bg-[#FF6B6B] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-[#F05434] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-[#FF6B6B] transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-[#F05434] transition-colors duration-300">
                     {feature.title}
                   </h3>
 
@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
                   {feature.description.length > 100 && (
                     <button
                       onClick={() => toggleCard(feature.title)}
-                      className="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-[#FF6B6B] to-[#FF6B6B]/80 hover:from-[#FF6B6B]/90 hover:to-[#FF6B6B]/70 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
+                      className="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-[#F05434] to-[#F05434]/80 hover:from-[#F05434]/90 hover:to-[#F05434]/70 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
                     >
                       <span>{expandedCard === feature.title ? "Show Less" : "Learn More"}</span>
                       {expandedCard === feature.title ? (

@@ -83,8 +83,8 @@ export default function HeroBanner({
                 className="px-12 py-6 text-xl font-bold text-white border-2 border-white hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
                 style={{
                   background:
-                    "linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%)",
-                  boxShadow: "0 20px 40px rgba(255, 107, 107, 0.3)",
+                    "linear-gradient(135deg, #F05434 0%, #FF8E8E 100%)",
+                  boxShadow: "0 20px 40px rgba(240, 84, 52, 0.3)",
                 }}
                 onClick={handleBookNow}
               >

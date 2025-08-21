@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { FaClock, FaUserMd, FaCheckCircle, FaTimes, FaWhatsapp, FaHeart, FaPaw } from "react-icons/fa"
-import { MdPets, MdVideoCall } from "react-icons/md"
+import { MdPets } from "react-icons/md"
 
 const VetConsultation = () => {
     const [isVisible, setIsVisible] = useState(true)
@@ -47,7 +47,7 @@ const VetConsultation = () => {
                         {/* Close Button */}
                         <button
                             onClick={handleClose}
-                            className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 rounded-full bg-secondary border border-border text-muted-foreground hover:text-primary hover:bg-primary/10 hover:scale-125 transition-all duration-300 ease-bounce active:scale-95 transform-gpu will-change-transform z-10"
+                            className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 rounded-full bg-secondary border border-border text-muted-foreground hover:text-[#F05434] hover:bg-[#F05434]/10 hover:scale-125 transition-all duration-300 ease-bounce active:scale-95 transform-gpu will-change-transform z-10"
                         >
                             <FaTimes className="w-5 h-5" />
                         </button>
@@ -58,16 +58,16 @@ const VetConsultation = () => {
                                 {/* Header */}
                                 <div className="space-y-2 sm:space-y-3">
                                     <div className="flex items-center space-x-2 sm:space-x-3">
-                                        <div className="p-2 sm:p-3 bg-primary/10 rounded-full">
-                                            <MdPets className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                                        <div className="p-2 sm:p-3 bg-[#F05434]/10 rounded-full">
+                                            <MdPets className="w-5 h-5 sm:w-6 sm:h-6 text-[#F05434]" />
                                         </div>
-                                        <span className="text-primary font-bold text-xs sm:text-sm uppercase tracking-wider">
+                                        <span className="text-[#F05434] font-bold text-xs sm:text-sm uppercase tracking-wider">
                                             🐾 Paws Friend
                                         </span>
                                     </div>
                                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-tight">
                                         Free Online Vet
-                                        <span className="block text-primary">Consultation</span>
+                                        <span className="block text-[#F05434]">Consultation</span>
                                     </h2>
                                     <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                                         Get expert veterinary advice for your beloved pet from the comfort of your home. Our certified vets
@@ -78,21 +78,21 @@ const VetConsultation = () => {
                                 {/* Features */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                                     <div className="flex items-center space-x-2 sm:space-x-3">
-                                        <FaClock className="w-4 h-4 text-primary flex-shrink-0" />
+                                        <FaClock className="w-4 h-4 text-[#F05434] flex-shrink-0" />
                                         <span className="text-foreground text-xs sm:text-sm font-medium">24/7 Availability</span>
                                     </div>
 
                                     <div className="flex items-center space-x-2 sm:space-x-3">
-                                        <FaUserMd className="w-4 h-4 text-primary flex-shrink-0" />
+                                        <FaUserMd className="w-4 h-4 text-[#F05434] flex-shrink-0" />
                                         <span className="text-foreground text-xs sm:text-sm font-medium">Expert Veterinarians</span>
                                     </div>
                                     <div className="flex items-center space-x-2 sm:space-x-3">
-                                        <FaCheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                                        <FaCheckCircle className="w-4 h-4 text-[#F05434] flex-shrink-0" />
                                         <span className="text-foreground text-xs sm:text-sm font-medium">Instant Connection</span>
                                     </div>
 
                                     <div className="flex items-center space-x-2 sm:space-x-3">
-                                        <FaPaw className="w-4 h-4 text-primary flex-shrink-0" />
+                                        <FaPaw className="w-4 h-4 text-[#F05434] flex-shrink-0" />
                                         <span className="text-foreground text-xs sm:text-sm font-medium">Pet Care Specialists</span>
                                     </div>
                                 </div>
@@ -125,17 +125,17 @@ const VetConsultation = () => {
                                         height={500}
                                     />
                                     {/* Trust badge overlay */}
-                                    <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                                    <div className="absolute top-4 right-4 bg-[#F05434] text-[#F05434]-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                                         Certified Vets
                                     </div>
                                 </div>
 
                                 {/* Floating Elements */}
-                                <div className="absolute top-4 left-4 w-8 h-8 sm:w-12 sm:h-12 bg-primary/20 rounded-full animate-bounce flex items-center justify-center">
-                                    <FaPaw className="w-4 h-4 text-primary" />
+                                <div className="absolute top-4 left-4 w-8 h-8 sm:w-12 sm:h-12 bg-[#F05434]/20 rounded-full animate-bounce flex items-center justify-center">
+                                    <FaPaw className="w-4 h-4 text-[#F05434]" />
                                 </div>
-                                <div className="absolute bottom-8 right-4 w-6 h-6 sm:w-10 sm:h-10 bg-primary/20 rounded-full animate-bounce delay-500 flex items-center justify-center">
-                                    <FaHeart className="w-3 h-3 text-primary" />
+                                <div className="absolute bottom-8 right-4 w-6 h-6 sm:w-10 sm:h-10 bg-[#F05434]/20 rounded-full animate-bounce delay-500 flex items-center justify-center">
+                                    <FaHeart className="w-3 h-3 text-[#F05434]" />
                                 </div>
                             </div>
                         </div>

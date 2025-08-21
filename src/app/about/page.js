@@ -22,7 +22,7 @@ export default function AboutPage() {
               <CardContent className="p-6 sm:p-8 text-center">
                 <div
                   className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#FF6B6B" }}
+                  style={{ backgroundColor: "#F05434" }}
                 >
                   <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
               <CardContent className="p-6 sm:p-8 text-center">
                 <div
                   className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#FF6B6B" }}
+                  style={{ backgroundColor: "#F05434" }}
                 >
                   <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
               <CardContent className="p-6 sm:p-8 text-center">
                 <div
                   className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#FF6B6B" }}
+                  style={{ backgroundColor: "#F05434" }}
                 >
                   <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div
                       className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: "#FF6B6B" }}
+                      style={{ backgroundColor: "#F05434" }}
                     ></div>
                     <span className="text-sm sm:text-base text-gray-600">
                       <strong>Love:</strong> We care for every pet
@@ -81,7 +81,7 @@ export default function AboutPage() {
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div
                       className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: "#FF6B6B" }}
+                      style={{ backgroundColor: "#F05434" }}
                     ></div>
                     <span className="text-sm sm:text-base text-gray-600">
                       <strong>Knowledge:</strong> Expert pet care
@@ -90,7 +90,7 @@ export default function AboutPage() {
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div
                       className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: "#FF6B6B" }}
+                      style={{ backgroundColor: "#F05434" }}
                     ></div>
                     <span className="text-sm sm:text-base text-gray-600">
                       <strong>Trust:</strong> Always doing what&apos;s best
@@ -99,7 +99,7 @@ export default function AboutPage() {
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div
                       className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: "#FF6B6B" }}
+                      style={{ backgroundColor: "#F05434" }}
                     ></div>
                     <span className="text-sm sm:text-base text-gray-600">
                       <strong>Health:</strong> Optimal pet wellness
@@ -108,7 +108,7 @@ export default function AboutPage() {
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div
                       className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: "#FF6B6B" }}
+                      style={{ backgroundColor: "#F05434" }}
                     ></div>
                     <span className="text-sm sm:text-base text-gray-600">
                       <strong>Family:</strong> Pets are family
@@ -150,7 +150,7 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Activity
                       className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
-                      style={{ color: "#FF6B6B" }}
+                      style={{ color: "#F05434" }}
                     />
                     <p className="text-sm sm:text-base text-gray-600">
                       Regular walks and playtime to keep dogs physically active
@@ -160,7 +160,7 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Activity
                       className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
-                      style={{ color: "#FF6B6B" }}
+                      style={{ color: "#F05434" }}
                     />
                     <p className="text-sm sm:text-base text-gray-600">
                       Balanced and nutritious diet tailored to individual needs
@@ -170,7 +170,7 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Activity
                       className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
-                      style={{ color: "#FF6B6B" }}
+                      style={{ color: "#F05434" }}
                     />
                     <p className="text-sm sm:text-base text-gray-600">
                       Regular health check-ups and vaccination schedules
@@ -201,7 +201,7 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Activity
                       className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
-                      style={{ color: "#FF6B6B" }}
+                      style={{ color: "#F05434" }}
                     />
                     <p className="text-sm sm:text-base text-gray-600">
                       Balanced nutrition with special dietary considerations for
@@ -211,7 +211,7 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Activity
                       className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
-                      style={{ color: "#FF6B6B" }}
+                      style={{ color: "#F05434" }}
                     />
                     <p className="text-sm sm:text-base text-gray-600">
                       Clean and comfortable environment with engaging playtime
@@ -221,7 +221,7 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Activity
                       className="w-4 h-4 sm:w-5 sm:h-5 mt-1 flex-shrink-0"
-                      style={{ color: "#FF6B6B" }}
+                      style={{ color: "#F05434" }}
                     />
                     <p className="text-sm sm:text-base text-gray-600">
                       Regular brushing to prevent matting and reduce shedding

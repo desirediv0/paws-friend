@@ -7,12 +7,14 @@ import {
 } from "./ui/carousel";
 import Image from "next/image";
 import { desktop1, desktop2, mobile1, mobile2 } from "@/assets";
+import { useRouter } from "next/navigation";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [api, setApi] = useState(null);
   const [autoplay, setAutoplay] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter()
 
   const slides = [
     {
@@ -76,8 +78,10 @@ const HeroCarousel = () => {
         >
           <CarouselContent className="h-full">
             {slides.map((slide, index) => (
-              <CarouselItem key={index} className="h-full p-0">
-                <div className="relative h-[520px] sm:h-[420px] md:h-[320px] lg:h-[320px] xl:h-[360px] w-full overflow-hidden rounded-xl">
+              <CarouselItem key={index}
+                onClick={() => router.push(`/contact`)}
+                className="h-full p-0 cursor-pointer">
+                <div className="relative h-[520px] sm:h-[420px] md:h-[320px] lg:h-[320px] xl:h-[360px] w-full overflow-hidden">
                   {/* Background Image */}
                   <Image
                     src={isMobile ? slide.smimg : slide.img}

@@ -124,11 +124,10 @@ const Form = () => {
     <>
       {submitMessage && (
         <div
-          className={`mb-6 p-4 rounded-xl text-center ${
-            submitSuccess
+          className={`mb-6 p-4 rounded-xl text-center ${submitSuccess
               ? "bg-green-50 text-green-800 border border-green-200"
               : "bg-red-50 text-red-800 border border-red-200"
-          }`}
+            }`}
         >
           {submitMessage}
         </div>
@@ -155,14 +154,13 @@ const Form = () => {
                 />
                 <label
                   htmlFor={`${uniqueId}-${pet.value}`}
-                  className={`group flex flex-col items-center p-3 sm:p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105 relative ${
-                    formData.petType === pet.value
-                      ? "border-[#FF6B6B] bg-[#FF6B6B]/20 shadow-lg ring-2 ring-[#FF6B6B]/30"
+                  className={`group flex flex-col items-center p-3 sm:p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105 relative ${formData.petType === pet.value
+                      ? "border-[#F05434] bg-[#F05434]/20 shadow-lg ring-2 ring-[#F05434]/30"
                       : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   {formData.petType === pet.value && (
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#FF6B6B] rounded-full flex items-center justify-center shadow-lg ">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#F05434] rounded-full flex items-center justify-center shadow-lg ">
                       <svg
                         className="w-3 h-3 text-white"
                         fill="currentColor"
@@ -190,11 +188,10 @@ const Form = () => {
                     )}
                   </span>
                   <span
-                    className={`text-xs sm:text-sm font-bold text-center transition-colors duration-300 ${
-                      formData.petType === pet.value
-                        ? "text-[#FF6B6B]"
+                    className={`text-xs sm:text-sm font-bold text-center transition-colors duration-300 ${formData.petType === pet.value
+                        ? "text-[#F05434]"
                         : "text-gray-900"
-                    }`}
+                      }`}
                   >
                     {pet.label}
                   </span>
@@ -215,7 +212,7 @@ const Form = () => {
             onChange={(e) =>
               setFormData({ ...formData, service: e.target.value })
             }
-            className="w-full bg-white border border-gray-300 text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+            className="w-full bg-white border border-gray-300 text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent"
           >
             <option value="">-- Select Your Service --</option>
             {services.map((service) => (
@@ -240,7 +237,7 @@ const Form = () => {
               id={`${uniqueId}-petName`}
               type="text"
               required
-              className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent text-sm sm:text-base"
+              className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
               placeholder="Your pet's name"
               value={formData.petName}
               onChange={(e) =>
@@ -258,7 +255,7 @@ const Form = () => {
                 id={`${uniqueId}-ownerName`}
                 type="text"
                 required
-                className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent text-sm sm:text-base"
+                className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
                 placeholder="Your full name"
                 value={formData.ownerName}
                 onChange={(e) =>
@@ -282,7 +279,7 @@ const Form = () => {
               id={`${uniqueId}-email`}
               type="email"
               required
-              className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent text-sm sm:text-base"
+              className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
               placeholder="your.email@example.com"
               value={formData.email}
               onChange={(e) =>
@@ -303,7 +300,7 @@ const Form = () => {
               id={`${uniqueId}-phone`}
               type="tel"
               required
-              className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent text-sm sm:text-base"
+              className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
               placeholder="+91 98765 43210"
               value={formData.phone}
               onChange={(e) =>
@@ -325,7 +322,7 @@ const Form = () => {
                 id={`${uniqueId}-date`}
                 type="date"
                 required
-                className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 rounded-xl focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent text-sm sm:text-base"
+                className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
                 value={formData.appointmentDate}
                 onChange={(e) =>
                   setFormData({ ...formData, appointmentDate: e.target.value })
@@ -342,7 +339,7 @@ const Form = () => {
               onChange={(e) =>
                 setFormData({ ...formData, appointmentTime: e.target.value })
               }
-              className="w-full bg-white border border-gray-300 text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+              className="w-full bg-white border border-gray-300 text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent"
             >
               <option value="">Select time</option>
               {timeSlots.map((time) => (
@@ -366,7 +363,7 @@ const Form = () => {
           <Textarea
             id={`${uniqueId}-message`}
             rows={3}
-            className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl resize-none focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent text-sm sm:text-base"
+            className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl resize-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
             placeholder="Tell us about any specific concerns or requirements..."
             value={formData.notes}
             onChange={(e) =>
@@ -379,7 +376,7 @@ const Form = () => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="group w-full bg-[#FF6B6B] hover:bg-[#FF5252] disabled:bg-gray-400 text-white rounded-2xl py-4 sm:py-6 text-base sm:text-lg font-black shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] border-0 disabled:cursor-not-allowed disabled:transform-none"
+          className="group w-full bg-[#F05434] hover:bg-[#FF5252] disabled:bg-gray-400 text-white rounded-2xl py-4 sm:py-6 text-base sm:text-lg font-black shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] border-0 disabled:cursor-not-allowed disabled:transform-none"
         >
           <div className="flex items-center justify-center">
             <Heart className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
@@ -393,7 +390,7 @@ const Form = () => {
         {/* Trust Badge */}
         <div className="text-center pt-3 sm:pt-4">
           <p className="text-xs sm:text-sm text-gray-600 flex items-center justify-center">
-            <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-[#FF6B6B]" />
+            <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-[#F05434]" />
             Your information is 100% secure & confidential
           </p>
         </div>

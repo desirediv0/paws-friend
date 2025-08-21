@@ -28,8 +28,8 @@ const Footer = () => {
     <footer className="bg-[#F2F2F2] text-gray-900 relative overflow-hidden">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-24 h-24 bg-[#FF6B6B] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-20 h-20 bg-[#FF6B6B] rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-24 h-24 bg-[#F05434] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-20 h-20 bg-[#F05434] rounded-full blur-3xl"></div>
       </div>
 
       {/* Main Footer Content */}

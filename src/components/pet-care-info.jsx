@@ -154,8 +154,8 @@ export default function PetCareInfo() {
                   </div>
                   <div className="flex items-center gap-4">
                     <Button
-                      className="text-white font-semibold px-8 py-3"
-                      style={{ backgroundColor: "#FF6B6B" }}
+                      className="text-white font-semibold px-8 py-3 bg-[#F05434]"
+
                       onClick={() => confirmCall('+918800682777')}
                     >
                       <Phone className="w-4 h-4 mr-2" />
@@ -181,7 +181,7 @@ export default function PetCareInfo() {
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
-                      style={{ backgroundColor: "#FF6B6B" }}
+                      style={{ backgroundColor: "#F05434" }}
                     >
                       {service.id}
                     </div>
@@ -220,7 +220,7 @@ export default function PetCareInfo() {
                 <CardContent className="p-8 text-center">
                   <div
                     className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white"
-                    style={{ backgroundColor: "#FF6B6B" }}
+                    style={{ backgroundColor: "#F05434" }}
                   >
                     {benefit.icon}
                   </div>
@@ -255,7 +255,7 @@ export default function PetCareInfo() {
                 <div className="flex items-center gap-4">
                   <Button
                     className="text-white font-semibold px-8 py-3"
-                    style={{ backgroundColor: "#FF6B6B" }}
+                    style={{ backgroundColor: "#F05434" }}
                     onClick={() => confirmWhatsApp('+918800682777')}
                   >
                     Enquire Now
@@ -287,7 +287,7 @@ export default function PetCareInfo() {
                 <div className="flex items-start gap-4">
                   <div
                     className="w-6 h-6 rounded-full flex items-center justify-center mt-1 flex-shrink-0"
-                    style={{ backgroundColor: "#FF6B6B" }}
+                    style={{ backgroundColor: "#F05434" }}
                   >
                     <Users className="w-3 h-3 text-white" />
                   </div>
@@ -300,7 +300,7 @@ export default function PetCareInfo() {
                 <div className="flex items-start gap-4">
                   <div
                     className="w-6 h-6 rounded-full flex items-center justify-center mt-1 flex-shrink-0"
-                    style={{ backgroundColor: "#FF6B6B" }}
+                    style={{ backgroundColor: "#F05434" }}
                   >
                     <Phone className="w-3 h-3 text-white" />
                   </div>
@@ -360,7 +360,7 @@ export default function PetCareInfo() {
                     <div className="px-6 pb-6">
                       <div
                         className="h-1 w-16 mb-4 rounded"
-                        style={{ backgroundColor: "#FF6B6B" }}
+                        style={{ backgroundColor: "#F05434" }}
                       ></div>
                       <p className="text-gray-600 leading-relaxed">
                         {faq.answer}

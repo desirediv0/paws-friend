@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Phone, Heart, Star, Sparkles, X, Menu } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Phone, Heart, Star, Sparkles, X, Menu } from "lucide-react";
 import {
   dogtrainer,
   groomedtowel,
@@ -13,8 +13,8 @@ import {
   petboarding,
   surgerysetup,
   vetexam,
-} from "@/assets"
-import Image from "next/image"
+} from "@/assets";
+import Image from "next/image";
 
 const services = [
   {
@@ -133,11 +133,11 @@ const services = [
     ],
     image: homevaccination,
   },
-]
+];
 
 export default function PetServices() {
-  const [activeService, setActiveService] = useState(services[0])
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeService, setActiveService] = useState(services[0]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -145,32 +145,43 @@ export default function PetServices() {
         {/* Header */}
         <div className="text-center mb-8 lg:mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#FF6B6B]" />
-            <h1 className="text-2xl lg:text-4xl font-bold text-gray-800">Paws Friend</h1>
-            <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#FF6B6B]" />
+            <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#F05434]" />
+            <h1 className="text-2xl lg:text-4xl font-bold text-gray-800">
+              Paws Friend
+            </h1>
+            <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#F05434]" />
           </div>
           <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-            Premium pet care services delivered to your doorstep with love and expertise
+            Premium pet care services delivered to your doorstep with love and
+            expertise
           </p>
         </div>
 
         <div className="lg:hidden mb-6">
           <Button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="w-full bg-[#FF6B6B] hover:bg-[#FF6B6B]/90 text-white"
+            className="w-full bg-[#F05434] hover:bg-[#F05434]/90 text-white"
           >
-            {isMobileMenuOpen ? <X className="w-4 h-4 mr-2" /> : <Menu className="w-4 h-4 mr-2" />}
+            {isMobileMenuOpen ? (
+              <X className="w-4 h-4 mr-2" />
+            ) : (
+              <Menu className="w-4 h-4 mr-2" />
+            )}
             {isMobileMenuOpen ? "Close Services" : "Browse Services"}
           </Button>
         </div>
 
         <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
           {/* Services Sidebar */}
-          <div className={`lg:col-span-1 ${isMobileMenuOpen ? "block" : "hidden lg:block"}`}>
+          <div
+            className={`lg:col-span-1 ${
+              isMobileMenuOpen ? "block" : "hidden lg:block"
+            }`}
+          >
             <Card className="lg:sticky lg:top-8 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-4 lg:p-6">
                 <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4 lg:mb-6 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-[#FF6B6B]" />
+                  <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-[#F05434]" />
                   Our Services
                 </h2>
                 <div className="space-y-2">
@@ -178,21 +189,30 @@ export default function PetServices() {
                     <button
                       key={service.id}
                       onClick={() => {
-                        setActiveService(service)
-                        setIsMobileMenuOpen(false)
+                        setActiveService(service);
+                        setIsMobileMenuOpen(false);
                       }}
-                      className={`w-full text-left p-3 lg:p-4 rounded-lg transition-all duration-300 hover:shadow-md ${activeService.id === service.id
+                      className={`w-full text-left p-3 lg:p-4 rounded-lg transition-all duration-300 hover:shadow-md ${
+                        activeService.id === service.id
                           ? "text-white shadow-lg transform scale-105"
                           : "text-gray-700 hover:bg-white/50"
-                        }`}
+                      }`}
                       style={{
-                        backgroundColor: activeService.id === service.id ? "#FF6B6B" : "transparent",
+                        backgroundColor:
+                          activeService.id === service.id
+                            ? "#F05434"
+                            : "transparent",
                       }}
                     >
-                      <div className="font-semibold text-sm leading-tight">{service.title}</div>
+                      <div className="font-semibold text-sm leading-tight">
+                        {service.title}
+                      </div>
                       <div
-                        className={`text-xs mt-1 ${activeService.id === service.id ? "text-white/80" : "text-gray-500"
-                          }`}
+                        className={`text-xs mt-1 ${
+                          activeService.id === service.id
+                            ? "text-white/80"
+                            : "text-gray-500"
+                        }`}
                       >
                         Starting @ only {service.price}
                       </div>
@@ -212,16 +232,20 @@ export default function PetServices() {
                   <CardContent className="p-6 lg:p-8">
                     <div className="flex items-start justify-between mb-6">
                       <div>
-                        <h3 className="text-xl lg:text-2xl font-bold text-gray-800 mb-2">{activeService.title}</h3>
+                        <h3 className="text-xl lg:text-2xl font-bold text-gray-800 mb-2">
+                          {activeService.title}
+                        </h3>
                         <div className="flex items-center gap-3 flex-wrap">
-                          <span className="text-2xl lg:text-3xl font-bold text-[#FF6B6B]">{activeService.price}</span>
+                          <span className="text-2xl lg:text-3xl font-bold text-[#F05434]">
+                            {activeService.price}
+                          </span>
                           {activeService.originalPrice && (
                             <span className="text-base lg:text-lg text-gray-500 line-through">
                               {activeService.originalPrice}
                             </span>
                           )}
                           {activeService.discount && (
-                            <Badge className="bg-[#FF6B6B] text-white hover:bg-[#FF6B6B]/90 text-xs">
+                            <Badge className="bg-[#F05434] text-white hover:bg-[#F05434]/90 text-xs">
                               {activeService.discount}
                             </Badge>
                           )}
@@ -235,12 +259,16 @@ export default function PetServices() {
                     </p>
 
                     <div className="mb-6 lg:mb-8">
-                      <h4 className="font-semibold text-gray-800 mb-3">Our Services Include:</h4>
+                      <h4 className="font-semibold text-gray-800 mb-3">
+                        Our Services Include:
+                      </h4>
                       <div className="grid grid-cols-1 gap-2">
                         {activeService.features.map((feature, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-[#FF6B6B] flex-shrink-0"></div>
-                            <span className="text-sm text-gray-600">{feature}</span>
+                            <div className="w-2 h-2 rounded-full bg-[#F05434] flex-shrink-0"></div>
+                            <span className="text-sm text-gray-600">
+                              {feature}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -249,22 +277,22 @@ export default function PetServices() {
                     <div className="space-y-3">
                       <Button
                         className="w-full text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105"
-                        style={{ backgroundColor: "#FF6B6B" }}
+                        style={{ backgroundColor: "#F05434" }}
                         onClick={() => {
                           const message = encodeURIComponent(
-                            `Hi Paws Friend! I want to book ${activeService.title} (${activeService.price}). Please provide more details and confirm my booking.`,
-                          )
-                          const whatsappUrl = `https://wa.me/918800682777?text=${message}`
-                          window.open(whatsappUrl, "_blank")
+                            `Hi Paws Friend! I want to book ${activeService.title} (${activeService.price}). Please provide more details and confirm my booking.`
+                          );
+                          const whatsappUrl = `https://wa.me/918800682777?text=${message}`;
+                          window.open(whatsappUrl, "_blank");
                         }}
                       >
                         Book Now
                       </Button>
                       <Button
                         variant="outline"
-                        className="w-full border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white transition-all duration-300 bg-transparent"
+                        className="w-full border-[#F05434] text-[#F05434] hover:bg-[#F05434] hover:text-white transition-all duration-300 bg-transparent"
                         onClick={() => {
-                          window.location.href = "tel:+918800682777"
+                          window.location.href = "tel:+918800682777";
                         }}
                       >
                         <Phone className="w-4 h-4 mr-2" />
@@ -288,29 +316,43 @@ export default function PetServices() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="bg-white/95 backdrop-blur-sm rounded-lg p-3 lg:p-4">
-                          <h4 className="font-bold text-gray-800 mb-1 text-sm lg:text-base">Professional Care</h4>
+                          <h4 className="font-bold text-gray-800 mb-1 text-sm lg:text-base">
+                            Professional Care
+                          </h4>
                           <p className="text-xs lg:text-sm text-gray-600">
                             Trusted by thousands of pet parents across the city
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="shadow-xl border-0" style={{ backgroundColor: "#FF6B6B" }}>
+                    <div
+                      className="shadow-xl border-0"
+                      style={{ backgroundColor: "#F05434" }}
+                    >
                       <div className="p-4 lg:p-6">
                         <div className="text-center text-white">
-                          <h3 className="text-xl lg:text-2xl font-bold mb-2">Ready to Book?</h3>
+                          <h3 className="text-xl lg:text-2xl font-bold mb-2">
+                            Ready to Book?
+                          </h3>
                           <p className="mb-4 text-white/90 text-sm lg:text-base">
-                            Contact us now for the best pet care services in your city
+                            Contact us now for the best pet care services in
+                            your city
                           </p>
                           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <div className="flex items-center gap-2">
                               <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
-                              <span className="font-semibold text-sm lg:text-base">+91 8800682777</span>
+                              <span className="font-semibold text-sm lg:text-base">
+                                +91 8800682777
+                              </span>
                             </div>
-                            <div className="hidden sm:block text-white/50">|</div>
+                            <div className="hidden sm:block text-white/50">
+                              |
+                            </div>
                             <div className="flex items-center gap-2">
                               <Heart className="w-4 h-4 lg:w-5 lg:h-5" />
-                              <span className="text-sm lg:text-base">Available 24/7</span>
+                              <span className="text-sm lg:text-base">
+                                Available 24/7
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -324,5 +366,5 @@ export default function PetServices() {
         </div>
       </div>
     </div>
-  )
+  );
 }

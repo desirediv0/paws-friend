@@ -92,7 +92,7 @@ export async function POST(request) {
             padding: 20px;
           }
           .header {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            background: linear-gradient(135deg, #F05434, #FF8E8E);
             color: white;
             padding: 30px;
             text-align: center;
@@ -108,20 +108,20 @@ export async function POST(request) {
           }
           .field-label {
             font-weight: bold;
-            color: #FF6B6B;
+            color: #F05434;
             margin-bottom: 5px;
           }
           .field-value {
             background: white;
             padding: 15px;
             border-radius: 5px;
-            border-left: 4px solid #FF6B6B;
+            border-left: 4px solid #F05434;
           }
           .appointment-details {
             background: #fff5f5;
             padding: 20px;
             border-radius: 8px;
-            border: 2px solid #FF6B6B;
+            border: 2px solid #F05434;
             margin: 20px 0;
           }
           .footer {
@@ -142,7 +142,7 @@ export async function POST(request) {
         
         <div class="content">
           <div class="appointment-details">
-            <h3 style="color: #FF6B6B; margin-top: 0;">📅 Appointment Details</h3>
+            <h3 style="color: #F05434; margin-top: 0;">📅 Appointment Details</h3>
             <p><strong>Date:</strong> ${appointmentDate}</p>
             <p><strong>Time:</strong> ${appointmentTime}</p>
             <p><strong>Service:</strong> ${service}</p>
@@ -240,7 +240,7 @@ export async function POST(request) {
             padding: 20px;
           }
           .header {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            background: linear-gradient(135deg, #F05434, #FF8E8E);
             color: white;
             padding: 30px;
             text-align: center;
@@ -255,7 +255,7 @@ export async function POST(request) {
             background: #fff5f5;
             padding: 25px;
             border-radius: 8px;
-            border: 2px solid #FF6B6B;
+            border: 2px solid #F05434;
             margin: 20px 0;
             text-align: center;
           }
@@ -272,7 +272,7 @@ export async function POST(request) {
           <p>Thank you for booking an appointment with Paws Friend! We're excited to take care of ${petName}.</p>
           
           <div class="appointment-card">
-            <h3 style="color: #FF6B6B; margin-top: 0;">Your Appointment Details</h3>
+            <h3 style="color: #F05434; margin-top: 0;">Your Appointment Details</h3>
             <p><strong>Pet:</strong> ${petName}</p>
             <p><strong>Service:</strong> ${service}</p>
             <p><strong>Date:</strong> ${appointmentDate}</p>

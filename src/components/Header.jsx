@@ -62,7 +62,7 @@ const Header = () => {
     <>
       <header
         className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 rounded-full ${isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-xl border border-[#FF6B6B]/10"
+          ? "bg-white/95 backdrop-blur-xl shadow-xl border border-[#F05434]/10"
           : "bg-white/90 backdrop-blur-sm shadow-lg"
           }`}
         style={{
@@ -95,13 +95,13 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className={`relative px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 group ${isActive(item.href)
-                    ? "text-white bg-[#FF6B6B] shadow-lg shadow-[#FF6B6B]/25"
-                    : "text-gray-700 hover:text-[#FF6B6B] hover:bg-[#FF6B6B]/5"
+                    ? "text-white bg-[#F05434] shadow-lg shadow-[#F05434]/25"
+                    : "text-gray-700 hover:text-[#F05434] hover:bg-[#F05434]/5"
                     }`}
                 >
                   {item.name}
                   {!isActive(item.href) && (
-                    <div className="absolute inset-0 rounded-xl bg-[#FF6B6B]/10 opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10"></div>
+                    <div className="absolute inset-0 rounded-xl bg-[#F05434]/10 opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10"></div>
                   )}
                 </Link>
               ))}
@@ -110,9 +110,9 @@ const Header = () => {
             {/* Right Side - Contact Info + CTA */}
             <div className="hidden lg:flex items-center space-x-6">
               {/* Emergency Contact */}
-              <div className="flex items-center space-x-3 text-gray-600 hover:text-[#FF6B6B] transition-all duration-300 cursor-pointer group">
-                <div className="w-12 h-12 bg-[#FF6B6B]/10 rounded-xl flex items-center justify-center group-hover:bg-[#FF6B6B]/20 transition-all duration-300">
-                  <Phone className="w-5 h-5 text-[#FF6B6B]" />
+              <div className="flex items-center space-x-3 text-gray-600 hover:text-[#F05434] transition-all duration-300 cursor-pointer group">
+                <div className="w-12 h-12 bg-[#F05434]/10 rounded-xl flex items-center justify-center group-hover:bg-[#F05434]/20 transition-all duration-300">
+                  <Phone className="w-5 h-5 text-[#F05434]" />
                 </div>
                 <div className="hidden xl:block">
                   <p className="text-sm font-semibold text-gray-900">
@@ -125,7 +125,7 @@ const Header = () => {
               {/* Book Appointment Button */}
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] hover:from-[#FF5252] hover:to-[#FF6B6B] text-white rounded-xl px-8 py-3 text-sm font-bold shadow-lg shadow-[#FF6B6B]/25 hover:shadow-xl hover:shadow-[#FF6B6B]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5">
+                  <Button className="bg-gradient-to-r from-[#F05434] to-[#F05434] hover:from-[#FF5252] hover:to-[#F05434] text-white rounded-xl px-8 py-3 text-sm font-bold shadow-lg shadow-[#F05434]/25 hover:shadow-xl hover:shadow-[#F05434]/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5">
                     <Heart className="w-4 h-4 mr-2" />
                     Book Appointment
                   </Button>
@@ -141,9 +141,9 @@ const Header = () => {
             <div className="lg:hidden">
               <button
                 onClick={toggleMenu}
-                className="w-12 h-12 bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-105"
+                className="w-12 h-12 bg-[#F05434]/10 hover:bg-[#F05434]/20 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-105"
               >
-                <Menu className="w-6 h-6 text-[#FF6B6B]" />
+                <Menu className="w-6 h-6 text-[#F05434]" />
               </button>
             </div>
           </div>
@@ -155,13 +155,13 @@ const Header = () => {
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 lg:hidden mobile-menu">
           <div className="flex justify-end items-start pt-4 px-4">
             <div
-              className={`bg-white rounded-3xl w-full max-w-sm shadow-2xl border border-[#FF6B6B]/10 transform transition-all duration-500 ease-out ${isMenuOpen
+              className={`bg-white rounded-3xl w-full max-w-sm shadow-2xl border border-[#F05434]/10 transform transition-all duration-500 ease-out ${isMenuOpen
                 ? "translate-x-0 opacity-100 scale-100"
                 : "translate-x-full opacity-0 scale-95"
                 }`}
             >
               {/* Mobile Menu Header */}
-              <div className="flex justify-between items-center p-6 pb-4 border-b border-[#FF6B6B]/10">
+              <div className="flex justify-between items-center p-6 pb-4 border-b border-[#F05434]/10">
                 <div className="flex items-center space-x-3">
                   <Image
                     src="/logo.jpg"
@@ -171,7 +171,7 @@ const Header = () => {
                     className="rounded-xl shadow-lg"
                   />
                   <div>
-                    <h2 className="text-lg font-bold text-[#FF6B6B]">
+                    <h2 className="text-lg font-bold text-[#F05434]">
                       PAWS FRIEND
                     </h2>
                     <p className="text-xs text-gray-500 font-medium">
@@ -181,9 +181,9 @@ const Header = () => {
                 </div>
                 <button
                   onClick={toggleMenu}
-                  className="w-10 h-10 bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 rounded-xl flex items-center justify-center transition-all duration-200"
+                  className="w-10 h-10 bg-[#F05434]/10 hover:bg-[#F05434]/20 rounded-xl flex items-center justify-center transition-all duration-200"
                 >
-                  <X className="w-5 h-5 text-[#FF6B6B]" />
+                  <X className="w-5 h-5 text-[#F05434]" />
                 </button>
               </div>
 
@@ -195,8 +195,8 @@ const Header = () => {
                       key={item.name}
                       href={item.href}
                       className={`flex items-center justify-between px-4 py-4 rounded-xl font-semibold transition-all duration-200 ${isActive(item.href)
-                        ? "text-white bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] shadow-lg shadow-[#FF6B6B]/25"
-                        : "text-gray-700 hover:text-[#FF6B6B] hover:bg-[#FF6B6B]/5"
+                        ? "text-white bg-gradient-to-r from-[#F05434] to-[#F05434] shadow-lg shadow-[#F05434]/25"
+                        : "text-gray-700 hover:text-[#F05434] hover:bg-[#F05434]/5"
                         }`}
                       onClick={toggleMenu}
                       style={{
@@ -212,11 +212,11 @@ const Header = () => {
               </nav>
 
               {/* Mobile CTA Section */}
-              <div className="p-6 pt-4 border-t border-[#FF6B6B]/10 space-y-4">
+              <div className="p-6 pt-4 border-t border-[#F05434]/10 space-y-4">
                 {/* Emergency Contact */}
-                <div className="flex items-center space-x-3 p-4 bg-[#FF6B6B]/5 rounded-xl border border-[#FF6B6B]/10">
+                <div className="flex items-center space-x-3 p-4 bg-[#F05434]/5 rounded-xl border border-[#F05434]/10">
                   <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
-                    <Phone className="w-5 h-5 text-[#FF6B6B]" />
+                    <Phone className="w-5 h-5 text-[#F05434]" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-900">
@@ -229,7 +229,7 @@ const Header = () => {
                 {/* Book Appointment Button */}
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button className="w-full bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] hover:from-[#FF5252] hover:to-[#FF6B6B] text-white rounded-xl py-4 text-base font-bold shadow-lg shadow-[#FF6B6B]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                    <Button className="w-full bg-gradient-to-r from-[#F05434] to-[#F05434] hover:from-[#FF5252] hover:to-[#F05434] text-white rounded-xl py-4 text-base font-bold shadow-lg shadow-[#F05434]/25 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                       <Heart className="w-5 h-5 mr-2" />
                       Book Appointment
                     </Button>
