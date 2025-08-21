@@ -60,9 +60,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div
-                  className={`w-16 h-16 bg-${info.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}
-                >
+                <div className="w-16 h-16 bg-[#F05434] rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <info.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -82,7 +80,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Map */}
-      <section className="py-20 bg-gradient-to-br from-skyBlue/10 to-softPink/10">
+      <section className="py-20 bg-gradient-to-br from-[#F05434]/10 to-[#F05434]/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -97,7 +95,7 @@ export default function ContactPage() {
             >
               <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-min">
                 <div className="flex items-center space-x-3 mb-8">
-                  <div className="w-12 h-12 bg-skyBlue rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#F05434] rounded-xl flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -109,10 +107,17 @@ export default function ContactPage() {
                 </div>
 
                 <div className="bg-gray-100 rounded-2xl h-80 flex items-center justify-center">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.5619637086293!2d77.05010637528429!3d28.508510675732754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1983b859b1fb%3A0x2592d820fe0568bc!2s314%2C%20Sector%2023%2C%20Gurugram%2C%20Haryana%20122017!5e1!3m2!1sen!2sin!4v1755493881617!5m2!1sen!2sin" width="100%" height="100%" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.5619637086293!2d77.05010637528429!3d28.508510675732754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1983b859b1fb%3A0x2592d820fe0568bc!2s314%2C%20Sector%2023%2C%20Gurugram%2C%20Haryana%20122017!5e1!3m2!1sen!2sin!4v1755493881617!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
 
-                <div className="mt-6 p-4 bg-coral/10 rounded-xl">
+                <div className="mt-6 p-4 bg-[#F05434]/10 rounded-xl">
                   <h3 className="font-semibold text-gray-900 mb-2">
                     Getting Here
                   </h3>
@@ -139,7 +144,7 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Frequently Asked <span className="text-coral">Questions</span>
+              Frequently Asked <span className="text-[#F05434]">Questions</span>
             </h2>
             <p className="text-xl text-gray-600">
               Quick answers to common questions about our services and policies.

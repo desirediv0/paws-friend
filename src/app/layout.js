@@ -77,11 +77,27 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${openSans.variable}`}>
-      <body className="antialiased bg-[#f2f2f2] text-gray-900 overflow-x-hidden">
+      <body className="antialiased  text-gray-900 overflow-x-hidden bg-[url('/bg-mobile.jpg')] md:bg-[url('/bg-big.jpg')]">
         <Header />
-        {children}
-        <VetConsultation />
-        <FloatingBottomBar />
+        <div className="relative">
+          <div
+            className="absolute inset-0 pointer-events-none"
+            aria-hidden="true"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/30 via-[#F2F2F2]/50 to-[#F2F2F2]/50 md:from-[#F2F2F2]/50 md:via-[#F2F2F2]/60 md:to-[#F2F2F2]/60"></div>
+
+            {/* Subtle floating elements - hidden on mobile */}
+            <div className="hidden md:block absolute top-20 left-20 w-64 h-64 bg-[#F05434]/50 rounded-full blur-3xl"></div>
+            <div className="hidden md:block absolute top-40 right-32 w-80 h-80 bg-[#F05434]/50 rounded-full blur-3xl"></div>
+            <div className="hidden md:block absolute bottom-32 left-40 w-72 h-72 bg-[#F05434]/50 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative z-10">
+            {children}
+            <VetConsultation />
+            <FloatingBottomBar />
+          </div>
+        </div>
         <Footer />
       </body>
     </html>

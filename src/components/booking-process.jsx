@@ -40,7 +40,7 @@ export default function BookingProcess() {
   ];
 
   return (
-    <section className="py-16 px-4" style={{ backgroundColor: "#F2F2F2" }}>
+    <section className="py-16 px-4" >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

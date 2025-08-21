@@ -140,7 +140,7 @@ export default function PetServices() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen ">
       <div className="container mx-auto px-4 py-6 lg:py-12">
         {/* Header */}
         <div className="text-center mb-8 lg:mb-16">
@@ -174,9 +174,8 @@ export default function PetServices() {
         <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
           {/* Services Sidebar */}
           <div
-            className={`lg:col-span-1 ${
-              isMobileMenuOpen ? "block" : "hidden lg:block"
-            }`}
+            className={`lg:col-span-1 ${isMobileMenuOpen ? "block" : "hidden lg:block"
+              }`}
           >
             <Card className="lg:sticky lg:top-8 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-4 lg:p-6">
@@ -192,11 +191,10 @@ export default function PetServices() {
                         setActiveService(service);
                         setIsMobileMenuOpen(false);
                       }}
-                      className={`w-full text-left p-3 lg:p-4 rounded-lg transition-all duration-300 hover:shadow-md ${
-                        activeService.id === service.id
+                      className={`w-full text-left p-3 lg:p-4 rounded-lg transition-all duration-300 hover:shadow-md ${activeService.id === service.id
                           ? "text-white shadow-lg transform scale-105"
                           : "text-gray-700 hover:bg-white/50"
-                      }`}
+                        }`}
                       style={{
                         backgroundColor:
                           activeService.id === service.id
@@ -208,11 +206,10 @@ export default function PetServices() {
                         {service.title}
                       </div>
                       <div
-                        className={`text-xs mt-1 ${
-                          activeService.id === service.id
+                        className={`text-xs mt-1 ${activeService.id === service.id
                             ? "text-white/80"
                             : "text-gray-500"
-                        }`}
+                          }`}
                       >
                         Starting @ only {service.price}
                       </div>
