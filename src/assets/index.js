@@ -16,9 +16,11 @@ import placeholderUser from "./placeholder-user.jpg";
 
 import desktop1 from "./desktop1.jpg";
 import desktop2 from "./desktop2.jpg";
+import desktop3 from "./desktop3.jpg";
 
 import mobile1 from "./mobile1.jpg";
 import mobile2 from "./mobile2.jpg";
+import mobile3 from "./mobile3.jpg";
 
 export {
   dog,
@@ -36,6 +38,8 @@ export {
   placeholderUser,
   desktop1,
   desktop2,
+  desktop3,
   mobile1,
-  mobile2
+  mobile2,
+  mobile3
 };

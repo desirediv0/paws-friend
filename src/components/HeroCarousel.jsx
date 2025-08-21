@@ -6,7 +6,7 @@ import {
   CarouselItem,
 } from "./ui/carousel";
 import Image from "next/image";
-import { desktop1, desktop2, mobile1, mobile2 } from "@/assets";
+import { desktop1, desktop2, desktop3, mobile1, mobile2, mobile3 } from "@/assets";
 import { useRouter } from "next/navigation";
 
 const HeroCarousel = () => {
@@ -24,6 +24,10 @@ const HeroCarousel = () => {
     {
       img: desktop2,
       smimg: mobile2,
+    },
+    {
+      img: desktop3,
+      smimg: mobile3,
     },
   ];
 
