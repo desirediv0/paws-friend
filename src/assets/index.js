@@ -14,6 +14,12 @@ import surgerysetup from "./veterinary-surgery-setup.png";
 import placeholder from "./placeholder.jpg";
 import placeholderUser from "./placeholder-user.jpg";
 
+import desktop1 from "./desktop1.jpg";
+import desktop2 from "./desktop2.jpg";
+
+import mobile1 from "./mobile1.jpg";
+import mobile2 from "./mobile2.jpg";
+
 export {
   dog,
   cat,
@@ -28,4 +34,8 @@ export {
   surgerysetup,
   placeholder,
   placeholderUser,
+  desktop1,
+  desktop2,
+  mobile1,
+  mobile2
 };
