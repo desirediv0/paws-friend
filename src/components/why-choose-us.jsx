@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Why Choose Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Why Choose Us</h2>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px bg-gray-400 w-16"></div>
             <div className="w-8 h-8 bg-[#F05434] rounded-full flex items-center justify-center">
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
             </div>
             <div className="h-px bg-gray-400 w-16"></div>
           </div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-[#1A237E] text-lg max-w-2xl mx-auto font-semibold">
             Discover what makes Paws Friend the perfect choice for your beloved pet&apos;s care and well-being
           </p>
         </div>

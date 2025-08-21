@@ -44,15 +44,15 @@ export default function BookingProcess() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Book Your Pet Care Partner.
           </h2>
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px bg-cyan-400 w-16"></div>
+            <div className="h-px bg-cyan-800 w-16"></div>
             <div className="w-8 h-8 rounded-full bg-green-400 flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-full"></div>
             </div>
-            <div className="h-px bg-cyan-400 w-16"></div>
+            <div className="h-px bg-cyan-800 w-16"></div>
           </div>
         </div>
 
@@ -95,14 +95,14 @@ export default function BookingProcess() {
               >
                 {/* Step Number */}
                 <div className="absolute top-4 right-6">
-                  <span className="text-4xl font-bold text-gray-300 group-hover:text-gray-400 transition-colors">
+                  <span className="text-4xl font-bold text-gray-400 group-hover:text-gray-500 transition-colors">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Step Label */}
                 <div className="mb-4">
-                  <span className="text-sm font-medium text-gray-500 bg-white px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-gray-600 bg-white px-3 py-1 rounded-full">
                     Step
                   </span>
                 </div>
@@ -115,7 +115,7 @@ export default function BookingProcess() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                <h3 className="text-2xl font-bold text-black mb-4">
                   {step.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -136,7 +136,7 @@ export default function BookingProcess() {
           >
             Start Booking Process
           </Button>
-          <p className="text-gray-600 mt-4">
+          <p className="text-[#1A237E] mt-4 font-semibold">
             Call us at{" "}
             <span className="font-semibold text-gray-800">+91 8800682777</span>{" "}
             for immediate assistance

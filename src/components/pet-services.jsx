@@ -146,12 +146,12 @@ export default function PetServices() {
         <div className="text-center mb-8 lg:mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#F05434]" />
-            <h1 className="text-2xl lg:text-4xl font-bold text-gray-800">
+            <h1 className="text-2xl lg:text-6xl font-bold text-black">
               Paws Friend
             </h1>
             <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#F05434]" />
           </div>
-          <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+          <p className="text-base lg:text-xl text-[#1A237E]  max-w-2xl mx-auto px-4 font-semibold ">
             Premium pet care services delivered to your doorstep with love and
             expertise
           </p>
@@ -192,8 +192,8 @@ export default function PetServices() {
                         setIsMobileMenuOpen(false);
                       }}
                       className={`w-full text-left p-3 lg:p-4 rounded-lg transition-all duration-300 hover:shadow-md ${activeService.id === service.id
-                          ? "text-white shadow-lg transform scale-105"
-                          : "text-gray-700 hover:bg-white/50"
+                        ? "text-white shadow-lg transform scale-105"
+                        : "text-gray-700 hover:bg-white/50"
                         }`}
                       style={{
                         backgroundColor:
@@ -207,8 +207,8 @@ export default function PetServices() {
                       </div>
                       <div
                         className={`text-xs mt-1 ${activeService.id === service.id
-                            ? "text-white/80"
-                            : "text-gray-500"
+                          ? "text-white/80"
+                          : "text-gray-500"
                           }`}
                       >
                         Starting @ only {service.price}
