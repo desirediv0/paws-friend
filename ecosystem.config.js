@@ -1,46 +1,27 @@
 module.exports = {
     apps: [
         {
-            name: 'paws-friend',
-            script: 'index.js',
-            instances: 1,
-            autorestart: true,
-            watch: false,
-            max_memory_restart: '1G',
+            name: "paws-friend",                        // PM2 process name
+            script: "node_modules/.bin/next",           // Next.js binary
+            args: "start",                              // Run next start
+            cwd: "./",                                  // Root directory
+            interpreter: "none",                        // Direct binary use
             env: {
-                NODE_ENV: 'production',
-                PORT: 7000
+                NODE_ENV: "development",
+                PORT: 3000
             },
             env_production: {
-                NODE_ENV: 'production',
-                PORT: 7000
+                NODE_ENV: "production",
+                PORT: 3000
             },
-            // Logging
-            log_file: './logs/combined.log',
-            out_file: './logs/out.log',
-            error_file: './logs/error.log',
-            log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
-
-            // Process management
-            min_uptime: '10s',
-            max_restarts: 10,
-
-            // Advanced features
-            instance_var: 'INSTANCE_ID',
-            exec_mode: 'fork'
+            watch: false,                               // No auto-watch in prod
+            instances: 1,                               // 1 instance (Next.js SSR ke liye best)
+            autorestart: true,                          // Restart on crash
+            max_memory_restart: "512M",                 // Memory limit
+            out_file: "./logs/out.log",                 // Logs
+            error_file: "./logs/error.log",
+            merge_logs: true,
+            time: true
         }
-    ],
-
-    deploy: {
-        production: {
-            user: 'runner',
-            host: 'localhost',
-            ref: 'origin/main',
-            repo: 'https://github.com/desirediv0/paws-friend.git',
-            path: '/home/runner/paws-friend',
-            'pre-deploy-local': '',
-            'post-deploy': 'npm install && npm run build && pm2 reload ecosystem.config.js --env production',
-            'pre-setup': ''
-        }
-    }
+    ]
 };
