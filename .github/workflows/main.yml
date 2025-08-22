@@ -43,36 +43,25 @@ jobs:
         run: npm run build
         
       # ------------------------------
-      # PM2 DEPLOYMENT
+      # PM2 DEPLOYMENT (YOUR CONFIG)
       # ------------------------------
       - name: Create logs directory
         run: mkdir -p logs
         
-      - name: Install PM2 globally (if not exists)
+      - name: Deploy with PM2 (Using your ecosystem.config.js)
         run: |
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
           
-          if ! command -v pm2 &> /dev/null; then
-            echo "Installing PM2..."
-            npm install -g pm2
-          fi
-          pm2 --version
+          # Your correct PM2 path
+          PM2_PATH="/home/runner/.nvm/versions/node/v22.18.0/bin/pm2"
           
-      - name: Deploy with PM2
-        run: |
-          export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          # Smart deployment using your ecosystem config
+          $PM2_PATH restart paws-friend --env production --update-env || $PM2_PATH start ecosystem.config.js --env production
           
-          pm2 stop paws-friend 2>/dev/null || true
-          pm2 delete paws-friend 2>/dev/null || true
+          # Save configuration
+          $PM2_PATH save
           
-          pm2 start ecosystem.config.js --env production
-          pm2 save
-          
-      - name: Setup PM2 startup (if needed)
-        run: |
-          export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          
-          /home/runner/.nvm/versions/node/v22.18.0/bin/pm2 startup systemd --user --hp $HOME || true
+          # Show status for verification
+          $PM2_PATH status
+          $PM2_PATH logs paws-friend --lines 5
