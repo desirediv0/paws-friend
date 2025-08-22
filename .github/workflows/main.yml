@@ -55,7 +55,8 @@ jobs:
           
           PM2_PATH="/home/runner/.nvm/versions/node/v22.18.0/bin/pm2"
           
-          $PM2_PATH restart paws-friend --env production --update-env || $PM2_PATH start ecosystem.config.js --env production
+          # Correct way - restart with ecosystem config
+          $PM2_PATH restart ecosystem.config.js --env production || $PM2_PATH start ecosystem.config.js --env production
           $PM2_PATH save
           
           echo "🚀 Deployment completed successfully!"
