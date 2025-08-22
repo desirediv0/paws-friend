@@ -1,24 +1,21 @@
 module.exports = {
     apps: [
         {
-            name: "paws-friend",                        // PM2 process name
-            script: "node_modules/.bin/next",           // Next.js binary
-            args: "start",                              // Run next start
-            cwd: "./",                                  // Root directory
-            interpreter: "none",                        // Direct binary use
-            env: {
-                NODE_ENV: "development",
-                PORT: 7000
-            },
+            name: "paws-friend",
+            script: "node_modules/.bin/next",
+            args: "start",
+            cwd: "/home/runner/pawsfriend/_work/paws-friend/paws-friend",
+            interpreter: "none",
             env_production: {
                 NODE_ENV: "production",
                 PORT: 7000
             },
-            watch: false,                               // No auto-watch in prod
-            instances: 1,                               // 1 instance (Next.js SSR ke liye best)
-            autorestart: true,                          // Restart on crash
-            max_memory_restart: "512M",                 // Memory limit
-            out_file: "./logs/out.log",                 // Logs
+            instances: 1,
+            autorestart: true,
+            max_restarts: 5,
+            min_uptime: "10s",
+            max_memory_restart: "1G",
+            out_file: "./logs/out.log",
             error_file: "./logs/error.log",
             merge_logs: true,
             time: true
