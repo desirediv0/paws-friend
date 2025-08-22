@@ -14,7 +14,8 @@ const HeroCarousel = () => {
   const [api, setApi] = useState(null);
   const [autoplay, setAutoplay] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const router = useRouter()
+  const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
 
   const slides = [
     {
@@ -31,17 +32,34 @@ const HeroCarousel = () => {
     },
   ];
 
+  // Handle client-side mounting
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   // Handle responsive detection
   useEffect(() => {
+    if (!isClient) return;
+
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
     };
 
     checkMobile();
-    window.addEventListener("resize", checkMobile);
 
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+    const handleResize = () => {
+      checkMobile();
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+    };
+  }, [isClient]);
 
   // Handle autoplay functionality
   useEffect(() => {
@@ -68,38 +86,72 @@ const HeroCarousel = () => {
     };
   }, [api]);
 
+  // Don't render until client-side
+  if (!isClient) {
+    return (
+      <div className="relative w-full h-[200px] md:h-[400px] bg-gray-200 animate-pulse rounded-lg">
+        <div className="flex items-center justify-center h-full">
+          <div className="text-gray-400">Loading...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="relative w-full">
-      {/* Mobile: Smaller height, Desktop: Larger height */}
-      <div className="relative overflow-hidden">
+    <div className="relative w-full mx-auto">
+      <div className="relative overflow-hidden w-full">
         <Carousel
           setApi={setApi}
-          className="h-full w-full"
+          className="w-full"
           opts={{
             loop: true,
             align: "start",
           }}
         >
-          <CarouselContent className="h-full">
+          <CarouselContent>
             {slides.map((slide, index) => (
-              <CarouselItem key={index}
+              <CarouselItem
+                key={index}
                 onClick={() => router.push(`/contact`)}
-                className="h-full p-0 cursor-pointer">
-                <div className="relative h-[520px] sm:h-[420px] md:h-[320px] lg:h-[320px] xl:h-[360px] w-full overflow-hidden">
-                  {/* Background Image */}
-                  <Image
-                    src={isMobile ? slide.smimg : slide.img}
-                    alt="Hero banner"
-                    fill
-                    className="object-fill transition-transform duration-700"
-                    priority={index === 0}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                  />
+                className="pl-0 cursor-pointer"
+              >
+                <div className="relative w-full">
+                  {/* Mobile Image - Small screens */}
+                  <div className="block md:hidden">
+                    <div className="relative w-full h-[70vh] overflow-hidden">
+                      <Image
+                        src={slide.smimg}
+                        alt={`Hero banner ${index + 1} mobile`}
+                        fill
+                        className="object-fill object-center"
+                        priority={index === 0}
+                        sizes="100vw"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Desktop Image - Medium and larger screens */}
+                  <div className="hidden md:block">
+                    <div className="relative w-full h-[350px]  overflow-hidden">
+                      <Image
+                        src={slide.img}
+                        alt={`Hero banner ${index + 1} desktop`}
+                        fill
+                        className="object-fill object-center"
+                        priority={index === 0}
+                        sizes="(min-width: 768px) 100vw, 100vw"
+                      />
+                    </div>
+                  </div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
+
+
+
+
       </div>
     </div>
   );
