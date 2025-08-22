@@ -48,24 +48,36 @@ jobs:
       - name: Create logs directory
         run: mkdir -p logs
         
-      - name: Deploy with PM2
+      - name: Install PM2 globally (if not exists)
         run: |
-          # Check if NVM and Node are available
+          # Load NVM
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
           
-          # Use the correct PM2 path for runner user
-          PM2_PATH=$(which pm2 || echo "$HOME/.nvm/versions/node/v22.18.0/bin/pm2")
+          # Check if PM2 exists, if not install it
+          if ! command -v pm2 &> /dev/null; then
+            echo "Installing PM2..."
+            npm install -g pm2
+          fi
+          
+          # Verify PM2 installation
+          pm2 --version
+          
+      - name: Deploy with PM2
+        run: |
+          # Load NVM
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
           
           # Stop existing process if running
-          $PM2_PATH stop paws-friend 2>/dev/null || true
-          $PM2_PATH delete paws-friend 2>/dev/null || true
+          pm2 stop paws-friend 2>/dev/null || true
+          pm2 delete paws-friend 2>/dev/null || true
           
           # Start the application using ecosystem config
-          $PM2_PATH start ecosystem.config.js --env production
+          pm2 start ecosystem.config.js --env production
           
           # Save PM2 process list
-          $PM2_PATH save
+          pm2 save
           
       - name: Setup PM2 startup (if needed)
         run: |
