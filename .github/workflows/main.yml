@@ -53,15 +53,20 @@ jobs:
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
           
-          # Your correct PM2 path
+          # Proper working directory
+          cd /home/runner/pawsfriend/_work/paws-friend/paws-friend
+          
+          # PM2 path
           PM2_PATH="/home/runner/.nvm/versions/node/v22.18.0/bin/pm2"
           
-          # Smart deployment using your ecosystem config
-          $PM2_PATH restart paws-friend --env production --update-env || $PM2_PATH start ecosystem.config.js --env production
+          # Stop and delete existing process
+          $PM2_PATH stop paws-friend || true
+          $PM2_PATH delete paws-friend || true
           
-          # Save configuration
+          # Start fresh
+          $PM2_PATH start ecosystem.config.js --env production
+          
+          # Save and show status
           $PM2_PATH save
-          
-          # Show status for verification
           $PM2_PATH status
-          $PM2_PATH logs paws-friend --lines 5
+          $PM2_PATH logs paws-friend --lines 10
