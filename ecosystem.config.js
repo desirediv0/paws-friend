@@ -8,11 +8,11 @@ module.exports = {
             interpreter: "none",                        // Direct binary use
             env: {
                 NODE_ENV: "development",
-                PORT: 3000
+                PORT: 7000
             },
             env_production: {
                 NODE_ENV: "production",
-                PORT: 3000
+                PORT: 7000
             },
             watch: false,                               // No auto-watch in prod
             instances: 1,                               // 1 instance (Next.js SSR ke liye best)
