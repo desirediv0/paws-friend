@@ -1,0 +1,72 @@
+name: Deploy paws friend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        node-version: [22.x]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+    
+      # ------------------------------
+      # FRONTEND SETUP
+      # ------------------------------
+      - name: Clean npm cache & remove existing dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm cache clean --force
+          
+      - name: Install frontend dependencies
+        run: npm install
+        
+      - name: Create frontend .env file
+        run: |
+          touch .env
+          echo "${{ secrets.PROD_FRONTEND_ENV }}" > .env
+          
+      - name: Build frontend
+        run: npm run build
+        
+      # ------------------------------
+      # PM2 DEPLOYMENT
+      # ------------------------------
+      - name: Deploy with PM2
+        run: |
+          # Check if NVM and Node are available
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          
+          # Use the correct PM2 path for runner user
+          PM2_PATH=$(which pm2 || echo "$HOME/.nvm/versions/node/v22.18.0/bin/pm2")
+          
+          # Stop existing process if running
+          $PM2_PATH stop paws-friend 2>/dev/null || true
+          $PM2_PATH delete paws-friend 2>/dev/null || true
+          
+          # Start the application
+          $PM2_PATH start index.js --name paws-friend
+          
+          # Save PM2 process list
+          $PM2_PATH save
+          
+      - name: Setup PM2 startup (if needed)
+        run: |
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          PM2_PATH=$(which pm2 || echo "$HOME/.nvm/versions/node/v22.18.0/bin/pm2")
+          $PM2_PATH startup || true
