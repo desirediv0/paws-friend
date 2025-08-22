@@ -45,6 +45,9 @@ jobs:
       # ------------------------------
       # PM2 DEPLOYMENT
       # ------------------------------
+      - name: Create logs directory
+        run: mkdir -p logs
+        
       - name: Deploy with PM2
         run: |
           # Check if NVM and Node are available
@@ -58,8 +61,8 @@ jobs:
           $PM2_PATH stop paws-friend 2>/dev/null || true
           $PM2_PATH delete paws-friend 2>/dev/null || true
           
-          # Start the application
-          $PM2_PATH start index.js --name paws-friend
+          # Start the application using ecosystem config
+          $PM2_PATH start ecosystem.config.js --env production
           
           # Save PM2 process list
           $PM2_PATH save
