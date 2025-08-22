@@ -125,7 +125,7 @@ const VetConsultation = () => {
                                         height={500}
                                     />
                                     {/* Trust badge overlay */}
-                                    <div className="absolute top-4 right-4 bg-[#F05434] text-[#F05434]-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                                    <div className="absolute top-4 right-4 bg-[#F05434] text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                                         Certified Vets
                                     </div>
                                 </div>

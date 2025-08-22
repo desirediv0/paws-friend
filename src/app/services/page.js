@@ -3,7 +3,7 @@ import PetServices from "@/components/pet-services";
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#F2F2F2" }}>
+    <div className="min-h-screen">
       <HeroBanner
         title="Our Pet Care Services"
         subtitle="Professional Care for Your Beloved Pets"
