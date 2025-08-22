@@ -136,7 +136,7 @@ export default function BookingProcess() {
           >
             Start Booking Process
           </Button>
-          <p className="text-[#1A237E] mt-4 font-semibold">
+          <p className="text-[#0e134d] mt-4 font-semibold">
             Call us at{" "}
             <span className="font-semibold text-gray-800">+91 8800682777</span>{" "}
             for immediate assistance

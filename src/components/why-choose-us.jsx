@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
             </div>
             <div className="h-px bg-gray-400 w-16"></div>
           </div>
-          <p className="text-[#1A237E] text-lg max-w-2xl mx-auto font-semibold">
+          <p className="text-[#0e134d] text-lg max-w-2xl mx-auto font-semibold">
             Discover what makes Paws Friend the perfect choice for your beloved pet&apos;s care and well-being
           </p>
         </div>

@@ -131,7 +131,7 @@ export default function PetCareInfo() {
             <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Paws Friend Advanced Pet Care Services
             </h1>
-            <p className="text-base text-[#1A237E] max-w-4xl mx-auto leading-relaxed font-semibold">
+            <p className="text-base text-[#0e134d] max-w-4xl mx-auto leading-relaxed font-semibold">
               Pets are not just animals they are a part of our family. Their comfort and health matter the most, and that is why we bring pet care directly to your home. From vet visits, vaccination, and grooming to basic care we make everything easy and stress-free for both pets and parents. Dogs, cats, or birds, every pet has unique needs, and our trained professionals understand how to care for them with love and patience. Choosing the right pet care means choosing happiness and safety for your furry and feathered friends.
             </p>
           </div>
@@ -206,7 +206,7 @@ export default function PetCareInfo() {
             <h2 className="text-4xl font-bold text-black mb-4">
               Benefits Of In-House Pet Care Services
             </h2>
-            <p className="text-lg text-[#1A237E] max-w-4xl mx-auto leading-relaxed font-semibold">
+            <p className="text-lg text-[#0e134d] max-w-4xl mx-auto leading-relaxed font-semibold">
               Choosing in-house pet care comes with many benefits for both you and your furry friend. It helps in reducing behavioural issues by providing a safe and familiar environment. These services also support your pet’s mental health and emotional well-being through personalized care, companionship, and engaging playtime right at home.
             </p>
           </div>
@@ -278,7 +278,7 @@ export default function PetCareInfo() {
               <h2 className="text-4xl font-bold text-black mb-6">
                 Paws Friend – The First Choice for Pet Care Near You
               </h2>
-              <p className="text-lg text-[#1A237E] mb-8 leading-relaxed">
+              <p className="text-lg text-[#0e134d] mb-8 leading-relaxed">
                 At Paws Friend, we haven’t built this legacy overnight. It’s the result of dedication, consistent improvement,
                 and truly listening to what pet parents need. Our goal is simple — keeping your furry companion happy, healthy, and loved.
               </p>
@@ -291,7 +291,7 @@ export default function PetCareInfo() {
                   >
                     <Users className="w-3 h-3 text-white" />
                   </div>
-                  <p className="text-[#1A237E] leading-relaxed">
+                  <p className="text-[#0e134d] leading-relaxed">
                     Every member of our expert team goes through strict background checks and training. We make sure they are not just
                     qualified, but also genuinely passionate about caring for pets.
                   </p>
@@ -304,7 +304,7 @@ export default function PetCareInfo() {
                   >
                     <Phone className="w-3 h-3 text-white" />
                   </div>
-                  <p className="text-[#1A237E] leading-relaxed">
+                  <p className="text-[#0e134d] leading-relaxed">
                     We keep pet parents connected through video calls, photos, and short updates. This way, you’ll always know your
                     little one is safe and happy, while you focus on your day.
                   </p>
@@ -333,7 +333,7 @@ export default function PetCareInfo() {
             <h2 className="text-4xl font-bold text-black mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-[#1A237E]">
+            <p className="text-lg text-[#0e134d]">
               Get answers to common questions about our pet care services
             </p>
           </div>

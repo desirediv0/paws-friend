@@ -151,7 +151,7 @@ export default function PetServices() {
             </h1>
             <Heart className="w-6 h-6 lg:w-8 lg:h-8 text-[#F05434]" />
           </div>
-          <p className="text-base lg:text-xl text-[#1A237E]  max-w-2xl mx-auto px-4 font-semibold ">
+          <p className="text-base lg:text-xl text-[#0e134d]  max-w-2xl mx-auto px-4 font-semibold ">
             Premium pet care services delivered to your doorstep with love and
             expertise
           </p>
