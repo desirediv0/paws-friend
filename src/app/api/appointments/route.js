@@ -213,7 +213,7 @@ export async function POST(request) {
     // Send email to admin
     const mailOptions = {
       from: process.env.NEXT_PUBLIC_FROM_EMAIL,
-      to: process.env.NEXT_PUBLIC_TO_EMAIL,
+      to: "powsfriend@gmail.com",
       subject: `New Pet Appointment: ${petName} (${service}) - ${appointmentDate}`,
       html: emailTemplate,
       replyTo: email,
