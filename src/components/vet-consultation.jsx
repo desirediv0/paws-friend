@@ -37,7 +37,7 @@ const VetConsultation = () => {
             />
 
             {/* Popup Wrapper for Centering */}
-            <div className="fixed inset-0 z-[1000] flex items-center justify-center pointer-events-none">
+            <div className="fixed inset-0 z-[1000] mt-16 md:mt-24 flex items-center justify-center pointer-events-none">
                 {/* Popup */}
                 <div
                     className={`relative w-full  max-w-4xl mx-2 sm:mx-4 md:mx-0 pointer-events-auto transition-all duration-300 ease-bounce ${isClosing ? "opacity-0 scale-95 translate-y-4" : "opacity-100 scale-100 translate-y-0"

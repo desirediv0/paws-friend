@@ -174,38 +174,36 @@ export async function POST(request) {
           </div>
         
           
-          ${
-            petAge
-              ? `
+          ${petAge
+        ? `
           <div class="field">
             <div class="field-label">🎂 Pet Age:</div>
             <div class="field-value">${petAge}</div>
           </div>
           `
-              : ""
-          }
+        : ""
+      }
           
-          ${
-            notes
-              ? `
+          ${notes
+        ? `
           <div class="field">
             <div class="field-label">📝 Additional Notes:</div>
             <div class="field-value">${notes.replace(/\n/g, "<br>")}</div>
           </div>
           `
-              : ""
-          }
+        : ""
+      }
           
           <div class="footer">
             <p>This appointment was booked through the Paws Friend website.</p>
             <p>Submitted on: ${new Date().toLocaleString("en-IN", {
-              timeZone: "Asia/Kolkata",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-            })}</p>
+        timeZone: "Asia/Kolkata",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      })}</p>
           </div>
         </div>
       </body>
@@ -221,7 +219,12 @@ export async function POST(request) {
       replyTo: email,
     };
 
-    await transporter.sendMail(mailOptions);
+    try {
+      transporter.sendMail(mailOptions);
+      console.log("Admin email sent successfully");
+    } catch (adminEmailError) {
+      console.error("Failed to send admin email:", adminEmailError);
+    }
 
     // Send confirmation email to customer
     const confirmationTemplate = `
