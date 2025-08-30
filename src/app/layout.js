@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingBottomBar from "@/components/FloatingBottomBar";
 import VetConsultation from "@/components/vet-consultation";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -77,6 +78,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${openSans.variable}`}>
+      <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17519548132" strategy="afterInteractive"></Script>
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-17519548132');
+          `}
+        </Script>
+      </head>
       <body className="antialiased  text-gray-900 overflow-x-hidden bg-[url('/bg-mobile.jpg')] md:bg-[url('/bg-big.jpg')]">
         <Header />
         <div className="relative">
