@@ -5,17 +5,15 @@ import {
   Mail,
   MapPin,
   Clock,
-  Facebook,
-  Twitter,
+
   Instagram,
-  Linkedin,
   Heart,
   Star,
   Sparkles,
   PawPrint,
   Award,
   Shield,
-  Zap,
+
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
@@ -25,7 +23,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#F2F2F2] text-gray-900 relative overflow-hidden">
+    <footer className="bg-[#F2F2F2] text-gray-900 relative overflow-hidden z-0">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-24 h-24 bg-[#F05434] rounded-full blur-3xl"></div>
@@ -77,30 +75,15 @@ const Footer = () => {
               </div>
 
               <div className="flex space-x-4">
+
+
                 <a
-                  href="#"
-                  className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <Facebook className="w-5 h-5 text-gray-900" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <Twitter className="w-5 h-5 text-gray-900" />
-                </a>
-                <a
-                  href="#"
+                  href="https://www.instagram.com/pawsfriend__"
                   className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   <Instagram className="w-5 h-5 text-gray-900" />
                 </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <Linkedin className="w-5 h-5 text-gray-900" />
-                </a>
+
               </div>
             </div>
 

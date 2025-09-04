@@ -46,7 +46,7 @@ export default function FloatingBottomBar() {
     }
 
     const handleInstagramClick = () => {
-        window.open("https://www.instagram.com/pawsfriends__/", "_blank")
+        window.open("https://www.instagram.com/pawsfriend__", "_blank")
     }
 
     const confirmCall = (phoneNumber) => {
@@ -65,7 +65,7 @@ export default function FloatingBottomBar() {
         <>
             {/* Floating Bottom Bar */}
             {/* Mobile/Tablet - Full Width Bottom Bar */}
-            <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 md:hidden">
+            <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 md:hidden">
                 <div className="flex items-center">
                     {/* Call Button */}
                     <button
