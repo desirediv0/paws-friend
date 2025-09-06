@@ -4,6 +4,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 import ModernHero from "@/components/modern-hero";
 import PetCareInfo from "@/components/pet-care-info";
 import PetServices from "@/components/pet-services";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyChooseUs from "@/components/why-choose-us";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <PetCareInfo />
       {/* <VideoTestimonials /> */}
       <BookingProcess />
+      <TestimonialsSection />
     </main>
   );
 }
