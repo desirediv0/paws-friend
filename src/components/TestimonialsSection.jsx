@@ -84,9 +84,9 @@ const TestimonialsSection = () => {
                         <CarouselContent>
                             {testimonials.map((testimonial, index) => {
                                 // Add extra margin to first and last items
-                                let itemClass = "md:basis-1/3 px-2";
-                                if (index === 0) itemClass += " ml-6";
-                                if (index === testimonials.length - 1) itemClass += " mr-6";
+                                let itemClass = "md:basis-1/3 px-3";
+                                if (index === 0) itemClass += " ml-0";
+                                if (index === testimonials.length - 1) itemClass += " mr-0";
                                 return (
                                     <CarouselItem key={index} className={itemClass}>
                                         <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col h-full justify-between border border-gray-100">
