@@ -79,6 +79,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${openSans.variable}`}>
       <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17519548132"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17519548132');
+            `,
+          }}
+        />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17519548132" strategy="afterInteractive"></Script>
         <Script id="google-ads" strategy="afterInteractive">
           {`
