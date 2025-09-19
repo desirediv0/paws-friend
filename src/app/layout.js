@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingBottomBar from "@/components/FloatingBottomBar";
-import VetConsultation from "@/components/vet-consultation";
+// import VetConsultation from "@/components/vet-consultation";
 import Script from "next/script";
 
 const poppins = Poppins({
@@ -119,7 +119,7 @@ export default function RootLayout({ children }) {
 
           <div className="relative z-10">
             {children}
-            <VetConsultation />
+            {/* <VetConsultation /> */}
             <FloatingBottomBar />
           </div>
         </div>
