@@ -17,7 +17,7 @@ const Terms = () => {
                             Please read the terms of service (&quot;Terms&quot;) carefully before using our website and services.
                             This website <strong>pawsfriend.in</strong> (&quot;Platform&quot;) is owned and operated by
                             <strong> Paws Friend</strong> (&quot;Company&quot;, &quot;We&quot;, &quot;Us&quot;, or &quot;Our&quot;), a pet care service provider
-                            having its registered office at 314, Sec 23, Gurgaon, Haryana 122017.
+                            having its registered office at 694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017.
                         </p>
 
                         <p>
@@ -132,7 +132,7 @@ const Terms = () => {
                                 </div>
                                 <div className="mt-4">
                                     <h3 className="font-semibold text-gray-800 mb-2">Address:</h3>
-                                    <p className="text-gray-600">314, Sec 23, Gurgaon, Haryana 122017</p>
+                                    <p className="text-gray-600">694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</p>
                                 </div>
                                 <div className="mt-4">
                                     <h3 className="font-semibold text-gray-800 mb-2">Business Hours:</h3>
@@ -220,7 +220,7 @@ const Terms = () => {
                                     <p><strong>Email:</strong> connect@pawsfriend.in</p>
                                     <p><strong>Phone:</strong> +91 8800682777</p>
                                     <p><strong>Emergency:</strong> +91 9112561322</p>
-                                    <p><strong>Address:</strong> 314, Sec 23, Gurgaon, Haryana 122017</p>
+                                    <p><strong>Address:</strong> 694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</p>
                                 </div>
                                 <p className="text-blue-600 text-sm mt-4">
                                     We will acknowledge complaints within 24 hours and resolve them within 15 days.

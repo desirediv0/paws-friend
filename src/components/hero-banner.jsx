@@ -104,7 +104,7 @@ export default function HeroBanner({
                   <span className="font-medium">+91- 911 256 1322</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span> 314, Sec 23, Gurgaon, Haryana 122017</span>
+                  <span> 694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>24/7 Emergency Services</span>

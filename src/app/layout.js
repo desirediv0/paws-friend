@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${poppins.variable} ${openSans.variable}`}>
       <head>
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17519548132"></script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17519548132"></Script>
         <script
           dangerouslySetInnerHTML={{
             __html: `

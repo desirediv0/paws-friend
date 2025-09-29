@@ -22,7 +22,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Address",
-      details: [" 314, Sec 23, Gurgaon, Haryana 122017"],
+      details: [" 694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017"],
       color: "coral",
     },
     {
@@ -108,7 +108,7 @@ export default function ContactPage() {
 
                 <div className="bg-gray-100 rounded-2xl h-80 flex items-center justify-center">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.5619637086293!2d77.05010637528429!3d28.508510675732754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1983b859b1fb%3A0x2592d820fe0568bc!2s314%2C%20Sector%2023%2C%20Gurugram%2C%20Haryana%20122017!5e1!3m2!1sen!2sin!4v1755493881617!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d745.9332894008799!2d77.04333508101759!3d28.51244852506217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1936eecdd3e9%3A0x9d61d7857cf1cfef!2sBigway%20Production!5e1!3m2!1sen!2sin!4v1759137887033!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     allowFullScreen=""

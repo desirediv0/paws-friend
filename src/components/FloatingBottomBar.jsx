@@ -25,7 +25,7 @@ export default function FloatingBottomBar() {
         {
             number: "+918800682777",
             office: "Main Office",
-            location: "314, Sec 23, Gurgaon, Haryana 122017",
+            location: "694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017",
         },
     ]
 
@@ -33,7 +33,7 @@ export default function FloatingBottomBar() {
         {
             number: "+918800682777",
             office: "Main Office",
-            location: "314, Sec 23, Gurgaon, Haryana 122017",
+            location: "694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017",
         },
     ]
 
