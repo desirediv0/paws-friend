@@ -214,14 +214,14 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative z-10 border-t border-white/20 py-6 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 border-t border-white/20 py-6 pb-20 md:pb-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-900/80 text-sm mb-4 md:mb-0 flex items-center">
             <Heart className="w-4 h-4 mr-2 text-gray-900" />© {currentYear} Paws
             Friend. Made with love for your pets!
           </div>
           <div className="flex space-x-6 text-sm">
-            {[{ name: "Privacy Policy", href: "/privacy" }, { name: "Terms of Service", href: "/terms" }, { name: "Cookie Policy", href: "/cookies" }].map(
+            {[{ name: "Privacy Policy", href: "/privacy-policy" }, { name: "Terms of Service", href: "/terms" },].map(
               (link, index) => (
                 <Link
                   key={index}
