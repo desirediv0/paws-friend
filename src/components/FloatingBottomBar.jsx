@@ -88,7 +88,7 @@ export default function FloatingBottomBar() {
                     {/* Instagram Button */}
                     <button
                         onClick={handleInstagramClick}
-                        className="flex items-center justify-center flex-1 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-4 w-full transition-all duration-300"
+                        className="hidden md:flex items-center justify-center flex-1 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-4 w-full transition-all duration-300"
                     >
                         <InstagramIcon className="w-5 h-5 mr-2" />
                         <span>Instagram</span>

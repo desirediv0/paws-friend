@@ -125,7 +125,7 @@ export default function PetCareInfo() {
   return (
     <div className="min-h-screen" >
       {/* Header Section */}
-      <div className="py-16 px-4">
+      <div className="py-8 md:py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
@@ -200,7 +200,7 @@ export default function PetCareInfo() {
       </div>
 
       {/* Benefits Section */}
-      <div className="py-16 px-4 ">
+      <div className="md:py-16 px-4 ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-black mb-4">
@@ -271,7 +271,7 @@ export default function PetCareInfo() {
       </div>
 
 
-      <div className="py-16 px-4" >
+      <div className="md:py-16 px-4" >
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
@@ -327,7 +327,7 @@ export default function PetCareInfo() {
 
 
       {/* FAQ Section */}
-      <div className="py-16 px-4 ">
+      <div className="md:py-16 px-4 ">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-black mb-4">

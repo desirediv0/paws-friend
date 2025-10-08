@@ -61,23 +61,23 @@ export default function HeroBanner({
 
         {/* Main Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <div className="space-y-8">
+          <div className="space-y-4 md:space-y-8">
             {subtitle && (
-              <p className="text-2xl sm:text-3xl font-semibold opacity-95">
+              <p className="text-xl sm:text-3xl font-semibold opacity-95">
                 {subtitle}
               </p>
             )}
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
+            <h1 className="text-3xl sm:text-6xl lg:text-7xl font-black leading-tight">
               {title}
             </h1>
 
-            <p className="text-xl sm:text-2xl max-w-4xl mx-auto opacity-95 leading-relaxed">
+            <p className="text-base sm:text-2xl max-w-4xl mx-auto opacity-95 leading-relaxed">
               {description}
             </p>
 
             {/* Simple CTA Button */}
-            <div className="pt-8">
+            <div className=" mt-4 md:pt-8">
               <Button
                 size="lg"
                 className="px-12 py-6 text-xl font-bold text-white border-2 border-white hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105"

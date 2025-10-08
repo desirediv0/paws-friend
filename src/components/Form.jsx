@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
-  Calendar,
   User,
   Phone,
   Mail,
@@ -17,7 +16,7 @@ import {
   Star,
 } from "lucide-react";
 import Image from "next/image";
-import { bird, cat, dog } from "@/assets";
+import { bird, cat, dog, large } from "@/assets";
 
 const Form = () => {
   const uniqueId = useId();
@@ -28,8 +27,6 @@ const Form = () => {
     email: "",
     phone: "",
     service: "",
-    appointmentDate: "",
-    appointmentTime: "",
     notes: "",
   });
 
@@ -40,7 +37,7 @@ const Form = () => {
   const petTypes = [
     { value: "dog", label: "Dog", icon: dog },
     { value: "cat", label: "Cat", icon: cat },
-    { value: "bird", label: "Bird", icon: bird },
+    { value: "Large Animal", label: "Large Animal", icon: large },
     { value: "other", label: "Other", icon: "🐾" },
   ];
 
@@ -48,22 +45,13 @@ const Form = () => {
     "Veterinary Service",
     "Pet Grooming",
     "Pet Training",
-    "Pet Boarding",
     "Pet Surgery",
-    "Online Vet Consultation",
+    "Pet vaccination",
     "Vet Home Visit",
+    "Online Vet Consultation",
   ];
 
-  const timeSlots = [
-    "09:00 AM",
-    "10:00 AM",
-    "11:00 AM",
-    "12:00 PM",
-    "02:00 PM",
-    "03:00 PM",
-    "04:00 PM",
-    "05:00 PM",
-  ];
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -92,8 +80,6 @@ const Form = () => {
           email: "",
           phone: "",
           service: "",
-          appointmentDate: "",
-          appointmentTime: "",
           notes: "",
         });
       } else {
@@ -125,8 +111,8 @@ const Form = () => {
       {submitMessage && (
         <div
           className={`mb-6 p-4 rounded-xl text-center ${submitSuccess
-              ? "bg-green-50 text-green-800 border border-green-200"
-              : "bg-red-50 text-red-800 border border-red-200"
+            ? "bg-green-50 text-green-800 border border-green-200"
+            : "bg-red-50 text-red-800 border border-red-200"
             }`}
         >
           {submitMessage}
@@ -140,7 +126,7 @@ const Form = () => {
             <PawPrint className="w-4 h-4 mr-2" />
             Select Your Pet:
           </Label>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3">
+          <div className="grid grid-cols-4 gap-2 sm:gap-3">
             {petTypes.map((pet) => (
               <div key={pet.value} className="relative">
                 <input
@@ -154,9 +140,9 @@ const Form = () => {
                 />
                 <label
                   htmlFor={`${uniqueId}-${pet.value}`}
-                  className={`group flex flex-col items-center p-3 sm:p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105 relative ${formData.petType === pet.value
-                      ? "border-[#F05434] bg-[#F05434]/20 shadow-lg ring-2 ring-[#F05434]/30"
-                      : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
+                  className={`group flex flex-col items-center p-3 sm:p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105  h-28 relative ${formData.petType === pet.value
+                    ? "border-[#F05434] bg-[#F05434]/20 shadow-lg ring-2 ring-[#F05434]/30"
+                    : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
                     }`}
                 >
                   {formData.petType === pet.value && (
@@ -183,14 +169,14 @@ const Form = () => {
                         alt={pet.label}
                         width={40}
                         height={40}
-                        className="object-contain w-8 h-8 sm:w-10 sm:h-10"
+                        className="object-contain w-10 h-10"
                       />
                     )}
                   </span>
                   <span
                     className={`text-xs sm:text-sm font-bold text-center transition-colors duration-300 ${formData.petType === pet.value
-                        ? "text-[#F05434]"
-                        : "text-gray-900"
+                      ? "text-[#F05434]"
+                      : "text-gray-900"
                       }`}
                   >
                     {pet.label}
@@ -228,7 +214,7 @@ const Form = () => {
         </div>
 
         {/* Input Fields */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
           <div>
             <Label className="text-sm font-bold text-gray-900 mb-2 block">
               Pet Name *
@@ -310,50 +296,6 @@ const Form = () => {
           </div>
         </div>
 
-        {/* Date & Time */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-          <div>
-            <Label className="text-sm font-bold text-gray-900 mb-2 block">
-              Preferred Date *
-            </Label>
-            <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400 z-10" />
-              <Input
-                id={`${uniqueId}-date`}
-                type="date"
-                required
-                className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
-                value={formData.appointmentDate}
-                onChange={(e) =>
-                  setFormData({ ...formData, appointmentDate: e.target.value })
-                }
-              />
-            </div>
-          </div>
-          <div>
-            <Label className="text-sm font-bold text-gray-900 mb-2 block">
-              Preferred Time *
-            </Label>
-            <select
-              value={formData.appointmentTime}
-              onChange={(e) =>
-                setFormData({ ...formData, appointmentTime: e.target.value })
-              }
-              className="w-full bg-white border border-gray-300 text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent"
-            >
-              <option value="">Select time</option>
-              {timeSlots.map((time) => (
-                <option
-                  key={time}
-                  value={time}
-                  className="bg-white text-gray-900"
-                >
-                  {time}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
 
         {/* Message */}
         <div>

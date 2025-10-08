@@ -40,7 +40,7 @@ export default function BookingProcess() {
   ];
 
   return (
-    <section className="py-16 px-4" >
+    <section className="py-8 md:py-16 px-4" >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

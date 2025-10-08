@@ -9,7 +9,7 @@ import WhyChooseUs from "@/components/why-choose-us";
 
 export default function Home() {
   return (
-    <main className="min-h-screen mt-24 md:mt-28">
+    <main className="min-h-screen mt-0 md:mt-28">
       <HeroCarousel />
       <ModernHero />
       <PetServices />

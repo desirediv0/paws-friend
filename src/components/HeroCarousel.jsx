@@ -89,7 +89,7 @@ const HeroCarousel = () => {
   // Don't render until client-side
   if (!isClient) {
     return (
-      <div className="relative w-full h-[200px] md:h-[400px] bg-gray-200 animate-pulse rounded-lg">
+      <div className="relative w-full h-[200px] md:h-[400px] bg-gray-200 animate-pulse rounded-lg hidden md:block">
         <div className="flex items-center justify-center h-full">
           <div className="text-gray-400">Loading...</div>
         </div>
@@ -98,7 +98,7 @@ const HeroCarousel = () => {
   }
 
   return (
-    <div className="relative w-full mx-auto">
+    <div className="relative w-full mx-auto hidden md:block">
       <div className="relative overflow-hidden w-full">
         <Carousel
           setApi={setApi}

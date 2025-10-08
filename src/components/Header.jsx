@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Heart } from "lucide-react";
+import { Menu, X, Phone, Heart, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -61,14 +61,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 rounded-full ${isScrolled
+        className={` md:fixed md:top-4 md:left-1/2 transform md:-translate-x-1/2 z-50 transition-all duration-500 w-full md:rounded-full ${isScrolled
           ? "bg-white/95 backdrop-blur-xl shadow-xl border border-[#F05434]/10"
           : "bg-white/90 backdrop-blur-sm shadow-lg"
           }`}
-        style={{
-          width: "90%",
-          maxWidth: "1400px",
-        }}
       >
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -87,6 +83,12 @@ const Header = () => {
                 />
               </div>
             </Link>
+
+            <div className="flex items-center justify-center gap-2 md:hidden">
+              <PhoneCall className="w-5 h-5 text-[#F05434]" />
+
+              <p className="text-sm text-gray-500">+91 9112561322</p>
+            </div>
 
             {/* Desktop Navigation - Center */}
             <nav className="hidden lg:flex items-center space-x-1">

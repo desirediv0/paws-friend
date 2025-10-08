@@ -4,19 +4,18 @@ import AppointmentForm from "./AppointmentForm"
 const ModernHero = () => {
   return (
     <>
-      <section className="relative min-h-screen bg-[#F2F2F2] overflow-hidden bg-[url('/bg-mobile.jpg')] md:bg-[url('/bg-big.jpg')] bg-cover bg-center">
+      <section className="relative min-h-screen bg-[#F1A99A] overflow-hidden  bg-cover bg-center">
         {/* Clean Background with Subtle Elements */}
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#F2F2F2]/30 via-[#F2F2F2]/50 to-[#F2F2F2]/50 md:from-[#F2F2F2]/50 md:via-[#F2F2F2]/60 md:to-[#F2F2F2]/60"></div>
 
-          {/* Subtle floating elements - hidden on mobile */}
           <div className="hidden md:block absolute top-20 left-20 w-64 h-64 bg-[#F05434]/50 rounded-full blur-3xl"></div>
           <div className="hidden md:block absolute top-40 right-32 w-80 h-80 bg-[#F05434]/50 rounded-full blur-3xl"></div>
           <div className="hidden md:block absolute bottom-32 left-40 w-72 h-72 bg-[#F05434]/50 rounded-full blur-3xl"></div>
-        </div>
+        </div> */}
 
         {/* Main Content */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 mt-20 md:mt-0">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 ">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8 lg:space-y-10 lg:pt-16">
@@ -39,13 +38,13 @@ const ModernHero = () => {
                   <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800">
                     Professional Healthcare Services for Dogs & Cats
                   </h2>
-                  <p className="text-sm sm:text-base lg:text-xl text-gray-700 font-medium leading-relaxed">
+                  <p className="text-sm sm:text-base lg:text-xl text-gray-700 font-medium leading-relaxed pb-5 md:pb-10">
                     🏆 Award-Winning Veterinarians • 🚀 Same Day Service • 💝 Caring Touch
                   </p>
                 </div>
 
                 {/* Contact Section */}
-                <div className="space-y-4 sm:space-y-6">
+                <a href="tel:+918800682777" className="space-y-4 sm:space-y--10">
                   {/* [#F05434] CTA */}
                   <div className="group bg-[#F05434] p-1 rounded-2xl shadow-xl">
                     <div className="bg-white text-gray-900 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 rounded-2xl flex items-center justify-between group-hover:bg-gray-50 transition-all duration-300">
@@ -63,11 +62,11 @@ const ModernHero = () => {
                       <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[#F05434] flex-shrink-0 ml-2" />
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
 
               {/* Service Features */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-4">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 ">
                 {[
                   {
                     icon: Award,

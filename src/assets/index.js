@@ -1,6 +1,7 @@
 import dog from "./dog.png";
 import cat from "./cat.png";
 import bird from "./bird.png";
+import large from "./large.png";
 
 import dogtrainer from "./dog-trainer-happy-dog.png";
 import groomedtowel from "./groomed-dog-towel.png";
@@ -41,5 +42,6 @@ export {
   desktop3,
   mobile1,
   mobile2,
-  mobile3
+  mobile3,
+  large
 };

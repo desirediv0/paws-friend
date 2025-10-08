@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
   }
 
   return (
-    <section className="py-16 px-4 ">
+    <section className="py-8 md:py-16 px-4 ">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {features.map((feature, index) => {
             const IconComponent = feature.icon
             return (

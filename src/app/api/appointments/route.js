@@ -35,8 +35,6 @@ export async function POST(request) {
       petType,
       petAge,
       service,
-      appointmentDate,
-      appointmentTime,
       notes,
     } = await request.json();
 
@@ -47,9 +45,7 @@ export async function POST(request) {
       !phone ||
       !petName ||
       !petType ||
-      !service ||
-      !appointmentDate ||
-      !appointmentTime
+      !service
     ) {
       return NextResponse.json(
         { error: "All required fields must be filled" },
@@ -143,8 +139,6 @@ export async function POST(request) {
         <div class="content">
           <div class="appointment-details">
             <h3 style="color: #F05434; margin-top: 0;">📅 Appointment Details</h3>
-            <p><strong>Date:</strong> ${appointmentDate}</p>
-            <p><strong>Time:</strong> ${appointmentTime}</p>
             <p><strong>Service:</strong> ${service}</p>
           </div>
 
@@ -214,7 +208,7 @@ export async function POST(request) {
     const mailOptions = {
       from: process.env.NEXT_PUBLIC_FROM_EMAIL,
       to: "powsfriend@gmail.com",
-      subject: `New Pet Appointment: ${petName} (${service}) - ${appointmentDate}`,
+      subject: `New Pet Appointment: ${petName} (${service})`,
       html: emailTemplate,
       replyTo: email,
     };
@@ -278,8 +272,6 @@ export async function POST(request) {
             <h3 style="color: #F05434; margin-top: 0;">Your Appointment Details</h3>
             <p><strong>Pet:</strong> ${petName}</p>
             <p><strong>Service:</strong> ${service}</p>
-            <p><strong>Date:</strong> ${appointmentDate}</p>
-            <p><strong>Time:</strong> ${appointmentTime}</p>
           </div>
           
           <p>We will contact you shortly to confirm your appointment. If you need to make any changes, please contact us as soon as possible.</p>
