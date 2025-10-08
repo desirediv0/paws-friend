@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Phone, Heart, Star, Sparkles, X, Menu } from "lucide-react";
 import {
   dogtrainer,
-  groomedtowel,
   homevaccination,
   onlinevetconsultation,
   petboarding,
@@ -18,21 +17,20 @@ import Image from "next/image";
 
 const services = [
   {
-    id: "grooming",
-    title: "Pet Grooming Services",
-    price: "₹999",
+    id: "home-vet-ncr",
+    title: "Home Veterinary Services & Vaccination In NCR",
+    price: "Contact for pricing",
     description:
-      "Give your pets the care they deserve with Paws Friend's at-home grooming services. No more stressful travel our professional groomers come right to your doorstep. From bathing and brushing to nail trimming and overall hygiene, we make sure your furry companion looks and feels their best. Keep your cats and dogs clean, comfortable, and happy all at budget-friendly prices.",
+      "Expert at-home veterinary care and vaccinations across NCR. Our compassionate vets visit your home for checkups, vaccinations, and urgent support. See the Contact page for full details.",
     features: [
-      "Full grooming",
-      "Mini grooming",
-      "Nail cutting",
-      "Ear clipping",
-      "Paw massage",
-      "Hair trimming",
-      "Tick and flea treatment",
+      "Home vet visits",
+      "Vaccinations",
+      "Routine checkups",
+      "Emergency services",
+      "Compassionate care",
+      "Latest equipment",
     ],
-    image: groomedtowel,
+    image: vetexam,
   },
   {
     id: "veterinary",
@@ -50,6 +48,21 @@ const services = [
       "Wellness care",
     ],
     image: vetexam,
+  },
+  {
+    id: "vet-visit",
+    title: "Vet visit at home",
+    price: "₹499",
+    description:
+      "PawsFriend brings a personalized, 24/7 veterinary service for cats and dogs, right at your doorstep—offering convenience and peace of mind.",
+    features: [
+      "Vaccinations & Health Checkups",
+      "Sick Pet Visits",
+      "Dental Care",
+      "Surgery & Post-Operative Care",
+      "Pain Management & Palliative Care",
+    ],
+    image: homevaccination,
   },
   {
     id: "training",

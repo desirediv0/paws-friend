@@ -43,12 +43,12 @@ const Form = () => {
 
   const services = [
     "Veterinary Service",
-    "Pet Grooming",
     "Pet Training",
     "Pet Surgery",
     "Pet vaccination",
     "Vet Home Visit",
     "Online Vet Consultation",
+    "Pet Grooming",
   ];
 
 

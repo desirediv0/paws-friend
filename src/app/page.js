@@ -6,6 +6,7 @@ import PetCareInfo from "@/components/pet-care-info";
 import PetServices from "@/components/pet-services";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyChooseUs from "@/components/why-choose-us";
+import WhyChooseVaccination from "@/components/why-choose-vaccination";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroCarousel />
       <ModernHero />
       <PetServices />
+      <WhyChooseVaccination />
       <WhyChooseUs />
       <PetCareInfo />
       {/* <VideoTestimonials /> */}

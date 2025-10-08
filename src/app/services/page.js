@@ -1,5 +1,6 @@
 import HeroBanner from "@/components/hero-banner";
 import PetServices from "@/components/pet-services";
+import WhyChooseVaccination from "@/components/why-choose-vaccination";
 
 export default function ServicesPage() {
   return (
@@ -15,6 +16,8 @@ export default function ServicesPage() {
       <div id="services">
         <PetServices />
       </div>
+
+      <WhyChooseVaccination />
     </div>
   );
 }
