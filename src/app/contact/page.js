@@ -10,7 +10,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+91- 880 068 2777", "Emergency: +91- 911 256 1322"],
+      details: ["Emergency: +91- 911 256 1322"],
       color: "coral",
     },
     {
@@ -22,7 +22,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Address",
-      details: [" 694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017"],
+      details: [" 694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017"],
       color: "coral",
     },
     {

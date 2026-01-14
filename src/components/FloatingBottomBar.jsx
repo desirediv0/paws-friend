@@ -23,17 +23,17 @@ export default function FloatingBottomBar() {
 
     const phoneNumbers = [
         {
-            number: "+918800682777",
+            number: "+919112561322",
             office: "Main Office",
-            location: "694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017",
+            location: "694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017",
         },
     ]
 
     const whatsAppNumbers = [
         {
-            number: "+918800682777",
+            number: "+919112561322",
             office: "Main Office",
-            location: "694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017",
+            location: "694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017",
         },
     ]
 

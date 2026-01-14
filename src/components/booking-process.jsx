@@ -138,7 +138,7 @@ export default function BookingProcess() {
           </Button>
           <p className="text-[#0e134d] mt-4 font-semibold">
             Call us at{" "}
-            <span className="font-semibold text-gray-800">+91 8800682777</span>{" "}
+            <span className="font-semibold text-gray-800">+91 9112561322</span>{" "}
             for immediate assistance
           </p>
         </div>

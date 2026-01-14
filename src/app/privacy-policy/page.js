@@ -7,7 +7,7 @@ const Privacy = () => {
                 <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Privacy Policy</h1>
 
                 <p className="mb-4 text-gray-700">
-                    <strong>Paws Friend</strong> (&quot;Company&quot;, &quot;We&quot;, &quot;Us&quot;, or &quot;Our&quot;) a pet care service provider with its registered office at 694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017, operates the website www.pawsfriend.in (hereinafter referred to as the &quot;Platform&quot;). The Company is committed to protecting Your privacy and the information that You share while using the Platform. We value the trust You place in Us. That&apos;s why We maintain the highest security standards for securing the transactions and Your information.
+                    <strong>Paws Friend</strong> (&quot;Company&quot;, &quot;We&quot;, &quot;Us&quot;, or &quot;Our&quot;) a pet care service provider with its registered office at 694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017, operates the website www.pawsfriend.in (hereinafter referred to as the &quot;Platform&quot;). The Company is committed to protecting Your privacy and the information that You share while using the Platform. We value the trust You place in Us. That&apos;s why We maintain the highest security standards for securing the transactions and Your information.
                 </p>
 
                 <p className="mb-4 text-gray-700">
@@ -153,9 +153,8 @@ const Privacy = () => {
 
                 <ul className="list-none pl-0 mb-4 text-gray-700 space-y-1">
                     <li><strong>Email ID:</strong> connect@pawsfriend.in</li>
-                    <li><strong>Phone:</strong> +91 8800682777</li>
-                    <li><strong>Emergency:</strong> +91 9112561322</li>
-                    <li><strong>Address:</strong> 694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</li>
+                    <li><strong>Phone:</strong> +91 9112561322</li>
+                    <li><strong>Address:</strong> 694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</li>
                 </ul>
 
                 <p className="mb-4 text-gray-700">
@@ -182,9 +181,9 @@ const Privacy = () => {
                 <ul className="list-none pl-0 text-gray-700 space-y-1">
                     <li><strong>Website:</strong> www.pawsfriend.in</li>
                     <li><strong>Email:</strong> connect@pawsfriend.in</li>
-                    <li><strong>Phone:</strong> +91 8800682777</li>
+                    <li><strong>Phone:</strong> +91 9112561322</li>
                     <li><strong>Emergency:</strong> +91 9112561322</li>
-                    <li><strong>Address:</strong> 694, near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</li>
+                    <li><strong>Address:</strong> 694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</li>
                 </ul>
             </div>
         </div>

@@ -90,7 +90,7 @@ const faqs = [
   {
     question: "What Are The Pet Care Services Charges?",
     answer:
-      "Our pet care services are competitively priced starting from ₹499 for basic services. Pricing varies based on the type of service, duration, and specific requirements. We offer transparent pricing with no hidden costs. Contact us at +91 8800682777 for detailed pricing information.",
+      "Our pet care services are competitively priced starting from ₹499 for basic services. Pricing varies based on the type of service, duration, and specific requirements. We offer transparent pricing with no hidden costs. Contact us at +91 9112561322 for detailed pricing information.",
   },
   {
     question: "Do You Provide Emergency Pet Care Services?",
@@ -156,7 +156,7 @@ export default function PetCareInfo() {
                     <Button
                       className="text-white font-semibold px-8 py-3 bg-[#F05434]"
 
-                      onClick={() => confirmCall('+918800682777')}
+                      onClick={() => confirmCall('+919112561322')}
                     >
                       <Phone className="w-4 h-4 mr-2" />
                       Vet On Call
@@ -256,7 +256,7 @@ export default function PetCareInfo() {
                   <Button
                     className="text-white font-semibold px-8 py-3"
                     style={{ backgroundColor: "#F05434" }}
-                    onClick={() => confirmWhatsApp('+918800682777')}
+                    onClick={() => confirmWhatsApp('+919112561322')}
                   >
                     Enquire Now
                   </Button>

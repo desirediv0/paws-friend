@@ -21,7 +21,7 @@ const VetConsultation = () => {
         const message = encodeURIComponent(
             "Hi Paws Friend! I'm interested in your Free Online Vet Consultation service. Please help me connect with a veterinarian for my pet.",
         )
-        const whatsappUrl = `https://wa.me/918800682777?text=${message}`
+        const whatsappUrl = `https://wa.me/919112561322?text=${message}`
         window.open(whatsappUrl, "_blank")
     }
 
