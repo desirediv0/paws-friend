@@ -10,7 +10,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["Emergency: +91- 911 256 1322"],
+      details: ["Emergency: +91- 880 068 2777"],
       color: "coral",
     },
     {
@@ -171,7 +171,7 @@ export default function ContactPage() {
               {
                 question: "Do you offer emergency services?",
                 answer:
-                  "Yes, we provide 24/7 emergency care. Call our emergency line at +91- 9112561322 for immediate assistance.",
+                  "Yes, we provide 24/7 emergency care. Call our emergency line at +91- 8800682777 for immediate assistance.",
               },
             ].map((faq, index) => (
               <motion.div

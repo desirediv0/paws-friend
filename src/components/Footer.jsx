@@ -154,7 +154,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-gray-900/80">+91 9112561322</div>
+                    <div className="text-gray-900/80">+91 8800682777</div>
                   </div>
                 </div>
 

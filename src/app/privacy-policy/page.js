@@ -153,7 +153,7 @@ const Privacy = () => {
 
                 <ul className="list-none pl-0 mb-4 text-gray-700 space-y-1">
                     <li><strong>Email ID:</strong> connect@pawsfriend.in</li>
-                    <li><strong>Phone:</strong> +91 9112561322</li>
+                    <li><strong>Phone:</strong> +91 8800682777</li>
                     <li><strong>Address:</strong> 694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</li>
                 </ul>
 
@@ -181,8 +181,8 @@ const Privacy = () => {
                 <ul className="list-none pl-0 text-gray-700 space-y-1">
                     <li><strong>Website:</strong> www.pawsfriend.in</li>
                     <li><strong>Email:</strong> connect@pawsfriend.in</li>
-                    <li><strong>Phone:</strong> +91 9112561322</li>
-                    <li><strong>Emergency:</strong> +91 9112561322</li>
+                    <li><strong>Phone:</strong> +91 8800682777</li>
+                    <li><strong>Emergency:</strong> +91 8800682777</li>
                     <li><strong>Address:</strong> 694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</li>
                 </ul>
             </div>

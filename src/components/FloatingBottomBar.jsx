@@ -23,7 +23,7 @@ export default function FloatingBottomBar() {
 
     const phoneNumbers = [
         {
-            number: "+919112561322",
+            number: "+918800682777",
             office: "Main Office",
             location: "694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017",
         },
@@ -31,7 +31,7 @@ export default function FloatingBottomBar() {
 
     const whatsAppNumbers = [
         {
-            number: "+919112561322",
+            number: "+918800682777",
             office: "Main Office",
             location: "694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017",
         },

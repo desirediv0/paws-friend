@@ -44,7 +44,7 @@ const ModernHero = () => {
                 </div>
 
                 {/* Contact Section */}
-                <a href="tel:+919112561322" className="space-y-4 sm:space-y--10">
+                <a href="tel:+918800682777" className="space-y-4 sm:space-y--10">
                   {/* [#F05434] CTA */}
                   <div className="group bg-[#F05434] p-1 rounded-2xl shadow-xl">
                     <div className="bg-white text-gray-900 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 rounded-2xl flex items-center justify-between group-hover:bg-gray-50 transition-all duration-300">
@@ -54,7 +54,7 @@ const ModernHero = () => {
                         </div>
                         <div className="min-w-0 flex-1">
                           <span className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 block truncate">
-                            +91 91125 61322
+                            +91 88006 82777
                           </span>
                           <p className="text-xs sm:text-sm text-gray-600">24/7 Emergency Available</p>
                         </div>

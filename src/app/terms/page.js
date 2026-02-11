@@ -123,7 +123,7 @@ const Terms = () => {
                                     <div>
                                         <h3 className="font-semibold text-gray-800 mb-2">General Contact:</h3>
                                         <p className="text-gray-600">Email: connect@pawsfriend.in</p>
-                                        <p className="text-gray-600">Phone: +91 9112561322</p>
+                                        <p className="text-gray-600">Phone: +91 8800682777</p>
                                     </div>
 
                                 </div>
@@ -215,8 +215,8 @@ const Terms = () => {
                                 </p>
                                 <div className="text-blue-700">
                                     <p><strong>Email:</strong> connect@pawsfriend.in</p>
-                                    <p><strong>Phone:</strong> +91 9112561322</p>
-                                    <p><strong>Emergency:</strong> +91 9112561322</p>
+                                    <p><strong>Phone:</strong> +91 8800682777</p>
+                                    <p><strong>Emergency:</strong> +91 8800682777</p>
                                     <p><strong>Address:</strong> 694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</p>
                                 </div>
                                 <p className="text-blue-600 text-sm mt-4">
@@ -240,7 +240,7 @@ const Terms = () => {
                                     </div>
                                     <div>
                                         <p className="font-medium">Phone:</p>
-                                        <p className="text-gray-300">+91 9112561322</p>
+                                        <p className="text-gray-300">+91 8800682777</p>
                                     </div>
                                 </div>
                                 <p className="text-gray-400 text-xs mt-4">

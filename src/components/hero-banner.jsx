@@ -101,7 +101,7 @@ export default function HeroBanner({
             <div className="max-w-6xl mx-auto px-4 py-4">
               <div className="flex flex-col sm:flex-row justify-center items-center gap-6 text-sm text-gray-700">
                 <div className="flex items-center gap-2">
-                  <span className="font-medium">+91- 911 256 1322</span>
+                  <span className="font-medium">+91- 880 068 2777</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span> 694, Near Ansal Plaza, Sector 23, Gurugram, Haryana 122017</span>

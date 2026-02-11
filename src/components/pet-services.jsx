@@ -292,7 +292,7 @@ export default function PetServices() {
                           const message = encodeURIComponent(
                             `Hi Paws Friend! I want to book ${activeService.title} (${activeService.price}). Please provide more details and confirm my booking.`
                           );
-                          const whatsappUrl = `https://wa.me/919112561322?text=${message}`;
+                          const whatsappUrl = `https://wa.me/918800682777?text=${message}`;
                           window.open(whatsappUrl, "_blank");
                         }}
                       >
@@ -302,11 +302,11 @@ export default function PetServices() {
                         variant="outline"
                         className="w-full border-[#F05434] text-[#F05434] hover:bg-[#F05434] hover:text-white transition-all duration-300 bg-transparent"
                         onClick={() => {
-                          window.location.href = "tel:+919112561322";
+                          window.location.href = "tel:+918800682777";
                         }}
                       >
                         <Phone className="w-4 h-4 mr-2" />
-                        Call +91 9112561322
+                        Call +91 8800682777
                       </Button>
                     </div>
                   </CardContent>
@@ -352,7 +352,7 @@ export default function PetServices() {
                             <div className="flex items-center gap-2">
                               <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
                               <span className="font-semibold text-sm lg:text-base">
-                                +91 9112561322
+                                +91 8800682777
                               </span>
                             </div>
                             <div className="hidden sm:block text-white/50">
