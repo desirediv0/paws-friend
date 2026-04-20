@@ -62,8 +62,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        opensans: ["Open Sans", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        opensans: ["var(--font-opensans)", "sans-serif"],
+        outfit: ["var(--font-outfit)", "sans-serif"],
+        "serif-display": ["var(--font-serif-display)", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

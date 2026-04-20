@@ -96,6 +96,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {[
                   { name: "Home", href: "/" },
+                  { name: "Home Vet Care", href: "/home-vet-care" },
                   { name: "About Us", href: "/about" },
                   { name: "Services", href: "/services" },
                   { name: "Contact", href: "/contact" },
