@@ -29,7 +29,7 @@ export default function HomeVetCarePage() {
       <WhyChooseSide />
 
       {/* 04. First Visit Special Promo (Screenshot #7) */}
-      <PromoBanner />
+      {/* <PromoBanner /> */}
 
       {/* 05. Step-by-step Care Guide (Screenshot #3 & #4) */}
       <CareSteps />

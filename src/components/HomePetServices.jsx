@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Stethoscope, Syringe, Scissors, GraduationCap, Ambulance, ArrowRight } from "lucide-react";
+import { Stethoscope, Syringe, Ambulance, ArrowRight, FlaskConical, ShowerHead } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -17,15 +17,15 @@ const services = [
         color: "bg-[#F05434]/10 text-[#F05434]"
     },
     {
-        title: "Pet Boarding & Surgery",
-        desc: "Safe boarding facilities and professional surgical care for your pets.",
-        icon: Scissors,
+        title: "Lab Testing",
+        desc: "Accurate diagnostic tests to ensure early detection and proper treatment.",
+        icon: FlaskConical,
         color: "bg-[#F05434]/10 text-[#F05434]"
     },
     {
-        title: "Dog Training",
-        desc: "Professional behavioral training to ensure your pet is happy and disciplined.",
-        icon: GraduationCap,
+        title: "Pet Grooming",
+        desc: "Professional grooming services to keep your pet clean and comfortable.",
+        icon: ShowerHead,
         color: "bg-[#F05434]/10 text-[#F05434]"
     },
     {
@@ -42,7 +42,7 @@ const HomePetServices = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16 space-y-4">
                     <span className="text-[#F05434] text-[10px] uppercase font-black tracking-widest block ">Service</span>
-                    <h2 className="text-4xl md:text-5xl  text-sky-950">All Pet Services at Your Doorstep</h2>
+                    <h2 className="text-4xl md:text-5xl  text-sky-950">Pet Services</h2>
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

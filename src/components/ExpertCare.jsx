@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 
 const ExpertCare = () => {
     const stats = [
-        { value: "15000+", label: "HOME VISITS" },
-        { value: "12500+", label: "SUCCESSFUL TREATMENTS" },
-        { value: "1000+", label: "SUCCESSFUL SURGERIES" },
-        { value: "50+", label: "EXPERT VETS" }
+        { value: "20000+", label: "HOME VISITS" },
+        { value: "15000+", label: "SUCCESSFUL TREATMENTS" },
+        { value: "5000+", label: "HAPPY PET PARENTS" },
+        // { value: "50+", label: "EXPERT VETS" }
     ];
 
     return (
@@ -19,7 +19,7 @@ const ExpertCare = () => {
                     
                     <div className="space-y-8 animate-in fade-in slide-in-from-left duration-700">
                         <span className="text-[#F05434] text-[10px] uppercase font-black tracking-[0.3em] block mb-2 ">Veterinary Services</span>
-                        <h2 className="text-4xl md:text-6xl   text-sky-950 leading-tight">Expert Veterinary Care at Your Doorstep</h2>
+                        <h2 className="text-4xl md:text-6xl   text-sky-950 leading-tight">Experience Veterinary Service at Your Home</h2>
                         <p className="text-gray-500 text-lg font-medium leading-relaxed max-w-lg ">
                             Provide your pets with the best medical care without the stress of travel. Our licensed veterinarians come to your home for comprehensive checkups, vaccinations, diagnostics, and treatments. Ensure your furry friend&apos;s health with professional care that&apos;s convenient for you and comfortable for them. Book a home visit today.
                         </p>
@@ -47,7 +47,7 @@ const ExpertCare = () => {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="border-t border-gray-100 pt-10 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div className="border-t border-gray-100 pt-10 grid grid-cols-2 lg:grid-cols-3 gap-8 text-center">
                     {stats.map((s, i) => (
                         <div key={i} className="space-y-2 group">
                             <div className="text-3xl md:text-5xl   text-sky-900 group-hover:text-[#F05434] transition-colors duration-500">{s.value}</div>

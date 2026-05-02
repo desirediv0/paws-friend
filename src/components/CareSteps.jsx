@@ -6,17 +6,17 @@ const CareSteps = () => {
     const steps = [
         {
             number: "01",
-            title: "Book in 30 seconds",
+            title: "Schedule in Minutes",
             description: "Choose date & time that works for you."
         },
         {
             number: "02",
-            title: "Vet Comes Home",
+            title: "Vet Home Visits",
             description: "Licensed professional visits you at your doorstep."
         },
         {
             number: "03",
-            title: "Treatment or Clinic Support",
+            title: "Surgical and Clinic Support",
             description: "Home care or seamless shift to clinic if required."
         }
     ];
@@ -28,7 +28,7 @@ const CareSteps = () => {
                 <div className="text-center mb-16">
                     <span className="text-[#F05434] text-[10px] uppercase font-black tracking-widest block mb-4 ">How it works</span>
                     <h2 className="text-4xl md:text-5xl  text-sky-900 leading-tight">
-                        Simple and clear steps to care<br />for your lovely pet
+                        Easy and hygienic steps to care<br/> for your lovely pet
                     </h2>
                 </div>
 

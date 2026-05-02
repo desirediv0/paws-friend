@@ -125,7 +125,6 @@ const Footer = () => {
                   "Veterinary Care",
                   "Pet Grooming",
                   "Lab Testing",
-                  "Pet Training",
                   "Emergency Care",
                   "Vaccinations",
                 ].map((service, index) => (
