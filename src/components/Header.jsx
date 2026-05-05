@@ -8,10 +8,28 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import AppointmentForm from "./AppointmentForm";
 import { usePathname } from "next/navigation";
 
+import { dog, cat, groomedtowel } from "@/assets";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  const isHomeVetCare = pathname === "/home-vet-care";
+
+  const customPetTypes = isHomeVetCare ? [
+    { value: "dog", label: "Dog", icon: dog },
+    { value: "cat", label: "Cat", icon: cat },
+    { value: "grooming", label: "Grooming", icon: groomedtowel },
+  ] : undefined;
+
+  const customServices = isHomeVetCare ? [
+    "Veterinary Service",
+    "Pet vaccination",
+    "Vet Home Visit",
+    "Online Vet Consultation",
+    "Pet Grooming",
+  ] : undefined;
 
   // Handle scroll effect
   useEffect(() => {
@@ -134,7 +152,10 @@ const Header = () => {
                 </DialogTrigger>
 
                 <DialogContent className="p-0">
-                  <AppointmentForm />
+                  <AppointmentForm 
+                    customPetTypes={customPetTypes}
+                    customServices={customServices}
+                  />
                 </DialogContent>
               </Dialog>
             </div>
@@ -237,7 +258,10 @@ const Header = () => {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="p-0">
-                    <AppointmentForm />
+                    <AppointmentForm 
+                      customPetTypes={customPetTypes}
+                      customServices={customServices}
+                    />
                   </DialogContent>
                 </Dialog>
               </div>

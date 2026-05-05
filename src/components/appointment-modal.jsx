@@ -3,7 +3,7 @@
 import { PawPrint, X } from "lucide-react"
 import Form from "./Form"
 
-const AppointmentModal = ({ isOpen, onClose }) => {
+const AppointmentModal = ({ isOpen, onClose, customPetTypes, customServices }) => {
   if (!isOpen) return null
 
   return (
@@ -28,7 +28,10 @@ const AppointmentModal = ({ isOpen, onClose }) => {
           </button>
         </div>
         <div className="p-6">
-          <Form />
+          <Form 
+            customPetTypes={customPetTypes}
+            customServices={customServices}
+          />
         </div>
       </div>
     </div>

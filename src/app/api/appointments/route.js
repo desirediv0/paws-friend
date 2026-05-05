@@ -71,6 +71,9 @@ export async function POST(request) {
       );
     }
 
+    // Format pet type for display
+    const displayPetType = petType.charAt(0).toUpperCase() + petType.slice(1);
+
     // Email template for Paws Friend
     const emailTemplate = `
       <!DOCTYPE html>
@@ -141,7 +144,7 @@ export async function POST(request) {
             <h3 style="color: #F05434; margin-top: 0;">📅 Appointment Details</h3>
             <p><strong>Service:</strong> ${service}</p>
           </div>
-
+ 
           <div class="field">
             <div class="field-label">👤 Owner Name:</div>
             <div class="field-value">${ownerName}</div>
@@ -164,7 +167,7 @@ export async function POST(request) {
           
           <div class="field">
             <div class="field-label">🐾 Pet Type:</div>
-            <div class="field-value">${petType}</div>
+            <div class="field-value">${displayPetType}</div>
           </div>
         
           
@@ -203,18 +206,18 @@ export async function POST(request) {
       </body>
       </html>
     `;
-
+ 
     // Send email to admin
     const mailOptions = {
       from: process.env.NEXT_PUBLIC_FROM_EMAIL,
       to: "powsfriend@gmail.com",
-      subject: `New Pet Appointment: ${petName} (${service})`,
+      subject: `New ${displayPetType} Appointment: ${petName} (${service})`,
       html: emailTemplate,
       replyTo: email,
     };
-
+ 
     try {
-      transporter.sendMail(mailOptions);
+      await transporter.sendMail(mailOptions);
       console.log("Admin email sent successfully");
     } catch (adminEmailError) {
       console.error("Failed to send admin email:", adminEmailError);

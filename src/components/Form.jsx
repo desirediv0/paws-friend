@@ -16,9 +16,9 @@ import {
   Star,
 } from "lucide-react";
 import Image from "next/image";
-import { bird, cat, dog, large } from "@/assets";
+import {  cat, dog, large } from "@/assets";
 
-const Form = () => {
+const Form = ({ customPetTypes, customServices }) => {
   const uniqueId = useId();
   const [formData, setFormData] = useState({
     petType: "",
@@ -34,14 +34,16 @@ const Form = () => {
   const [submitMessage, setSubmitMessage] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const petTypes = [
+  const defaultPetTypes = [
     { value: "dog", label: "Dog", icon: dog },
     { value: "cat", label: "Cat", icon: cat },
     { value: "Large Animal", label: "Large Animal", icon: large },
     { value: "other", label: "Other", icon: "🐾" },
   ];
 
-  const services = [
+  const petTypes = customPetTypes || defaultPetTypes;
+
+  const defaultServices = [
     "Veterinary Service",
     "Pet Training",
     "Pet Surgery",
@@ -50,6 +52,15 @@ const Form = () => {
     "Online Vet Consultation",
     "Pet Grooming",
   ];
+
+  const services = customServices || defaultServices;
+
+  const gridColsClass = {
+    1: "grid-cols-1",
+    2: "grid-cols-2",
+    3: "grid-cols-3",
+    4: "grid-cols-4",
+  }[Math.min(petTypes.length, 4)] || "grid-cols-4";
 
 
 
@@ -100,10 +111,17 @@ const Form = () => {
 
   const handlePetTypeChange = (petValue) => {
     console.log("[v0] Pet type selected:", petValue);
-    setFormData({
+    const newData = {
       ...formData,
       petType: petValue,
-    });
+    };
+
+    // Auto-select grooming service if grooming pet type is selected
+    if (petValue === "grooming") {
+      newData.service = "Pet Grooming";
+    }
+
+    setFormData(newData);
   };
 
   return (
@@ -126,7 +144,7 @@ const Form = () => {
             <PawPrint className="w-4 h-4 mr-2" />
             Select Your Pet:
           </Label>
-          <div className="grid grid-cols-4 gap-2 sm:gap-3">
+          <div className={`grid ${gridColsClass} gap-2 sm:gap-3`}>
             {petTypes.map((pet) => (
               <div key={pet.value} className="relative">
                 <input

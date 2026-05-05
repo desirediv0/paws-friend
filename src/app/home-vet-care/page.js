@@ -8,6 +8,7 @@ import PromoBanner from "@/components/PromoBanner";
 import CareSteps from "@/components/CareSteps";
 import TrustGrid from "@/components/TrustGrid";
 import FooterContact from "@/components/FooterContact";
+import { dog, cat, groomedtowel } from "@/assets";
 
 export const metadata = {
   title: "Professional Vet & Pet Care at Your Home | Paws Friend",
@@ -15,11 +16,28 @@ export const metadata = {
 };
 
 export default function HomeVetCarePage() {
+  const customPetTypes = [
+    { value: "dog", label: "Dog", icon: dog },
+    { value: "cat", label: "Cat", icon: cat },
+    { value: "grooming", label: "Grooming", icon: groomedtowel },
+  ];
+
+  const customServices = [
+    "Veterinary Service",
+    "Pet vaccination",
+    "Vet Home Visit",
+    "Online Vet Consultation",
+    "Pet Grooming",
+  ];
+
   return (
     <main className="min-h-screen bg-white ">
       {/* 01. Hero Section with Booking Form (Screenshot #1) */}
       <div id="booking">
-        <HomeVetHero />
+        <HomeVetHero 
+          customPetTypes={customPetTypes}
+          customServices={customServices}
+        />
       </div>
 
       {/* 02. Expert Care Stats & Banner (Screenshot #2) */}
@@ -29,13 +47,13 @@ export default function HomeVetCarePage() {
       <WhyChooseSide />
 
       {/* 04. First Visit Special Promo (Screenshot #7) */}
-      {/* <PromoBanner /> */}
+      <PromoBanner />
 
       {/* 05. Step-by-step Care Guide (Screenshot #3 & #4) */}
       <CareSteps />
 
       {/* 06. All Pet Services (Screenshot #5) */}
-      <HomePetServices />
+      <HomePetServices excludeServices={["Pet Boarding & Surgery", "Dog Training"]} />
 
       {/* 07. Trust Grid (6 Cards) (Screenshot #7 & #8) */}
       <TrustGrid />
