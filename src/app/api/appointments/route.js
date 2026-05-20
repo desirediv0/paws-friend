@@ -63,8 +63,9 @@ export async function POST(request) {
     }
 
     // Validate phone format (basic validation)
-    const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
-    if (!phoneRegex.test(phone.replace(/[\s\-$$$$]/g, ""))) {
+    const cleanPhone = phone.replace(/[\s\-()]/g, "");
+    const phoneRegex = /^[+]?[0-9]{7,15}$/;
+    if (!phoneRegex.test(cleanPhone)) {
       return NextResponse.json(
         { error: "Please enter a valid phone number" },
         { status: 400 }
@@ -294,7 +295,13 @@ export async function POST(request) {
       html: confirmationTemplate,
     };
 
-    await transporter.sendMail(confirmationOptions);
+    try {
+      await transporter.sendMail(confirmationOptions);
+      console.log("Confirmation email sent to customer:", email);
+    } catch (confirmEmailError) {
+      console.error("Failed to send confirmation email to customer:", confirmEmailError);
+      // Don't fail the request if confirmation email fails
+    }
 
     return NextResponse.json(
       {

@@ -33,6 +33,7 @@ const Form = ({ customPetTypes, customServices }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
 
   const defaultPetTypes = [
     { value: "dog", label: "Dog", icon: dog },
@@ -68,6 +69,24 @@ const Form = ({ customPetTypes, customServices }) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage("");
+    setFieldErrors({});
+
+    // Client-side validation
+    const errors = {};
+    if (!formData.petType) errors.petType = "Please select your pet type";
+    if (!formData.service) errors.service = "Please select a service";
+    if (!formData.petName.trim()) errors.petName = "Pet name is required";
+    if (!formData.ownerName.trim()) errors.ownerName = "Your name is required";
+    if (!formData.email.trim()) errors.email = "Email address is required";
+    if (!formData.phone.trim()) errors.phone = "Mobile number is required";
+
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      setSubmitSuccess(false);
+      setSubmitMessage("Please fill all required fields before submitting.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch("/api/appointments", {
@@ -203,6 +222,9 @@ const Form = ({ customPetTypes, customServices }) => {
               </div>
             ))}
           </div>
+          {fieldErrors.petType && (
+            <p className="text-red-500 text-xs mt-2">{fieldErrors.petType}</p>
+          )}
         </div>
 
         {/* Service Selection */}
@@ -213,10 +235,13 @@ const Form = ({ customPetTypes, customServices }) => {
           </Label>
           <select
             value={formData.service}
-            onChange={(e) =>
-              setFormData({ ...formData, service: e.target.value })
-            }
-            className="w-full bg-white border border-gray-300 text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent"
+            onChange={(e) => {
+              setFormData({ ...formData, service: e.target.value });
+              if (fieldErrors.service) setFieldErrors({ ...fieldErrors, service: "" });
+            }}
+            className={`w-full bg-white border text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent ${
+              fieldErrors.service ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+            }`}
           >
             <option value="">-- Select Your Service --</option>
             {services.map((service) => (
@@ -229,6 +254,9 @@ const Form = ({ customPetTypes, customServices }) => {
               </option>
             ))}
           </select>
+          {fieldErrors.service && (
+            <p className="text-red-500 text-xs mt-1">{fieldErrors.service}</p>
+          )}
         </div>
 
         {/* Input Fields */}
@@ -241,13 +269,19 @@ const Form = ({ customPetTypes, customServices }) => {
               id={`${uniqueId}-petName`}
               type="text"
               required
-              className="bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
+              className={`bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${
+                fieldErrors.petName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+              }`}
               placeholder="Your pet's name"
               value={formData.petName}
-              onChange={(e) =>
-                setFormData({ ...formData, petName: e.target.value })
-              }
+              onChange={(e) => {
+                setFormData({ ...formData, petName: e.target.value });
+                if (fieldErrors.petName) setFieldErrors({ ...fieldErrors, petName: "" });
+              }}
             />
+            {fieldErrors.petName && (
+              <p className="text-red-500 text-xs mt-1">{fieldErrors.petName}</p>
+            )}
           </div>
           <div>
             <Label className="text-sm font-bold text-gray-900 mb-2 block">
@@ -259,17 +293,20 @@ const Form = ({ customPetTypes, customServices }) => {
                 id={`${uniqueId}-ownerName`}
                 type="text"
                 required
-                className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
+                className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${
+                  fieldErrors.ownerName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+                }`}
                 placeholder="Your full name"
                 value={formData.ownerName}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    ownerName: e.target.value,
-                  })
-                }
+                onChange={(e) => {
+                  setFormData({ ...formData, ownerName: e.target.value });
+                  if (fieldErrors.ownerName) setFieldErrors({ ...fieldErrors, ownerName: "" });
+                }}
               />
             </div>
+            {fieldErrors.ownerName && (
+              <p className="text-red-500 text-xs mt-1">{fieldErrors.ownerName}</p>
+            )}
           </div>
         </div>
 
@@ -283,14 +320,20 @@ const Form = ({ customPetTypes, customServices }) => {
               id={`${uniqueId}-email`}
               type="email"
               required
-              className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
+              className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${
+                fieldErrors.email ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+              }`}
               placeholder="your.email@example.com"
               value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
+              onChange={(e) => {
+                setFormData({ ...formData, email: e.target.value });
+                if (fieldErrors.email) setFieldErrors({ ...fieldErrors, email: "" });
+              }}
             />
           </div>
+          {fieldErrors.email && (
+            <p className="text-red-500 text-xs mt-1">{fieldErrors.email}</p>
+          )}
         </div>
 
         {/* Phone Input */}
@@ -304,14 +347,20 @@ const Form = ({ customPetTypes, customServices }) => {
               id={`${uniqueId}-phone`}
               type="tel"
               required
-              className="pl-9 sm:pl-10 bg-white border-gray-300 text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base"
+              className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${
+                fieldErrors.phone ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+              }`}
               placeholder="+91 98765 43210"
               value={formData.phone}
-              onChange={(e) =>
-                setFormData({ ...formData, phone: e.target.value })
-              }
+              onChange={(e) => {
+                setFormData({ ...formData, phone: e.target.value });
+                if (fieldErrors.phone) setFieldErrors({ ...fieldErrors, phone: "" });
+              }}
             />
           </div>
+          {fieldErrors.phone && (
+            <p className="text-red-500 text-xs mt-1">{fieldErrors.phone}</p>
+          )}
         </div>
 
 
