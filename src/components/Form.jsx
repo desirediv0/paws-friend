@@ -15,8 +15,6 @@ import {
   PawPrint,
   Star,
 } from "lucide-react";
-import Image from "next/image";
-import {  cat, dog, large } from "@/assets";
 
 const Form = ({ customPetTypes, customServices }) => {
   const uniqueId = useId();
@@ -36,10 +34,10 @@ const Form = ({ customPetTypes, customServices }) => {
   const [fieldErrors, setFieldErrors] = useState({});
 
   const defaultPetTypes = [
-    { value: "dog", label: "Dog", icon: dog },
-    { value: "cat", label: "Cat", icon: cat },
-    { value: "Large Animal", label: "Large Animal", icon: large },
-    { value: "other", label: "Other", icon: "🐾" },
+    { value: "dog", label: "Dog" },
+    { value: "cat", label: "Cat" },
+    { value: "Large Animal", label: "Large Animal" },
+    { value: "other", label: "Other" },
   ];
 
   const petTypes = customPetTypes || defaultPetTypes;
@@ -55,15 +53,6 @@ const Form = ({ customPetTypes, customServices }) => {
   ];
 
   const services = customServices || defaultServices;
-
-  const gridColsClass = {
-    1: "grid-cols-1",
-    2: "grid-cols-2",
-    3: "grid-cols-3",
-    4: "grid-cols-4",
-  }[Math.min(petTypes.length, 4)] || "grid-cols-4";
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -128,21 +117,6 @@ const Form = ({ customPetTypes, customServices }) => {
     }
   };
 
-  const handlePetTypeChange = (petValue) => {
-    console.log("[v0] Pet type selected:", petValue);
-    const newData = {
-      ...formData,
-      petType: petValue,
-    };
-
-    // Auto-select grooming service if grooming pet type is selected
-    if (petValue === "grooming") {
-      newData.service = "Pet Grooming";
-    }
-
-    setFormData(newData);
-  };
-
   return (
     <>
       {submitMessage && (
@@ -159,69 +133,26 @@ const Form = ({ customPetTypes, customServices }) => {
       <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 ">
         {/* Pet Type Selection */}
         <div>
-          <Label className="text-sm font-bold text-gray-900 mb-3 sm:mb-4 flex items-center">
+          <Label className="text-sm font-bold text-gray-900 mb-2 sm:mb-3 flex items-center">
             <PawPrint className="w-4 h-4 mr-2" />
             Select Your Pet:
           </Label>
-          <div className={`grid ${gridColsClass} gap-2 sm:gap-3`}>
+          <select
+            value={formData.petType}
+            onChange={(e) => {
+              setFormData({ ...formData, petType: e.target.value });
+              if (fieldErrors.petType) setFieldErrors({ ...fieldErrors, petType: "" });
+            }}
+            className={`w-full bg-white border text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent ${fieldErrors.petType ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+              }`}
+          >
+            <option value="">-- Select Your Pet --</option>
             {petTypes.map((pet) => (
-              <div key={pet.value} className="relative">
-                <input
-                  type="radio"
-                  id={`${uniqueId}-${pet.value}`}
-                  name={`${uniqueId}-petType`}
-                  value={pet.value}
-                  className="sr-only"
-                  checked={formData.petType === pet.value}
-                  onChange={(e) => handlePetTypeChange(e.target.value)}
-                />
-                <label
-                  htmlFor={`${uniqueId}-${pet.value}`}
-                  className={`group flex flex-col items-center p-3 sm:p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105  h-28 relative ${formData.petType === pet.value
-                    ? "border-[#F05434] bg-[#F05434]/20 shadow-lg ring-2 ring-[#F05434]/30"
-                    : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
-                    }`}
-                >
-                  {formData.petType === pet.value && (
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#F05434] rounded-full flex items-center justify-center shadow-lg ">
-                      <svg
-                        className="w-3 h-3 text-white"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  )}
-                  <span className="text-xl sm:text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                    {pet.value === "other" ? (
-                      <span className="text-3xl sm:text-4xl">🐾</span>
-                    ) : (
-                      <Image
-                        src={pet.icon || "/placeholder.svg"}
-                        alt={pet.label}
-                        width={40}
-                        height={40}
-                        className="object-contain w-10 h-10"
-                      />
-                    )}
-                  </span>
-                  <span
-                    className={`text-xs sm:text-sm font-bold text-center transition-colors duration-300 ${formData.petType === pet.value
-                      ? "text-[#F05434]"
-                      : "text-gray-900"
-                      }`}
-                  >
-                    {pet.label}
-                  </span>
-                </label>
-              </div>
+              <option key={pet.value} value={pet.value}>
+                {pet.label}
+              </option>
             ))}
-          </div>
+          </select>
           {fieldErrors.petType && (
             <p className="text-red-500 text-xs mt-2">{fieldErrors.petType}</p>
           )}
@@ -239,9 +170,8 @@ const Form = ({ customPetTypes, customServices }) => {
               setFormData({ ...formData, service: e.target.value });
               if (fieldErrors.service) setFieldErrors({ ...fieldErrors, service: "" });
             }}
-            className={`w-full bg-white border text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent ${
-              fieldErrors.service ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
-            }`}
+            className={`w-full bg-white border text-gray-900 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#F05434] focus:border-transparent ${fieldErrors.service ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+              }`}
           >
             <option value="">-- Select Your Service --</option>
             {services.map((service) => (
@@ -269,9 +199,8 @@ const Form = ({ customPetTypes, customServices }) => {
               id={`${uniqueId}-petName`}
               type="text"
               required
-              className={`bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${
-                fieldErrors.petName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
-              }`}
+              className={`bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.petName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+                }`}
               placeholder="Your pet's name"
               value={formData.petName}
               onChange={(e) => {
@@ -293,9 +222,8 @@ const Form = ({ customPetTypes, customServices }) => {
                 id={`${uniqueId}-ownerName`}
                 type="text"
                 required
-                className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${
-                  fieldErrors.ownerName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
-                }`}
+                className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.ownerName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+                  }`}
                 placeholder="Your full name"
                 value={formData.ownerName}
                 onChange={(e) => {
@@ -320,9 +248,8 @@ const Form = ({ customPetTypes, customServices }) => {
               id={`${uniqueId}-email`}
               type="email"
               required
-              className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${
-                fieldErrors.email ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
-              }`}
+              className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.email ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+                }`}
               placeholder="your.email@example.com"
               value={formData.email}
               onChange={(e) => {
@@ -347,9 +274,8 @@ const Form = ({ customPetTypes, customServices }) => {
               id={`${uniqueId}-phone`}
               type="tel"
               required
-              className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${
-                fieldErrors.phone ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
-              }`}
+              className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.phone ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+                }`}
               placeholder="+91 98765 43210"
               value={formData.phone}
               onChange={(e) => {
