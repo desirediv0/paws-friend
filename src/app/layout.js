@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingBottomBar from "@/components/FloatingBottomBar";
+import AutoPopupModal from "@/components/AutoPopupModal";
 // import VetConsultation from "@/components/vet-consultation";
 import Script from "next/script";
 
@@ -135,6 +136,7 @@ export default function RootLayout({ children }) {
             {children}
             {/* <VetConsultation /> */}
             <FloatingBottomBar />
+            <AutoPopupModal />
           </div>
         </div>
         <Footer />

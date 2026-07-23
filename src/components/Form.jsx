@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Phone,
-  Mail,
   Heart,
   Sparkles,
   Shield,
@@ -20,7 +19,6 @@ const Form = ({ customPetTypes, customServices }) => {
   const [formData, setFormData] = useState({
     petType: "",
     petName: "",
-    email: "",
     phone: "",
     service: "",
     notes: "",
@@ -62,7 +60,6 @@ const Form = ({ customPetTypes, customServices }) => {
     if (!formData.petType) errors.petType = "Please select your pet type";
     if (!formData.service) errors.service = "Please select a service";
     if (!formData.petName.trim()) errors.petName = "Pet name is required";
-    if (!formData.email.trim()) errors.email = "Email address is required";
     if (!formData.phone.trim()) errors.phone = "Mobile number is required";
 
     if (Object.keys(errors).length > 0) {
@@ -91,7 +88,6 @@ const Form = ({ customPetTypes, customServices }) => {
         setFormData({
           petType: "",
           petName: "",
-          email: "",
           phone: "",
           service: "",
           notes: "",
@@ -204,31 +200,6 @@ const Form = ({ customPetTypes, customServices }) => {
           />
           {fieldErrors.petName && (
             <p className="text-red-500 text-xs mt-1">{fieldErrors.petName}</p>
-          )}
-        </div>
-
-        <div>
-          <Label className="text-sm font-bold text-gray-900 mb-2 block">
-            Email Address *
-          </Label>
-          <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
-            <Input
-              id={`${uniqueId}-email`}
-              type="email"
-              required
-              className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.email ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
-                }`}
-              placeholder="your.email@example.com"
-              value={formData.email}
-              onChange={(e) => {
-                setFormData({ ...formData, email: e.target.value });
-                if (fieldErrors.email) setFieldErrors({ ...fieldErrors, email: "" });
-              }}
-            />
-          </div>
-          {fieldErrors.email && (
-            <p className="text-red-500 text-xs mt-1">{fieldErrors.email}</p>
           )}
         </div>
 
