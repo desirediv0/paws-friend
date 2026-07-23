@@ -33,42 +33,42 @@ const AutoPopupModal = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999] flex items-center justify-center p-3 sm:p-4 overflow-y-auto animate-in fade-in duration-300">
-      <div className="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden relative border border-orange-100 my-auto animate-in zoom-in-95 duration-300">
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-md z-[999999] flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-in fade-in duration-300">
+      <div className="bg-white rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden relative border border-orange-100 my-auto animate-in zoom-in-95 duration-300">
         
         {/* Header with gradient & offer */}
-        <div className="bg-gradient-to-r from-[#F05434] via-[#f76a4c] to-[#FF8E8E] p-4 sm:p-5 text-white relative">
-          <button
-            onClick={handleClose}
-            className="absolute top-3 right-3 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all focus:outline-none"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5 text-white" />
-          </button>
-
-          <div className="flex items-center space-x-3 pr-8">
-            <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center shrink-0">
-              <PawPrint className="w-6 h-6 text-white" />
+        <div className="bg-gradient-to-r from-[#F05434] via-[#f76a4c] to-[#FF8E8E] px-4 sm:px-6 py-3.5 text-white relative flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center shrink-0">
+              <PawPrint className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
-              <div className="flex items-center space-x-1 bg-white/20 px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase w-fit mb-1">
+              <div className="flex items-center space-x-1 bg-white/20 px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase w-fit mb-0.5">
                 <Gift className="w-3 h-3 text-yellow-300" />
                 <span>Special Offer Available</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-black text-white leading-tight">
+              <h3 className="text-base sm:text-xl font-black text-white leading-tight">
                 Book Your Vet Visit Today
               </h3>
             </div>
           </div>
+
+          <button
+            onClick={handleClose}
+            className="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all focus:outline-none shrink-0"
+            aria-label="Close modal"
+          >
+            <X className="w-5 h-5 text-white" />
+          </button>
         </div>
 
-        {/* Modal Body with Form */}
-        <div className="p-4 sm:p-6 max-h-[75vh] overflow-y-auto custom-scrollbar">
-          <Form />
+        {/* Modal Body with 2-Column Grid Form */}
+        <div className="p-4 sm:p-6">
+          <Form isGrid={true} />
         </div>
 
         {/* Footer Subtitle */}
-        <div className="bg-orange-50/60 border-t border-orange-100 p-3 text-center">
+        <div className="bg-orange-50/60 border-t border-orange-100 py-2 px-4 text-center">
           <p className="text-xs font-semibold text-gray-600 flex items-center justify-center gap-1">
             <Sparkles className="w-3.5 h-3.5 text-[#F05434]" />
             Instant Confirmation & Home Visit Available
