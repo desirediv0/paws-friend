@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { PawPrint, X, Sparkles, Gift } from "lucide-react";
+import { PawPrint, X, Gift } from "lucide-react";
 import Form from "./Form";
 
 const AutoPopupModal = () => {
@@ -33,8 +33,8 @@ const AutoPopupModal = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-md z-[999999] flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-in fade-in duration-300">
-      <div className="bg-white rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden relative border border-orange-100 my-auto animate-in zoom-in-95 duration-300">
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-md z-[999999] flex items-center justify-center p-4 sm:p-6 pt-20 sm:pt-8 overflow-y-auto animate-in fade-in duration-300">
+      <div className="bg-white rounded-3xl w-full max-w-xl sm:max-w-2xl shadow-2xl overflow-hidden relative border border-orange-100 my-auto animate-in zoom-in-95 duration-300">
         
         {/* Header with gradient & offer */}
         <div className="bg-gradient-to-r from-[#F05434] via-[#f76a4c] to-[#FF8E8E] px-4 sm:px-6 py-3.5 text-white relative flex items-center justify-between">
@@ -62,17 +62,9 @@ const AutoPopupModal = () => {
           </button>
         </div>
 
-        {/* Modal Body with 2-Column Grid Form */}
+        {/* Modal Body with Grid Form */}
         <div className="p-4 sm:p-6">
           <Form isGrid={true} />
-        </div>
-
-        {/* Footer Subtitle */}
-        <div className="bg-orange-50/60 border-t border-orange-100 py-2 px-4 text-center">
-          <p className="text-xs font-semibold text-gray-600 flex items-center justify-center gap-1">
-            <Sparkles className="w-3.5 h-3.5 text-[#F05434]" />
-            Instant Confirmation & Home Visit Available
-          </p>
         </div>
 
       </div>
