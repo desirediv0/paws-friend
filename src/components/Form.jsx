@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
-  User,
   Phone,
   Mail,
   Heart,
@@ -21,7 +20,6 @@ const Form = ({ customPetTypes, customServices }) => {
   const [formData, setFormData] = useState({
     petType: "",
     petName: "",
-    ownerName: "",
     email: "",
     phone: "",
     service: "",
@@ -36,8 +34,7 @@ const Form = ({ customPetTypes, customServices }) => {
   const defaultPetTypes = [
     { value: "dog", label: "Dog" },
     { value: "cat", label: "Cat" },
-    { value: "Large Animal", label: "Large Animal" },
-    { value: "other", label: "Other" },
+
   ];
 
   const petTypes = customPetTypes || defaultPetTypes;
@@ -65,7 +62,6 @@ const Form = ({ customPetTypes, customServices }) => {
     if (!formData.petType) errors.petType = "Please select your pet type";
     if (!formData.service) errors.service = "Please select a service";
     if (!formData.petName.trim()) errors.petName = "Pet name is required";
-    if (!formData.ownerName.trim()) errors.ownerName = "Your name is required";
     if (!formData.email.trim()) errors.email = "Email address is required";
     if (!formData.phone.trim()) errors.phone = "Mobile number is required";
 
@@ -95,7 +91,6 @@ const Form = ({ customPetTypes, customServices }) => {
         setFormData({
           petType: "",
           petName: "",
-          ownerName: "",
           email: "",
           phone: "",
           service: "",
@@ -190,52 +185,26 @@ const Form = ({ customPetTypes, customServices }) => {
         </div>
 
         {/* Input Fields */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
-          <div>
-            <Label className="text-sm font-bold text-gray-900 mb-2 block">
-              Pet Name *
-            </Label>
-            <Input
-              id={`${uniqueId}-petName`}
-              type="text"
-              required
-              className={`bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.petName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
-                }`}
-              placeholder="Your pet's name"
-              value={formData.petName}
-              onChange={(e) => {
-                setFormData({ ...formData, petName: e.target.value });
-                if (fieldErrors.petName) setFieldErrors({ ...fieldErrors, petName: "" });
-              }}
-            />
-            {fieldErrors.petName && (
-              <p className="text-red-500 text-xs mt-1">{fieldErrors.petName}</p>
-            )}
-          </div>
-          <div>
-            <Label className="text-sm font-bold text-gray-900 mb-2 block">
-              Your Name *
-            </Label>
-            <div className="relative">
-              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
-              <Input
-                id={`${uniqueId}-ownerName`}
-                type="text"
-                required
-                className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.ownerName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
-                  }`}
-                placeholder="Your full name"
-                value={formData.ownerName}
-                onChange={(e) => {
-                  setFormData({ ...formData, ownerName: e.target.value });
-                  if (fieldErrors.ownerName) setFieldErrors({ ...fieldErrors, ownerName: "" });
-                }}
-              />
-            </div>
-            {fieldErrors.ownerName && (
-              <p className="text-red-500 text-xs mt-1">{fieldErrors.ownerName}</p>
-            )}
-          </div>
+        <div>
+          <Label className="text-sm font-bold text-gray-900 mb-2 block">
+            Pet Name *
+          </Label>
+          <Input
+            id={`${uniqueId}-petName`}
+            type="text"
+            required
+            className={`bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.petName ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
+              }`}
+            placeholder="Your pet's name"
+            value={formData.petName}
+            onChange={(e) => {
+              setFormData({ ...formData, petName: e.target.value });
+              if (fieldErrors.petName) setFieldErrors({ ...fieldErrors, petName: "" });
+            }}
+          />
+          {fieldErrors.petName && (
+            <p className="text-red-500 text-xs mt-1">{fieldErrors.petName}</p>
+          )}
         </div>
 
         <div>
@@ -276,7 +245,7 @@ const Form = ({ customPetTypes, customServices }) => {
               required
               className={`pl-9 sm:pl-10 bg-white text-gray-900 placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-[#F05434] focus:border-transparent text-sm sm:text-base ${fieldErrors.phone ? "border-red-500 ring-1 ring-red-400" : "border-gray-300"
                 }`}
-              placeholder="+91 98765 43210"
+              placeholder="+91 91125 61322"
               value={formData.phone}
               onChange={(e) => {
                 setFormData({ ...formData, phone: e.target.value });
@@ -316,7 +285,7 @@ const Form = ({ customPetTypes, customServices }) => {
           <div className="flex items-center justify-center">
             <Heart className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
             <span className="text-sm sm:text-base">
-              {isSubmitting ? "Booking..." : "Book Now & Save Up to 30%"}
+              {isSubmitting ? "Booking..." : "Book Now & Save Up to 10%"}
             </span>
             <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 ml-2 sm:ml-3" />
           </div>

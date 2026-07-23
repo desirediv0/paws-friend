@@ -28,7 +28,6 @@ export async function POST(request) {
     }
 
     const {
-      ownerName,
       email,
       phone,
       petName,
@@ -40,7 +39,6 @@ export async function POST(request) {
 
     // Validate required fields
     if (
-      !ownerName ||
       !email ||
       !phone ||
       !petName ||
@@ -146,11 +144,6 @@ export async function POST(request) {
             <p><strong>Service:</strong> ${service}</p>
           </div>
  
-          <div class="field">
-            <div class="field-label">👤 Owner Name:</div>
-            <div class="field-value">${ownerName}</div>
-          </div>
-          
           <div class="field">
             <div class="field-label">📧 Email:</div>
             <div class="field-value">${email}</div>
@@ -269,7 +262,7 @@ export async function POST(request) {
         </div>
         
         <div class="content">
-          <p>Dear ${ownerName},</p>
+          <p>Dear Pet Parent,</p>
           <p>Thank you for booking an appointment with Paws Friend! We're excited to take care of ${petName}.</p>
           
           <div class="appointment-card">
